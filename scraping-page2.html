@@ -1,0 +1,1026 @@
+
+
+<!DOCTYPE html>
+<html lang="fr-FR" data-lang="fr" crm-lang="fr-FR" dir="ltr" crm-lcid="1036"
+	same-site-mode="None">
+<head>
+		
+		<meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript">
+				
+		</script>
+	<title>
+	
+		Prise de rendez-vous
+		- E-service Canada.ca
+</title>
+		
+		<script src="/_resources/getresourcemanager?lang=fr"></script>
+	
+	<script type="text/javascript">
+		// Refresh all powerBI Iframes on Login in one Iframe
+		window.addEventListener('message', function (event) {
+			if (event && event.data && event.data == 'refreshPowerBI') {
+				$("iframe.powerbi").each(function () {
+					this.src = this.src;
+				});
+			}
+		});
+
+		// Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+			var msViewportStyle = document.createElement("style");
+			msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+			document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+		}
+	</script>
+		
+	
+		
+		<link href="/bootstrap.min.css?1654219809000" rel="stylesheet" />
+
+		<link href="/css/glyphicons-font-awesome-migrate.min.css" rel="stylesheet"/>
+
+		<link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-4e08f363e8.css" rel="stylesheet" />
+
+
+		
+		<!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+		
+		<!--[if lt IE 10]>
+				<script src="~/js/formdata.js"></script>
+			<![endif]-->
+		
+			
+		
+		
+		<style type="text/css">@media (hover) {
+    .fc-daygrid-day:not(.fc-day-disabled) :hover {
+        background: lightblue !important;   
+    }
+}
+</style>
+		
+
+<script src="//assets.adobedtm.com/be5dfd287373/8cdb3d539c44/launch-6df9e9b447f9.min.js"></script>
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta name="google-site-verification" content="audaC6B5XAR2ow-TVVTZ5kWEaSZ3HMw9P_Rt432aymw">
+<meta name="robots" content="/en/robots.txt">
+
+<!-- Add in JS Redirect from powerappsportals to proper domain -->
+<script>
+var locationTmp = window.location.href;
+console.log("Current URL: " + locationTmp);
+try {
+    if (locationTmp.includes("sr-ds.powerappsportals.com")) { 
+        locationTmp = locationTmp.replace("sr-ds.powerappsportals.com", "eservices.canada.ca");
+        console.log("Detected Old URL... Redirecting to: " + locationTmp);
+
+        try { window.location.replace(locationTmp); }
+        catch(ex) {}
+
+        /*
+        setTimeout(function(locationTmp) {
+            window.location.href = locationTmp;
+        }, 1000, locationTmp);
+        */
+    }
+} catch(ex) { }
+</script>
+
+<!-- Add in the PWA Manifest -->
+<link rel="manifest" href="/fr/manifest-fr.json">
+
+<!-- Meta data -->
+<meta name="dcterms.title" content="Prise de rendez-vous">
+<meta name="dcterms.language" content="fra"> 
+<meta name="dcterms.creator" content="Emploi et Développement social Canada">
+<meta name="dcterms.service" content="ESDC-EDSC_EService_SCC-ServiceRequest">
+<meta name="dcterms.accessRights" content="2">
+<meta name="dcterms.issued" content="2022-04-04">
+<meta name="dcterms.modified" content="2022-06-03">
+<!-- Meta data-->
+
+<script>
+    // Provide the wb-lang attribute for WET
+    document.documentElement.setAttribute("data-wb-lang", "fr");
+</script>
+
+<!-- Load closure template scripts -->
+
+
+
+<!--
+    cdtsTheme=gcweb
+    cdtsVersion=rn
+    cdtsLanguage=fr
+-->
+
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/soyutils.js"></script>
+
+
+
+
+
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/wet-fr.js"></script>
+
+<!-- Write closure template -->
+<script>
+    document.write(wet.builder.refTop({
+        "isApplication": true
+    }));
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/en/assets/css/fonts/eServiceFonts.css">
+<link rel="stylesheet" type="text/css" href="/en/assets/css/eService.css">
+
+<!-- Additional Plugins -->
+<link href="/en/assets/vendor/select2/select2.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+
+<!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+<script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+<!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+<script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+<script src="/en/assets/vendor/azure-maps/azure-maps-fullscreen-control.min.js"></script>
+
+
+    <link href="/en/assets/vendor/printjs/print.min.css" rel="stylesheet">
+    <script src="/en/assets/vendor/printjs/print.min.js"></script>
+
+
+<script type="text/javascript">
+function throwFocus(e) {
+  e.preventDefault();
+  var dest = e.target.getAttribute("href").replace(/^.*#/, "");
+  document.location.href += "#"  + dest;
+  var destObj = document.getElementById(dest);
+  if (!destObj.hasAttribute("tabindex")) destObj.setAttribute("tabindex", "-1");
+  destObj.focus();
+} // End of throwFocus
+</script>
+
+<!-- Including eService Form Helpers -->
+<script src="/en/assets/libs/eServiceFormHelpers.js"></script>
+
+
+<!-- END Snippet Head/Bottom  -->
+		
+		
+	
+		<link href="/css/offlinenotification.css" rel="stylesheet" /></head>
+<body data-sitemap-state="/reservation/application/:/reservation/:/"
+	data-dateformat="yyyy-MM-dd"
+	data-timeformat="HH:mm"
+	data-datetimeformat="yyyy-MM-dd HH:mm"
+	data-app-path="/"
+	data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+	data-case-deflection-url="/_services/search/d78574f9-20c3-4dcc-8d8d-85cf5b7ac141">
+
+	<div id="offlineNotificationBar" style="display: none;">
+		<div id="web"></div>
+		<div id="message">Vous êtes hors connexion. Ceci est une version en lecture seule de la page.</div>
+		<div id="close" onclick="this.parentElement.style.display='none';"></div>
+	</div>
+
+	
+	<script type="text/javascript">
+		window["Microsoft"] = window["Microsoft"] || {};
+		window["Microsoft"].Dynamic365 = {
+			Portal: {
+				
+				User: {
+					contactId: '',
+					userName: ''
+				},
+				
+				version: '9.4.4.46',
+				type: 'CustomerPortal',
+				id: '6760744c-f752-40d9-91ee-f35b1a3cd06b'
+			}
+		}
+	</script>
+
+	
+		
+
+
+
+<!-- Search Enabled: false -->
+<!-- Current Page: /reservation/application/ -->
+
+
+<!-- Current Lang: fr | Français | fr/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615 -->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+<!-- Is English: false -->
+<!-- Is French: true -->
+<span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">fr</span>
+
+
+
+
+<span id="eService_DevelopmentMode_Enabled" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true" data-key="eService/DevelopmentMode/Enabled">false</span>
+
+
+    <!-- Load in React 17/development -->
+
+    <script src="/en/assets/vendor/react/react.development.js"></script>
+    <script src="/en/assets/vendor/react/react-dom.development.js"></script>
+
+
+
+<!-- CDTS Header -->
+<div id="def-top">
+</div>
+
+<script>
+  let appName = "eServiceCanada";
+  let eServiceDevelopmentMode = document.getElementById("eService_DevelopmentMode_Enabled").innerText;
+  if (eServiceDevelopmentMode.toLowerCase() == "true") {
+    
+    
+      appName += " (Développement)";
+    
+  }
+
+  let cdtsTopSettings = {
+      "appName": [
+        {
+          "text": appName,
+          "href": "/fr/menu"
+        }
+      ],
+      "lngLinks": [
+        
+          
+            {
+            "lang": "en",
+            "href": "/en/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615",
+            "text": "English"
+            }
+          
+        
+          
+        
+      ],
+      
+        
+        
+        
+      
+      "showPreContent": true
+  };
+
+  
+
+  var defTop = document.getElementById("def-top");
+
+  
+  // Display the Browser Warning
+  var browserIncompatible = false;
+  try {
+    function isNullOrWhitespace(text) {
+      if (typeof text === 'undefined' || text == null) return true;
+      return text.replace(/\s/g, '').length < 1;
+    }
+    function IsIE11OrOlder() {
+      const version = ieVersion(navigator.userAgent)
+      if (version == null) { return false; }
+      if (version <= 11) { return true; }
+      return false;
+    }
+    function ieVersion(uaString) {
+        var match = /\b(MSIE |Trident.*?rv:|Edge\/)(\d+)/.exec(uaString);
+        if (match) return parseInt(match[2])
+        return null;
+    }
+    if (IsIE11OrOlder()) { browserIncompatible = true; }
+
+    if (browserIncompatible == true) {
+      let browserWarningAlert = document.createElement("div");
+      browserWarningAlert.setAttribute("id", "UnsupportedBrowserAlert");
+      browserWarningAlert.setAttribute("class", "alert alert-warning");
+      browserWarningAlert.setAttribute("role", "alert");
+
+      let browserWarningAlertP = document.createElement("p");
+      browserWarningAlertP.innerText = "Nous avons détecté que votre navigateur n'est plus soutenu et ne fonctionnera pas correctement avec certaines fonctionnalités de ce site. Veuillez passer à un autre navigateur.";
+      browserWarningAlert.appendChild(browserWarningAlertP);
+      defTop.parentNode.insertBefore(browserWarningAlert, defTop.nextSibling);
+    }
+  }
+  catch(ex) { }
+  
+
+  // Turn on CDTS
+ defTop.outerHTML = wet.builder.appTop(cdtsTopSettings);
+</script>
+
+<!-- Preload Fonts -->
+<div id="preloadfont" aria-hidden="true">.</div>
+
+<!-- END GCWeb HEADER -->
+
+
+	<!-- add anti-forgery token-->
+	<div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-2c5735c41a.js" type="text/javascript"></script>
+
+	
+	<script src="/js/pcf/prop-types.js"></script><script src="/js/pcf/react-fela.js"></script><script src="/js/pcf/fela.js"></script><script src="/js/pcf/fela-dom.js"></script>
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/pcf.bundle-d5fa514165.js" type="text/javascript"></script>
+
+	<script src="/js/pcf/fluentui-react.js"></script>
+	
+	   <form method="post" action="/fr/reservation/application/?booking-privacy=true&amp;stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&amp;sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615" onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['liquid_form'];
+if (!theForm) {
+    theForm = document.liquid_form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZC4zCBv17yKgrioUgHIrWiAhRaZi0rOqjmZkKTUb8vWySOBWL1sEAEG6bt5HYfagcg2&amp;t=637847871181980093" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=1HpV3OVB0CaEXoaafcqmhpbbunChFedMpK6jD73iWL2oZ_eZG88ZyiG4_3K5u-1cgGC3I8R0qaRxXnqgFOLe9gQOeRNHLwx0wnigAwDROunwRzeUbdjh3xDOtNYzE3Iqv3r8BTNNDya_KwDPGR0shQ2&amp;t=14d69f50" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yCjrt5thcM8sJGgR_dC4etqMKcY1TrElZMGMQyaR3Aq7bpwvjbDYFwHh03Me9b7I9-uIahu4LzuKecXckSD3EXbCGpEjZLv0AbE0AjnkchXFfZ-iWuYSn0mM7_dMNtsP2sacKTANEk6UAW-AWQtUuas1&amp;t=49337fe8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLXd2KbFoIAAP9v3cVfX4u7gHSNYiVeJzXKYYhOkqBP_OLKQ8TeZVYZYL29Agbb2xccERRJcOCLfomezZjO9N8SfepfAoqsAufrSSDg3OxgX5VcSBx-w9ohIW86ldFEpZull-Uh5h9lNemHdWbGJBJs1&amp;t=49337fe8" type="text/javascript"></script>
+<script src="../../../js/jquery.blockUI.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/webform.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/radcaptcha.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/crmentityformview.js" type="text/javascript"></script>
+<script src="/xrm-adx/js/crmentityformview-datetime.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1128FCF4" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="7ewRs3gYIjQxyhFJkisTgNrPO+x521Klcz0VIFokijwpIQTJCiMbXhIQDUdxMDdkZvN2EQlQZjXLpYI1qTDMkEptsLLBWQq/Uh45Trygsj9o1pTGZYzETc+P31VeorOFJl43MkI2A9zOQTMVczTmWY6E8OESYkFBwmjIujAHHkf1jGemjQZbVIwqLSrj5k0q/askd0vJgDwVfcVm7L+cTmjBjflI/WpyQ7Mto/AnrEnBRsmfEDEVBjoG3FatO8NQM7uawWzaLJnfUShnJBPjoPSURfhFD5FjA6rAzI7ZvvsdlWgiH5g2g9WDatMWAxTR771o81QKBsR5AJ+w/CCE9CQXplymMlBNHCMLmhPqASHOERBPVOZ+mJ9Wxg/qRpzTksPAtl/9cJXHUHd51einK+obRLZuk7UfrSnbJp7JNcdgRPbmQnXbQockr3kMSndEmXLzsMMFnGLogmTy5wXmDqs5ttJfDqxifOOEIqHX/jpvcdoe/AGxk1juUDKtjnF8j9xVOOiPFyxKUNCFX0N/vIa1ROJJbWYeQc6qahdL/To+QJZVOrwFAdhQALtFFksTcZh1p7RBBNmJC+tNreaS0B90TT8jy+x/SRw1p4B6csNoUNFWuMvkX4DZGr9dzf6jLX6d4Yz3g+eIqTj7OBaq6gc9Yn2JSWpZnFCCA61bbxTU9XFq18xeUhmXeHrBf1K1H0K7A8+sbcU4WYdSLU4euqjbEYNWSxQQQMgGo88cnScYimdv4LOzLeWccrzGRayu" />
+</div>
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liquid_form', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+	<script type="text/javascript">
+		function entityFormClientValidate() {
+			// Custom client side validation. Method is called by the submit button's onclick event.
+			// Must return true or false. Returning false will prevent the form from submitting.
+			return true;
+		}			
+	</script>
+<div class="container">
+  <div class="page-heading">
+  <!--
+    
+      
+
+<ul class="breadcrumb">
+  <li>
+  <a href="/" title="Home">Home</a>
+ </li>
+  <li>
+  <a href="/reservation/" title="Bienvenue &#224; l&#39;outil de prise de rendez-vous eServiceCanada">Bienvenue &#224; l&#39;outil d...</a>
+ </li>
+  <li class="active">Prise de rendez-vous</li>
+</ul>
+    
+    -->
+    <!--
+    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="Français"><div class="xrm-attribute-value"><h2 class="wb-inv">Vous êtes ici&nbsp;:</h2></div></div>
+    -->
+  
+    
+
+<div class="page-header" >
+ <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Prise de rendez-vous</h1>
+</div>
+  
+
+  
+ </div>
+ <div class="row">
+  <div class="col-md-12">
+   
+  
+  
+  <div class="page-copy">
+ <div class="xrm-editable-html&#32;xrm-attribute"><div class="xrm-attribute-value"><!-- Azure Maps -->
+
+<input id="azureMapsClientId" type="hidden" name="azureMapsClientId" value="16a72cfd-c045-418a-a022-213965e8c94e">
+
+<input id="azureMapsMapEnabled" type="hidden" name="azureMapsMapEnabled" value="True">
+
+<input id="azureMapsInteractive" type="hidden" name="azureMapsInteractive" value="False">
+
+<input id="azureMapsAuthUrl" type="hidden" name="azureMapsAuthUrl" value="https://azuremapauthenticator-functionappprod.azurewebsites.net/api/AzureMapAuthenticator?code=DkDea3jrzTiGH8Ul5XYRlfaaghlBYA8BYY9oi6ZYSkhMNYU8yI7uyg==">
+
+<div id="success" class="row" style="display: none;">
+    <div class="col-md-10 col-md-offset-1">
+        <p class="h2" style="text-align: center;">Merci, votre rendez-vous est confirmé.</p>
+        <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au
+            Centre Service Canada.</p>
+    </div>
+</div>
+
+<div id="confirmNumberText" class="row" style="display: none;">
+    <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au Centre
+        Service Canada.</p>
+</div>
+
+<div id="ConfirmationSummary" class="container" style="display:none;">
+    <div id="SOcollapsible" class="row" style="display:none;">
+        <div class="wb-tabs">
+            <div class="tabpanels">
+                <details id="details-panel-overview" open="open">
+                    <summary>Un aperçu</summary>
+                    <div>
+                        <div id="Covidmessaging">
+                            <p class="h3" style="text-align: left;">Ne visitez pas un Centre Service Canada si vous
+                                :
+                            </p>
+                            <div>
+                                <ul>
+                                    <li>Avez un des symptômes de la COVID-19 tels que de la fièvre, de la toux ou de
+                                        la
+                                        difficulté à respirer</li>
+                                    <li>Avez été en contact avec un cas confirmé de COVID-19 dans les 14 derniers
+                                        jours
+                                    </li>
+                                    <li>Êtes tenu par les autorités de santé publique de vous isoler ou d’être en
+                                        quarantaine</li>
+                                </ul>
+                                <p>Veuillez suivre les conseils de la santé publique. Si vous ne suivez pas les
+                                    conseils
+                                    de la santé publique et essayez d’entrer dans un bureau, vous pourrez être
+                                    déclaré
+                                    aux autorités de santé publique locales. Pour plus de renseignements, visitez <a
+                                        href="https://www.canada.ca/fr/sante-publique/services/maladies/maladie-coronavirus-covid-19.html"
+                                        target="_blank">Canada.ca/lacovid19</a>.</p>
+                                <p>Service Canada s’engage à offrir un environnement sécuritaire pour tous. Veuillez
+                                    lire attentivement les instructions suivantes avant de vous rendre au bureau
+                                    pour
+                                    votre rendez-vous:</p>
+                                <ul>
+                                    <li>Veuillez arriver pas plus de 10 minutes avant votre rendez-vous. Si vous
+                                        êtes en
+                                        retard, vous devrez peut-être prendre un autre rendez-vous.</li>
+                                    <li>À votre arrivée à votre rendez-vous, veuillez-vous enregistrer directement
+                                        avec
+                                        le commissionnaire. Vous devrez lui fournir votre nom et l'heure de votre
+                                        rendez-vous.</li>
+                                    <li>Vous devrez être prêt à attendre à l'extérieur du bureau, ceci pourrait être nécessaire.</li>
+                                    <li>Durant votre visite, veuillez respecter la signalisation de santé et de sécurité.</li>
+                                    <li>Service Canada exige que tous portent un masque en tout temps à l’intérieur
+                                        du
+                                        bureau.</li>
+                                    <li>N'oubliez pas d'apporter tous les documents nécessaires pour votre demande.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div>
+                            <p class="h3" style="text-align: left;">Annuler votre rendez-vous</p>
+                            <div>
+                                <p>Si vous devez annuler votre rendez-vous, cliquez sur le lien suivant et suivre les
+                                    instructions : <a id="cancelAppointmentLink"
+                                        href="../cancel-annuler/?bookingid={!Booking:Booking;}&lastname={!Booking:Last Name;}"
+                                        target="_blank">Annuler le rendez-vous</a></p>
+                                <p>Si vous voulez modifier votre rendez-vous, vous devrez l'annuler et prendre un
+                                    nouveau
+                                    rendez-vous.</p>
+                            </div>
+                            <p class="h3" style="text-align: left;">Environnement à parfum réduit</p>
+                            <div>
+                                <p>Service Canada favorise un environnement à parfum réduit. Nous encourageons les
+                                    visiteurs
+                                    à utiliser le moins possible les produits parfumés dans nos bureaux.</p>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+                <details id="details-panel-passportconfirm">
+                    <summary>Service de passeport</summary>
+                    <div>
+                        <p>
+                            Veuillez apporter les documents requis, indiqués à la section aide-mémoire sur le formulaire de demande, à votre rendez-vous. Pour de plus amples
+                            renseignements,
+                            consultez <a
+                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html"
+                                target="_blank">Canada.ca/passeport</a>.
+                        <p>
+                        <p>
+                            <strong>Important:</strong> Si vous avez besoin d’un passeport dans les 45 jours ouvrables
+                            suivant la date de votre rendez-vous, une <a
+                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html#preuve"
+                                target="_blank">preuve de voyage ou de besoin</a> est requise.
+                        </p>
+                        <p>
+                            Veuillez noter que vous ne pouvez pas transférer votre rendez-vous à une autre personne.
+                        </p>
+                    </div>
+                </details>
+                <details id="details-panel-bioconfirm">
+                    <summary>Collecte des données biométriques</summary>
+                    <div>
+                        <ul>
+                            <li>
+                                N'oubliez pas d'apporter les documents suivants à votre rendez-vous:
+                                <ul>
+                                    <li>Votre lettre d'instructions pour la collecte des données biométriques , et</li>
+                                    <li>Le <strong>passeport</strong> ou le <strong>document de voyage</strong> utilisé
+                                        dans
+                                        votre demande.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Booking API -->
+
+<input id="bookingAPIUrl" type="hidden" name="bookingAPIUrl" value="https://eservice-api-production.azurewebsites.net/" data-entityname="esdc_booking">
+
+<!-- Session -->
+
+<input id="sessionExpiryEnabled" type="hidden" name="sessionExpiryEnabled" value="True"
+    data-entityname="esdc_booking">
+
+<input id="sessionExpiryTimeMinutes" type="hidden" name="sessionExpiryTimeMinutes" value="30"
+    data-entityname="esdc_booking">
+
+<!-- Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
+
+
+<script src="/en/assets/libs/eServiceBooking.js"></script></div></div>
+</div>
+
+  
+
+  
+
+  
+
+  
+    <div id="WebFormControl_de5496ccf543ec118c62000d3a09fbc2">
+	<span><script type="text/javascript">/// JS Doc References
+/// <reference path="../../libs/eServiceFormHelpers.js"/>
+/// <reference path="../../libs/eServiceBooking.js"/>
+
+$(document).ready(function () {
+    console.log("Step 0b Loaded");
+    let entityFormView = document.getElementById("EntityFormView");
+
+    // Pre-confirmation
+    $("[aria-roledescription]").removeAttr("aria-roledescription");
+
+    // Setup Initial Form state
+    configureFormState({
+        loadAddressMetadata: true,
+        metadataSectionName: "step0b_tab_metadata_section",
+        initialization: {
+            enabled: true,
+            options: {},
+            initalizeLogic: CreateBookingInitializationLogic({})
+        },
+        tooltips: {
+            options: {
+                hideByDefault: true,
+                focus: {
+                    showOnEnter: false,
+                    hideOnLeave: false
+                }
+            }
+        },
+        page: {
+            tab: {
+                hide: true
+            },
+            title: {
+                text: getTranslatedText(
+                    "Appointment Booking - Applicant Contact Information",
+                    "Prise de rendez-vous - Informations de contact"
+                ),
+                appendProgressBar: false
+            },
+            form: {
+                cacheInputs: {
+                    enabled: true,
+                    sessionKey: "esdc_booking-cached_inputs",
+                    location: "session"
+                }
+            }
+        }
+    });
+
+    // Add the Contact Us Button
+    let cached_inputs = getCachedRecordInputs();
+    if (cached_inputs.esdc_bookingtype.value == "564190000" /* Biometrics */) {
+        addContactUsButton();
+        $("#contactButton_area").show();
+    }
+});</script></span><div id="WebFormControl_de5496ccf543ec118c62000d3a09fbc2_ProgressIndicator" class="&#32;progress&#32;top&#32;progress&#32;top">
+		<div class="bar&#32;progress-bar" style="width:&#32;33%;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" aria-valuetext="33%" tabindex="0"><span aria-hidden="true">33%</span></div>
+	</div><div id="WebFormPanel" class="crmEntityFormView" onkeypress="javascript:return&#32;WebForm_FireDefaultButton(event,&#32;&#39;NextButton&#39;)">
+		<div id="EntityFormView" class="entity-form">
+			<input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName" id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID" id="EntityFormView_EntityID" value="b04f6a5b-4de8-ec11-b5cf-28187805c2cc" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState" id="EntityFormView_EntityState" value="0" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus" id="EntityFormView_EntityStatus" value="1" /><span id="EntityFormView_EntityLayoutConfig" data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;894ef88e-e596-4643-b78e-cd07669aa506&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;04dd4cd8-4c1b-49ad-a650-7e58136ca127&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;6c1afb39-a441-42f3-bb2d-dba30a8f3858&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;c492adcf-6e14-4f56-a8d3-8fea05acecc4&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span><div id="ValidationSummaryEntityFormView" class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
+
+			</div><h2 class="tab-title">Étape 0b</h2><div data-name="tab_4" class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Informations&#32;de&#32;contact"><legend class="section-title">Informations de contact</legend><table role="presentation" data-name="general_tab_section_header" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_firstname" id="esdc_firstname_label" class="field-label">Prénom</label><div class="validators"><span id="RequiredFieldValidatoresdc_firstname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_firstname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>S'il y a plus d'un demandeur pour le rendez-vous, n'écrivez que le nom d'un seul demandeur s'il vous plaît.</p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_firstname" type="text" maxlength="100" id="esdc_firstname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Prénom&#32;est&#32;obligatoire." aria-label="Prénom" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;S&#39;il&#32;y&#32;a&#32;plus&#32;d&#39;un&#32;demandeur&#32;pour&#32;le&#32;rendez-vous,&#32;n&#39;écrivez&#32;que&#32;le&#32;nom&#32;d&#39;un&#32;seul&#32;demandeur&#32;s&#39;il&#32;vous&#32;plaît.&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_lastname" id="esdc_lastname_label" class="field-label">Nom de famille</label><div class="validators"><span id="RequiredFieldValidatoresdc_lastname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_lastname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>S'il y a plus d'un demandeur pour le rendez-vous, n'écrivez que le nom d'un seul demandeur s'il vous plaît.</p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_lastname" type="text" maxlength="100" id="esdc_lastname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Nom&#32;de&#32;famille&#32;est&#32;obligatoire." aria-label="Nom&#32;de&#32;famille" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;S&#39;il&#32;y&#32;a&#32;plus&#32;d&#39;un&#32;demandeur&#32;pour&#32;le&#32;rendez-vous,&#32;n&#39;écrivez&#32;que&#32;le&#32;nom&#32;d&#39;un&#32;seul&#32;demandeur&#32;s&#39;il&#32;vous&#32;plaît.&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_primarytelephonenumber" id="esdc_primarytelephonenumber_label" class="field-label">Numéro de téléphone principal</label><div class="validators"><span id="RequiredFieldValidatoresdc_primarytelephonenumber" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_primarytelephonenumber" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>Fournissez un numéro de téléphone.</p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_primarytelephonenumber" type="text" maxlength="100" id="esdc_primarytelephonenumber" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Numéro&#32;de&#32;téléphone&#32;principal&#32;est&#32;obligatoire." aria-label="Numéro&#32;de&#32;téléphone&#32;principal" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;Fournissez&#32;un&#32;numéro&#32;de&#32;téléphone.&lt;/p&gt;&#10;&lt;/div&gt;" placeholder="Indiquez&#32;un&#32;numéro&#32;de&#32;téléphone" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;lookup&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_provinceterritorystateid" id="esdc_provinceterritorystateid_label" class="field-label">Province/Territoire</label><div class="validators"><span id="RequiredFieldValidatoresdc_provinceterritorystateid" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_provinceterritorystateid" id="esdc_provinceterritorystateid" class="lookup&#32;form-control&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="true">
+					<option value="" label="&#32;" aria-label="Vide"></option>
+					<option value="3b17d494-35b3-eb11-8236-0022486d8d5f">Alberta</option>
+					<option value="9c440baa-35b3-eb11-8236-0022486d8d5f">British Columbia</option>
+					<option value="6d861c55-36b3-eb11-8236-0022486d8d5f">Manitoba</option>
+					<option value="23dc27a2-36b3-eb11-8236-0022486d8d5f">New Brunswick</option>
+					<option value="5abc28c9-38b3-eb11-8236-0022486d8d5f">Newfoundland and Labrador</option>
+					<option value="6026aca2-39b3-eb11-8236-0022486d8d5f">Northwest Territories</option>
+					<option value="fc2243c9-36b3-eb11-8236-0022486d8d5f">Nova Scotia</option>
+					<option value="9936c08e-39b3-eb11-8236-0022486d8d5f">Nunavut</option>
+					<option value="daf4d05b-37b3-eb11-8236-0022486d8d5f">Ontario</option>
+					<option value="3b8110df-38b3-eb11-8236-0022486d8d5f">Prince Edward Island</option>
+					<option value="39449f70-37b3-eb11-8236-0022486d8d5f">Quebec</option>
+					<option value="5bc09caf-38b3-eb11-8236-0022486d8d5f">Saskatchewan</option>
+					<option value="8fef32b7-39b3-eb11-8236-0022486d8d5f">Yukon</option>
+
+				</select><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_provinceterritorystateid_entityname" type="hidden" id="esdc_provinceterritorystateid_entityname" value="esdc_provinceterritorystate" /></div></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_emailaddress" id="esdc_emailaddress_label" class="field-label">Adresse courriel</label><div class="validators"><span id="EmailFormatValidatoresdc_emailaddress" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoresdc_emailaddress" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info"><p>Un courriel contenant votre numéro de confirmation et des informations sur votre rendez-vous sera envoyé à l'adresse courriel indiquée</p></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_emailaddress" maxlength="100" id="esdc_emailaddress" class="text&#32;form-control&#32;" type="email" ondblclick="launchEmail(this.value);" onchange="setIsDirty(this.id);" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" style="text-decoration:underline;" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			</table></fieldset><fieldset aria-label="Metadonnée"><legend class="section-title">Metadonnée</legend><table role="presentation" data-name="step0b_tab_metadata_section" class="section"><colgroup><col style="width:100%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;datetime&#32;form-control-cell"><div class="info"><label for="esdc_sessionexpiryon" id="esdc_sessionexpiryon_label" class="field-label">Expiration de la session le</label><div class="validators"><span id="DateFormatValidatoresdc_sessionexpiryon" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon" type="text" value="2022-06-09T23:52:13.0000000" id="esdc_sessionexpiryon" class="datetime&#32;form-control&#32;" data-ui="datetimepicker" data-type="datetime" data-attribute="esdc_sessionexpiryon" data-behavior="TimeZoneIndependent" /></div></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_bookingtype" id="esdc_bookingtype_label" class="field-label">Type de rendez-vous</label></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype" id="esdc_bookingtype" class="readonly&#32;form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" disabled="disabled" aria-disabled="true">
+					<option value="" label="&#32;" aria-label="Vide"></option>
+					<option value="564190000">Collecte des données biométriques</option>
+					<option selected="selected" value="564190001">Service de passeport</option>
+
+				</select><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype_Value" id="esdc_bookingtype_Value" value="564190001" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype_SelectedIndex" id="esdc_bookingtype_SelectedIndex" value="2" /></div></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			</table></fieldset></div></div></div>
+		</div><div class="actions"><div class="col-sm-6&#32;clearfix">
+			<div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton" value="Précédent" onclick="javascript:__doPostBack(&#39;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton&#39;,&#39;&#39;)" id="PreviousButton" class="btn&#32;btn-default&#32;button&#32;previous&#32;previous-btn" nonActionLinkButton="true" /></div><div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton" value="Suivant" onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="NextButton" class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn" nonActionLinkButton="true" /></div>
+		</div></div>
+	</div>
+</div>
+  
+  
+  
+<div class="row">
+    <div class="col-md-12">
+        <dl class="text-right">
+            
+            
+            
+                <dt>Niveau de protection une fois terminé</dt>
+                <dd>Protégé-B</dd>
+            
+        </dl>
+    </div>  
+</div>
+
+
+  </div>
+ </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummaryEntityFormView"));
+var Page_Validators =  new Array(document.getElementById("RequiredFieldValidatoresdc_firstname"), document.getElementById("MaximumLengthValidatoresdc_firstname"), document.getElementById("RequiredFieldValidatoresdc_lastname"), document.getElementById("MaximumLengthValidatoresdc_lastname"), document.getElementById("RequiredFieldValidatoresdc_primarytelephonenumber"), document.getElementById("MaximumLengthValidatoresdc_primarytelephonenumber"), document.getElementById("RequiredFieldValidatoresdc_provinceterritorystateid"), document.getElementById("EmailFormatValidatoresdc_emailaddress"), document.getElementById("MaximumLengthValidatoresdc_emailaddress"), document.getElementById("DateFormatValidatoresdc_sessionexpiryon"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ValidationSummaryEntityFormView = document.all ? document.all["ValidationSummaryEntityFormView"] : document.getElementById("ValidationSummaryEntityFormView");
+ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> Le formulaire n\'a pas pu être soumis pour les raisons suivantes :</h2>";
+var RequiredFieldValidatoresdc_firstname = document.all ? document.all["RequiredFieldValidatoresdc_firstname"] : document.getElementById("RequiredFieldValidatoresdc_firstname");
+RequiredFieldValidatoresdc_firstname.controltovalidate = "esdc_firstname";
+RequiredFieldValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>Le champ Prénom est obligatoire. </a>";
+RequiredFieldValidatoresdc_firstname.display = "Dynamic";
+RequiredFieldValidatoresdc_firstname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatoresdc_firstname.initialvalue = "";
+var MaximumLengthValidatoresdc_firstname = document.all ? document.all["MaximumLengthValidatoresdc_firstname"] : document.getElementById("MaximumLengthValidatoresdc_firstname");
+MaximumLengthValidatoresdc_firstname.controltovalidate = "esdc_firstname";
+MaximumLengthValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>Prénom dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_firstname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var RequiredFieldValidatoresdc_lastname = document.all ? document.all["RequiredFieldValidatoresdc_lastname"] : document.getElementById("RequiredFieldValidatoresdc_lastname");
+RequiredFieldValidatoresdc_lastname.controltovalidate = "esdc_lastname";
+RequiredFieldValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Le champ Nom de famille est obligatoire. </a>";
+RequiredFieldValidatoresdc_lastname.display = "Dynamic";
+RequiredFieldValidatoresdc_lastname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatoresdc_lastname.initialvalue = "";
+var MaximumLengthValidatoresdc_lastname = document.all ? document.all["MaximumLengthValidatoresdc_lastname"] : document.getElementById("MaximumLengthValidatoresdc_lastname");
+MaximumLengthValidatoresdc_lastname.controltovalidate = "esdc_lastname";
+MaximumLengthValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Nom de famille dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_lastname.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var RequiredFieldValidatoresdc_primarytelephonenumber = document.all ? document.all["RequiredFieldValidatoresdc_primarytelephonenumber"] : document.getElementById("RequiredFieldValidatoresdc_primarytelephonenumber");
+RequiredFieldValidatoresdc_primarytelephonenumber.controltovalidate = "esdc_primarytelephonenumber";
+RequiredFieldValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Le champ Numéro de téléphone principal est obligatoire. </a>";
+RequiredFieldValidatoresdc_primarytelephonenumber.display = "Dynamic";
+RequiredFieldValidatoresdc_primarytelephonenumber.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatoresdc_primarytelephonenumber.initialvalue = "";
+var MaximumLengthValidatoresdc_primarytelephonenumber = document.all ? document.all["MaximumLengthValidatoresdc_primarytelephonenumber"] : document.getElementById("MaximumLengthValidatoresdc_primarytelephonenumber");
+MaximumLengthValidatoresdc_primarytelephonenumber.controltovalidate = "esdc_primarytelephonenumber";
+MaximumLengthValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Numéro de téléphone principal dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_primarytelephonenumber.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var RequiredFieldValidatoresdc_provinceterritorystateid = document.all ? document.all["RequiredFieldValidatoresdc_provinceterritorystateid"] : document.getElementById("RequiredFieldValidatoresdc_provinceterritorystateid");
+RequiredFieldValidatoresdc_provinceterritorystateid.controltovalidate = "esdc_provinceterritorystateid";
+RequiredFieldValidatoresdc_provinceterritorystateid.errormessage = "<a href=\'#esdc_provinceterritorystateid_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_provinceterritorystateid_label\",\"esdc_provinceterritorystateid\");return false;\' referenceControlId=esdc_provinceterritorystateid>Le champ Province/Territoire est obligatoire. </a>";
+RequiredFieldValidatoresdc_provinceterritorystateid.display = "Dynamic";
+RequiredFieldValidatoresdc_provinceterritorystateid.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidatoresdc_provinceterritorystateid.initialvalue = "";
+var EmailFormatValidatoresdc_emailaddress = document.all ? document.all["EmailFormatValidatoresdc_emailaddress"] : document.getElementById("EmailFormatValidatoresdc_emailaddress");
+EmailFormatValidatoresdc_emailaddress.controltovalidate = "esdc_emailaddress";
+EmailFormatValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Adresse courriel doit être une adresse de messagerie valide. </a>";
+EmailFormatValidatoresdc_emailaddress.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var MaximumLengthValidatoresdc_emailaddress = document.all ? document.all["MaximumLengthValidatoresdc_emailaddress"] : document.getElementById("MaximumLengthValidatoresdc_emailaddress");
+MaximumLengthValidatoresdc_emailaddress.controltovalidate = "esdc_emailaddress";
+MaximumLengthValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Adresse courriel dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_emailaddress.evaluationfunction = "CustomValidatorEvaluateIsValid";
+var DateFormatValidatoresdc_sessionexpiryon = document.all ? document.all["DateFormatValidatoresdc_sessionexpiryon"] : document.getElementById("DateFormatValidatoresdc_sessionexpiryon");
+DateFormatValidatoresdc_sessionexpiryon.controltovalidate = "esdc_sessionexpiryon";
+DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Le format de date de Expiration de la session le doit être valide. Exemple : {1} </a>";
+DateFormatValidatoresdc_sessionexpiryon.evaluationfunction = "CustomValidatorEvaluateIsValid";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ValidationSummaryEntityFormView');
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('RequiredFieldValidatoresdc_firstname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_firstname'));
+}
+
+document.getElementById('MaximumLengthValidatoresdc_firstname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_firstname'));
+}
+
+document.getElementById('RequiredFieldValidatoresdc_lastname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_lastname'));
+}
+
+document.getElementById('MaximumLengthValidatoresdc_lastname').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_lastname'));
+}
+
+document.getElementById('RequiredFieldValidatoresdc_primarytelephonenumber').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_primarytelephonenumber'));
+}
+
+document.getElementById('MaximumLengthValidatoresdc_primarytelephonenumber').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_primarytelephonenumber'));
+}
+
+document.getElementById('RequiredFieldValidatoresdc_provinceterritorystateid').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_provinceterritorystateid'));
+}
+
+document.getElementById('EmailFormatValidatoresdc_emailaddress').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('EmailFormatValidatoresdc_emailaddress'));
+}
+
+document.getElementById('MaximumLengthValidatoresdc_emailaddress').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_emailaddress'));
+}
+
+document.getElementById('DateFormatValidatoresdc_sessionexpiryon').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('DateFormatValidatoresdc_sessionexpiryon'));
+}
+//]]>
+</script>
+</form>
+
+
+	<script src="/js/pcf/loadPcfControls.js"></script>
+
+	
+		
+
+	
+		
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+<!-- CDTS Footer -->
+<div class="container">
+    <div id="def-preFooter"></div>
+</div>
+<script>
+    var defPreFooter = document.getElementById("def-preFooter");
+    if (defPreFooter != undefined && defPreFooter != null) {
+        defPreFooter.outerHTML = wet.builder.preFooter({
+            "dateModified": "2022-06-03",
+            "showFeedback": false,
+            "showShare": false
+        });
+    }
+</script>
+
+<div id="def-footer">
+    <!-- Write closure fall-back static file -->
+    <!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/footer-en.html -->
+</div>
+<!-- Write closure template -->
+<script>
+    var defFooter = document.getElementById("def-footer");
+    defFooter.outerHTML = wet.builder.footer({
+    });
+</script>
+<!-- Write closure template -->
+<script>
+    document.write(wet.builder.refFooter({
+        "isApplication": true
+    }));
+</script>
+
+
+
+<!--
+    cdtsTheme=gcweb
+    cdtsVersion=rn
+    cdtsLanguage=fr
+-->
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/fr.min.js"></script>
+
+<!-- Additional Plugins -->
+<script src="/en/assets/vendor/select2/select2.min.js"></script>
+
+<!-- Adobe Analytics -->
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+	
+	
+	
+	
+	
+	
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.bundle-f4f91a6eb4.js" type="text/javascript"></script>
+
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-3b0ea058d8.js" type="text/javascript"></script>
+
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1036.bundle-a9edc8a9d0.js" type="text/javascript"></script>
+
+	
+	
+	<script type="text/javascript">
+var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(n){var o={config:n,initialize:!0},t=document,e=window,i="script";setTimeout(function(){var e=t.createElement(i);e.src=n.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",t.getElementsByTagName(i)[0].parentNode.appendChild(e)});try{o.cookie=t.cookie}catch(e){}function a(n){o[n]=function(){var e=arguments;o.queue.push(function(){o[n].apply(o,e)})}}o.queue=[],o.version=2;for(var s=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];s.length;)a("track"+s.pop());var r="Track",c=r+"Page";a("start"+c),a("stop"+c);var u=r+"Event";if(a("start"+u),a("stop"+u),a("addTelemetryInitializer"),a("setAuthenticatedUserContext"),a("clearAuthenticatedUserContext"),a("flush"),o.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===n.disableExceptionTracking||n.extensionConfig&&n.extensionConfig.ApplicationInsightsAnalytics&&!0===n.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){a("_"+(s="onerror"));var p=e[s];e[s]=function(e,n,t,i,a){var r=p&&p(e,n,t,i,a);return!0!==r&&o["_"+s]({message:e,url:n,lineNumber:t,columnNumber:i,error:a}),r},n.autoExceptionInstrumented=!0}return o}(
+{
+  instrumentationKey:"e4d34349-2ba3-4dc1-85ea-d25863650474"
+}
+);(window[aiName]=aisdk).queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+</script>
+	<script>
+		//this event will update the title of the page based on active breadcrumb
+		$('.breadcrumb').ready(function () {
+			if ($('.breadcrumb').is(':visible')) {
+				document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "- E-service Canada.ca");
+			}
+		});
+
+		function GoToNewEditor() {
+			var editCmsUrlSegment = "EditInCms";
+			var currentUrl = window.location.href;
+			if (currentUrl.indexOf('?') > -1) {
+				var urlSegments = currentUrl.split("?");
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+			}
+			else {
+				window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+			}
+		}
+	</script>
+	
+		
+	
+	
+		
+			<script>
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.getRegistrations().then(function(registrations) {
+					for(let registration of registrations) {
+						registration.unregister();
+					}}).catch(function(err) {
+					console.log('Service Worker unregister action failed: ', err);
+					});
+				}
+			</script>
+		
+	
+		
+</body>
+</html>
+<!-- Generated at 09/06/2022 23:39:11 -->
+<!-- Page OK -->
