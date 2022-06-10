@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "bot-app"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-miyhhk52a7yw"
+s3_prefix = "bot-app"
+region = "ca-central-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["ServiceCanadaBotFunction=206753461854.dkr.ecr.ca-central-1.amazonaws.com/botappfef5291f/servicecanadabotfunction10ce0fferepo"]
