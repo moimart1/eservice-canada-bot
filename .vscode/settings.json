@@ -1,3 +1,4 @@
 {
-    "jira-plugin.workingProject": ""
+  "editor.rulers": [130],
+  "jira-plugin.workingProject": ""
 }

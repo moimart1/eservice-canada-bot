@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="fr-FR" data-lang="fr" crm-lang="fr-FR" dir="ltr" crm-lcid="1036"
+<html lang="en-US" data-lang="en" crm-lang="en-US" dir="ltr" crm-lcid="1033"
 	same-site-mode="None">
 <head>
 		
@@ -11,11 +11,11 @@
 		</script>
 	<title>
 	
-		Prise de rendez-vous
+		Appointment Booking
 		- E-service Canada.ca
 </title>
 		
-		<script src="/_resources/getresourcemanager?lang=fr"></script>
+		<script src="/_resources/getresourcemanager?lang=en"></script>
 	
 	<script type="text/javascript">
 		// Refresh all powerBI Iframes on Login in one Iframe
@@ -91,12 +91,12 @@ try {
 </script>
 
 <!-- Add in the PWA Manifest -->
-<link rel="manifest" href="/fr/manifest-fr.json">
+<link rel="manifest" href="/en/manifest-en.json">
 
 <!-- Meta data -->
-<meta name="dcterms.title" content="Prise de rendez-vous">
-<meta name="dcterms.language" content="fra"> 
-<meta name="dcterms.creator" content="Emploi et Développement social Canada">
+<meta name="dcterms.title" content="Appointment Booking">
+<meta name="dcterms.language" content="eng"> 
+<meta name="dcterms.creator" content="Employment and Social Development Canada">
 <meta name="dcterms.service" content="ESDC-EDSC_EService_SCC-ServiceRequest">
 <meta name="dcterms.accessRights" content="2">
 <meta name="dcterms.issued" content="2022-04-04">
@@ -105,7 +105,7 @@ try {
 
 <script>
     // Provide the wb-lang attribute for WET
-    document.documentElement.setAttribute("data-wb-lang", "fr");
+    document.documentElement.setAttribute("data-wb-lang", "en");
 </script>
 
 <!-- Load closure template scripts -->
@@ -115,16 +115,14 @@ try {
 <!--
     cdtsTheme=gcweb
     cdtsVersion=rn
-    cdtsLanguage=fr
+    cdtsLanguage=en
 -->
 
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/soyutils.js"></script>
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/wet-en.js"></script>
 
 
 
-
-
-<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/wet-fr.js"></script>
 
 <!-- Write closure template -->
 <script>
@@ -162,7 +160,7 @@ function throwFocus(e) {
   var destObj = document.getElementById(dest);
   if (!destObj.hasAttribute("tabindex")) destObj.setAttribute("tabindex", "-1");
   destObj.focus();
-} // End of throwFocus
+} 
 </script>
 
 <!-- Including eService Form Helpers -->
@@ -176,15 +174,15 @@ function throwFocus(e) {
 		<link href="/css/offlinenotification.css" rel="stylesheet" /></head>
 <body data-sitemap-state="/reservation/application/:/reservation/:/"
 	data-dateformat="yyyy-MM-dd"
-	data-timeformat="HH:mm"
-	data-datetimeformat="yyyy-MM-dd HH:mm"
+	data-timeformat="h:mm tt"
+	data-datetimeformat="yyyy-MM-dd h:mm tt"
 	data-app-path="/"
 	data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
 	data-case-deflection-url="/_services/search/d78574f9-20c3-4dcc-8d8d-85cf5b7ac141">
 
 	<div id="offlineNotificationBar" style="display: none;">
 		<div id="web"></div>
-		<div id="message">Vous êtes hors connexion. Ceci est une version en lecture seule de la page.</div>
+		<div id="message">You&#8217;re offline. This is a read only version of the page.</div>
 		<div id="close" onclick="this.parentElement.style.display='none';"></div>
 	</div>
 
@@ -215,8 +213,7 @@ function throwFocus(e) {
 <!-- Current Page: /reservation/application/ -->
 
 
-<!-- Current Lang: fr | Français | fr/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615 -->
-
+<!-- Current Lang: en | English | en/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=d2b3ea0c-d1e8-ec11-bb3d-000d3af47e51 -->
 
 
 
@@ -231,9 +228,10 @@ function throwFocus(e) {
   
   
 
-<!-- Is English: false -->
-<!-- Is French: true -->
-<span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">fr</span>
+
+<!-- Is English: true -->
+<!-- Is French: false -->
+<span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">en</span>
 
 
 
@@ -257,8 +255,8 @@ function throwFocus(e) {
   let eServiceDevelopmentMode = document.getElementById("eService_DevelopmentMode_Enabled").innerText;
   if (eServiceDevelopmentMode.toLowerCase() == "true") {
     
+      appName += " (Development)";
     
-      appName += " (Développement)";
     
   }
 
@@ -266,19 +264,19 @@ function throwFocus(e) {
       "appName": [
         {
           "text": appName,
-          "href": "/fr/menu"
+          "href": "/en/menu"
         }
       ],
       "lngLinks": [
         
           
-            {
-            "lang": "en",
-            "href": "/en/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615",
-            "text": "English"
-            }
-          
         
+          
+            {
+            "lang": "fr",
+            "href": "/fr/reservation/application/?booking-privacy=true&stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&sessionid=d2b3ea0c-d1e8-ec11-bb3d-000d3af47e51",
+            "text": "Français"
+            }
           
         
       ],
@@ -322,7 +320,7 @@ function throwFocus(e) {
       browserWarningAlert.setAttribute("role", "alert");
 
       let browserWarningAlertP = document.createElement("p");
-      browserWarningAlertP.innerText = "Nous avons détecté que votre navigateur n'est plus soutenu et ne fonctionnera pas correctement avec certaines fonctionnalités de ce site. Veuillez passer à un autre navigateur.";
+      browserWarningAlertP.innerText = "We have detected that your browser is no longer supported and will not work properly with some features on this site. Please switch to another browser.";
       browserWarningAlert.appendChild(browserWarningAlertP);
       defTop.parentNode.insertBefore(browserWarningAlert, defTop.nextSibling);
     }
@@ -350,11 +348,11 @@ function throwFocus(e) {
 
 	<script src="/js/pcf/fluentui-react.js"></script>
 	
-	   <form method="post" action="/fr/reservation/application/?booking-privacy=true&amp;stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&amp;sessionid=00a28c5b-4de8-ec11-bb3d-000d3af42615" onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
+	   <form method="post" action="/en/reservation/application/?booking-privacy=true&amp;stepid=7d4fa2a9-f4dd-ec11-bb3d-000d3af4ac86&amp;sessionid=d2b3ea0c-d1e8-ec11-bb3d-000d3af47e51" onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
 <div class="aspNetHidden">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
 </div>
 
 <script type="text/javascript">
@@ -398,7 +396,7 @@ return true;
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1128FCF4" />
 	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="7ewRs3gYIjQxyhFJkisTgNrPO+x521Klcz0VIFokijwpIQTJCiMbXhIQDUdxMDdkZvN2EQlQZjXLpYI1qTDMkEptsLLBWQq/Uh45Trygsj9o1pTGZYzETc+P31VeorOFJl43MkI2A9zOQTMVczTmWY6E8OESYkFBwmjIujAHHkf1jGemjQZbVIwqLSrj5k0q/askd0vJgDwVfcVm7L+cTmjBjflI/WpyQ7Mto/AnrEnBRsmfEDEVBjoG3FatO8NQM7uawWzaLJnfUShnJBPjoPSURfhFD5FjA6rAzI7ZvvsdlWgiH5g2g9WDatMWAxTR771o81QKBsR5AJ+w/CCE9CQXplymMlBNHCMLmhPqASHOERBPVOZ+mJ9Wxg/qRpzTksPAtl/9cJXHUHd51einK+obRLZuk7UfrSnbJp7JNcdgRPbmQnXbQockr3kMSndEmXLzsMMFnGLogmTy5wXmDqs5ttJfDqxifOOEIqHX/jpvcdoe/AGxk1juUDKtjnF8j9xVOOiPFyxKUNCFX0N/vIa1ROJJbWYeQc6qahdL/To+QJZVOrwFAdhQALtFFksTcZh1p7RBBNmJC+tNreaS0B90TT8jy+x/SRw1p4B6csNoUNFWuMvkX4DZGr9dzf6jLX6d4Yz3g+eIqTj7OBaq6gc9Yn2JSWpZnFCCA61bbxTU9XFq18xeUhmXeHrBf1K1H0K7A8+sbcU4WYdSLU4euqjbEYNWSxQQQMgGo88cnScYimdv4LOzLeWccrzGRayu" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="mT4q8OLxAxHgnxEIuddQiIIMev8aemEP6CdAsFIwk4+P1Lx/dH3cRVYqcVRcOxeug/NN6sW86tt3h4fZ91zgX9qc0O1hFzJiKGnSsgvmgEV36dI9O1XdYCDB9U5WjVHOaEu22NYeFGA81ty/eJi3mrmnuF2LhEDql/0otUfbXdaqjahM54VCtKvJtvM2DdgIyYeXLdrebYxYKqWK74Ea0UmBjcQAjYg8Kcv+gqnvLNfhFT38a50rXlHPIqazfuowcQWFxF1TTk3T+C6joUdV81QeVrAemNcquYkuuxQSpl0p3fuvhdyHOwX1OBEs4buDwkihBOcpLzHYuPbkPBfsWMSCL5axlri4GFBzz7gnI2XYQShGnFTTgDh72yrqk2PBNbd1pJ1bQC7e+IbbzK9fTsJLKyslBL9r+hEnLLp6jOgFA9Oxl4RtQQELv+BzDMX5Cdywnhm8NFl6LSO116Uv7R6P/D4azbZThkEVteXcrVaC+5FdlEzSpmZn6WGbhoBYQtojImehu9z4vboVaOmBwEwbj+U1rNIG6I1OnI2172wd9flxo81mI6BHmAUamFuvo9XnOQWC1UkCJGnjaLl7ruK1Hpmh3uBxPsWxPBGOSJw82X8i6RK15pO4ZoxzP5BFJpwI636GBGCVd016plhBlaxSKqpu6+mWI1acCgtBREbjk8s88nTkpuKwuINPGb/wJ5O6k7GsII07LlyIpI6jiMmTpHtxu/XvdYA9Yn5qrzTrhnZe/HGW0Aw+SdlKd0P8" />
 </div>
 	<script type="text/javascript">
 //<![CDATA[
@@ -424,20 +422,20 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
   <a href="/" title="Home">Home</a>
  </li>
   <li>
-  <a href="/reservation/" title="Bienvenue &#224; l&#39;outil de prise de rendez-vous eServiceCanada">Bienvenue &#224; l&#39;outil d...</a>
+  <a href="/reservation/" title="Welcome to the eServiceCanada Appointment Booking Tool">Welcome to the eServi...</a>
  </li>
-  <li class="active">Prise de rendez-vous</li>
+  <li class="active">Appointment Booking</li>
 </ul>
     
     -->
     <!--
-    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="Français"><div class="xrm-attribute-value"><h2 class="wb-inv">Vous êtes ici&nbsp;:</h2></div></div>
+    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><h2 class="wb-inv">You are here:</h2></div></div>
     -->
   
     
 
 <div class="page-header" >
- <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Prise de rendez-vous</h1>
+ <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Appointment Booking</h1>
 </div>
   
 
@@ -461,15 +459,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
 
 <div id="success" class="row" style="display: none;">
     <div class="col-md-10 col-md-offset-1">
-        <p class="h2" style="text-align: center;">Merci, votre rendez-vous est confirmé.</p>
-        <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au
-            Centre Service Canada.</p>
+        <p class="h2" style="text-align: center;">Thank you, your appointment has been booked.</p>
+        <p>Please keep a record of your confirmation number. This number is to confirm your appointment at the Service
+            Canada Centre.</p>
     </div>
-</div>
-
-<div id="confirmNumberText" class="row" style="display: none;">
-    <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au Centre
-        Service Canada.</p>
 </div>
 
 <div id="ConfirmationSummary" class="container" style="display:none;">
@@ -477,106 +470,94 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
         <div class="wb-tabs">
             <div class="tabpanels">
                 <details id="details-panel-overview" open="open">
-                    <summary>Un aperçu</summary>
+                    <summary>Overview</summary>
                     <div>
                         <div id="Covidmessaging">
-                            <p class="h3" style="text-align: left;">Ne visitez pas un Centre Service Canada si vous
-                                :
-                            </p>
+                            <p class="h3" style="text-align: left;">Do not come to a Service Canada Centre if you:</p>
                             <div>
                                 <ul>
-                                    <li>Avez un des symptômes de la COVID-19 tels que de la fièvre, de la toux ou de
-                                        la
-                                        difficulté à respirer</li>
-                                    <li>Avez été en contact avec un cas confirmé de COVID-19 dans les 14 derniers
-                                        jours
+                                    <li>Have any COVID-19 related symptoms such as fever, cough or difficulty
+                                        breathing
                                     </li>
-                                    <li>Êtes tenu par les autorités de santé publique de vous isoler ou d’être en
-                                        quarantaine</li>
+                                    <li>Have had contact with a confirmed case of COVID-19 in the past 14 days</li>
+                                    <li>Are required to self-isolate or quarantine by public health authorities</li>
                                 </ul>
-                                <p>Veuillez suivre les conseils de la santé publique. Si vous ne suivez pas les
-                                    conseils
-                                    de la santé publique et essayez d’entrer dans un bureau, vous pourrez être
-                                    déclaré
-                                    aux autorités de santé publique locales. Pour plus de renseignements, visitez <a
-                                        href="https://www.canada.ca/fr/sante-publique/services/maladies/maladie-coronavirus-covid-19.html"
-                                        target="_blank">Canada.ca/lacovid19</a>.</p>
-                                <p>Service Canada s’engage à offrir un environnement sécuritaire pour tous. Veuillez
-                                    lire attentivement les instructions suivantes avant de vous rendre au bureau
-                                    pour
-                                    votre rendez-vous:</p>
+                                <p>Please follow public health advice. If you don't follow public health advice and
+                                    try
+                                    to enter the office, you could be reported to local public health authorities.
+                                    For
+                                    more information, visit <a
+                                        href="https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html"
+                                        target="_blank">Canada.ca/covid19</a>.</p>
+                                <p>Service Canada is committed to providing a safe environment for all. Please read
+                                    the
+                                    following instructions carefully before visiting the office for your
+                                    appointment:
+                                </p>
                                 <ul>
-                                    <li>Veuillez arriver pas plus de 10 minutes avant votre rendez-vous. Si vous
-                                        êtes en
-                                        retard, vous devrez peut-être prendre un autre rendez-vous.</li>
-                                    <li>À votre arrivée à votre rendez-vous, veuillez-vous enregistrer directement
-                                        avec
-                                        le commissionnaire. Vous devrez lui fournir votre nom et l'heure de votre
-                                        rendez-vous.</li>
-                                    <li>Vous devrez être prêt à attendre à l'extérieur du bureau, ceci pourrait être nécessaire.</li>
-                                    <li>Durant votre visite, veuillez respecter la signalisation de santé et de sécurité.</li>
-                                    <li>Service Canada exige que tous portent un masque en tout temps à l’intérieur
-                                        du
-                                        bureau.</li>
-                                    <li>N'oubliez pas d'apporter tous les documents nécessaires pour votre demande.
-                                    </li>
+                                    <li>Please arrive no more than 10 minutes early for your appointment. If you are
+                                        late, you may have to make another appointment.</li>
+                                    <li>When you arrive for your appointment, please check-in with the
+                                        Commissionaire.
+                                        You will have to give them your name and the time of your appointment.</li>
+                                    <li>You should be ready to wait outside the office, should you be required to do so.</li>
+                                    <li>During your visit, please follow health and safety signage.</li>
+                                    <li>Service Canada requires everyone to wear a face mask at all times inside the office.</li>
+                                    <li>Be sure to bring all the required documentation for your request.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <hr />
                         <div>
-                            <p class="h3" style="text-align: left;">Annuler votre rendez-vous</p>
+                            <p class="h3" style="text-align: left;">Canceling your booking</p>
                             <div>
-                                <p>Si vous devez annuler votre rendez-vous, cliquez sur le lien suivant et suivre les
-                                    instructions : <a id="cancelAppointmentLink"
+                                <p>If you need to cancel your appointment, please click on this link and follow the
+                                    instructions: <a id="cancelAppointmentLink"
                                         href="../cancel-annuler/?bookingid={!Booking:Booking;}&lastname={!Booking:Last Name;}"
-                                        target="_blank">Annuler le rendez-vous</a></p>
-                                <p>Si vous voulez modifier votre rendez-vous, vous devrez l'annuler et prendre un
-                                    nouveau
-                                    rendez-vous.</p>
+                                        target="_blank">Cancel Booking</a></p>
+                                <p>If you want to change the appointment, you will need to cancel it and book a new
+                                    appointment.</p>
                             </div>
-                            <p class="h3" style="text-align: left;">Environnement à parfum réduit</p>
+                            <p class="h3" style="text-align: left;">Scent-reduced environment</p>
                             <div>
-                                <p>Service Canada favorise un environnement à parfum réduit. Nous encourageons les
-                                    visiteurs
-                                    à utiliser le moins possible les produits parfumés dans nos bureaux.</p>
+                                <p>Service Canada promotes a scent-reduced environment. We encourage limited use of
+                                    scented
+                                    products in our offices.</p>
                             </div>
                         </div>
                     </div>
                 </details>
                 <details id="details-panel-passportconfirm">
-                    <summary>Service de passeport</summary>
+                    <summary>Passport Service</summary>
                     <div>
                         <p>
-                            Veuillez apporter les documents requis, indiqués à la section aide-mémoire sur le formulaire de demande, à votre rendez-vous. Pour de plus amples
-                            renseignements,
-                            consultez <a
-                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html"
-                                target="_blank">Canada.ca/passeport</a>.
+                            Please bring the required documentation, indicated on the requirement checklist section on the application form, at your appointment. For more information, visit <a
+                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html"
+                                target="_blank">Canada.ca/passport</a>.
                         <p>
                         <p>
-                            <strong>Important:</strong> Si vous avez besoin d’un passeport dans les 45 jours ouvrables
-                            suivant la date de votre rendez-vous, une <a
-                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html#preuve"
-                                target="_blank">preuve de voyage ou de besoin</a> est requise.
+                            <strong>Important:</strong> If you need a passport in less than 45 business days from the
+                            date
+                            of your appointment, a <a
+                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html#proof"
+                                target="_blank">proof of travel or need</a> is required.
                         </p>
                         <p>
-                            Veuillez noter que vous ne pouvez pas transférer votre rendez-vous à une autre personne.
+                            Please note that you cannot transfer your appointment to another person. 
                         </p>
                     </div>
                 </details>
                 <details id="details-panel-bioconfirm">
-                    <summary>Collecte des données biométriques</summary>
+                    <summary>Biometrics Collection</summary>
                     <div>
                         <ul>
                             <li>
-                                N'oubliez pas d'apporter les documents suivants à votre rendez-vous:
+                                Please remember to bring the following with you to your appointment:
                                 <ul>
-                                    <li>Votre lettre d'instructions pour la collecte des données biométriques , et</li>
-                                    <li>Le <strong>passeport</strong> ou le <strong>document de voyage</strong> utilisé
-                                        dans
-                                        votre demande.</li>
+                                    <li>Your <strong>Biometrics Instruction Letter</strong>, and</li>
+                                    <li>The <strong>passport</strong> or <strong>travel document</strong> used in your
+                                        application.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -598,6 +579,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
 
 <input id="sessionExpiryTimeMinutes" type="hidden" name="sessionExpiryTimeMinutes" value="30"
     data-entityname="esdc_booking">
+
 
 <!-- Dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
@@ -675,23 +657,23 @@ $(document).ready(function () {
 		<div class="bar&#32;progress-bar" style="width:&#32;33%;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" aria-valuetext="33%" tabindex="0"><span aria-hidden="true">33%</span></div>
 	</div><div id="WebFormPanel" class="crmEntityFormView" onkeypress="javascript:return&#32;WebForm_FireDefaultButton(event,&#32;&#39;NextButton&#39;)">
 		<div id="EntityFormView" class="entity-form">
-			<input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName" id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID" id="EntityFormView_EntityID" value="b04f6a5b-4de8-ec11-b5cf-28187805c2cc" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState" id="EntityFormView_EntityState" value="0" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus" id="EntityFormView_EntityStatus" value="1" /><span id="EntityFormView_EntityLayoutConfig" data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;894ef88e-e596-4643-b78e-cd07669aa506&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;04dd4cd8-4c1b-49ad-a650-7e58136ca127&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;6c1afb39-a441-42f3-bb2d-dba30a8f3858&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;c492adcf-6e14-4f56-a8d3-8fea05acecc4&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span><div id="ValidationSummaryEntityFormView" class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
+			<input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName" id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID" id="EntityFormView_EntityID" value="466c8e11-d1e8-ec11-b5cf-0003ff9c13b7" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState" id="EntityFormView_EntityState" value="0" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus" id="EntityFormView_EntityStatus" value="1" /><span id="EntityFormView_EntityLayoutConfig" data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;3d25907a-c685-4d57-9ac2-7a736854d423&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;2c017de1-474d-4eb1-88f0-23a241e139d4&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;b0b694a5-8f49-4bf7-800a-bd213007a688&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;d9db736d-a073-4afe-a285-0fcff05baf0d&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span><div id="ValidationSummaryEntityFormView" class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
 
-			</div><h2 class="tab-title">Étape 0b</h2><div data-name="tab_4" class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Informations&#32;de&#32;contact"><legend class="section-title">Informations de contact</legend><table role="presentation" data-name="general_tab_section_header" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_firstname" id="esdc_firstname_label" class="field-label">Prénom</label><div class="validators"><span id="RequiredFieldValidatoresdc_firstname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_firstname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
-<p>S'il y a plus d'un demandeur pour le rendez-vous, n'écrivez que le nom d'un seul demandeur s'il vous plaît.</p>
-</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_firstname" type="text" maxlength="100" id="esdc_firstname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Prénom&#32;est&#32;obligatoire." aria-label="Prénom" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;S&#39;il&#32;y&#32;a&#32;plus&#32;d&#39;un&#32;demandeur&#32;pour&#32;le&#32;rendez-vous,&#32;n&#39;écrivez&#32;que&#32;le&#32;nom&#32;d&#39;un&#32;seul&#32;demandeur&#32;s&#39;il&#32;vous&#32;plaît.&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_lastname" id="esdc_lastname_label" class="field-label">Nom de famille</label><div class="validators"><span id="RequiredFieldValidatoresdc_lastname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_lastname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
-<p>S'il y a plus d'un demandeur pour le rendez-vous, n'écrivez que le nom d'un seul demandeur s'il vous plaît.</p>
-</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_lastname" type="text" maxlength="100" id="esdc_lastname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Nom&#32;de&#32;famille&#32;est&#32;obligatoire." aria-label="Nom&#32;de&#32;famille" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;S&#39;il&#32;y&#32;a&#32;plus&#32;d&#39;un&#32;demandeur&#32;pour&#32;le&#32;rendez-vous,&#32;n&#39;écrivez&#32;que&#32;le&#32;nom&#32;d&#39;un&#32;seul&#32;demandeur&#32;s&#39;il&#32;vous&#32;plaît.&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+			</div><h2 class="tab-title">Step 0b</h2><div data-name="tab_4" class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Applicant&#32;Contact&#32;Information"><legend class="section-title">Applicant Contact Information</legend><table role="presentation" data-name="general_tab_section_header" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_firstname" id="esdc_firstname_label" class="field-label">First Name</label><div class="validators"><span id="RequiredFieldValidatoresdc_firstname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_firstname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>If more than one applicant for the appointment, only write the name of one applicant please. </p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_firstname" type="text" maxlength="100" id="esdc_firstname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="First&#32;Name&#32;is&#32;a&#32;required&#32;field." aria-label="First&#32;Name" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;If&#32;more&#32;than&#32;one&#32;applicant&#32;for&#32;the&#32;appointment,&#32;only&#32;write&#32;the&#32;name&#32;of&#32;one&#32;applicant&#32;please.&#32;&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_lastname" id="esdc_lastname_label" class="field-label">Last Name</label><div class="validators"><span id="RequiredFieldValidatoresdc_lastname" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_lastname" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>If more than one applicant for the appointment, only write the name of one applicant please. </p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_lastname" type="text" maxlength="100" id="esdc_lastname" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Last&#32;Name&#32;is&#32;a&#32;required&#32;field." aria-label="Last&#32;Name" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;If&#32;more&#32;than&#32;one&#32;applicant&#32;for&#32;the&#32;appointment,&#32;only&#32;write&#32;the&#32;name&#32;of&#32;one&#32;applicant&#32;please.&#32;&lt;/p&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_primarytelephonenumber" id="esdc_primarytelephonenumber_label" class="field-label">Numéro de téléphone principal</label><div class="validators"><span id="RequiredFieldValidatoresdc_primarytelephonenumber" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_primarytelephonenumber" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
-<p>Fournissez un numéro de téléphone.</p>
-</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_primarytelephonenumber" type="text" maxlength="100" id="esdc_primarytelephonenumber" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Le&#32;champ&#32;Numéro&#32;de&#32;téléphone&#32;principal&#32;est&#32;obligatoire." aria-label="Numéro&#32;de&#32;téléphone&#32;principal" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;Fournissez&#32;un&#32;numéro&#32;de&#32;téléphone.&lt;/p&gt;&#10;&lt;/div&gt;" placeholder="Indiquez&#32;un&#32;numéro&#32;de&#32;téléphone" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;lookup&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_provinceterritorystateid" id="esdc_provinceterritorystateid_label" class="field-label">Province/Territoire</label><div class="validators"><span id="RequiredFieldValidatoresdc_provinceterritorystateid" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_provinceterritorystateid" id="esdc_provinceterritorystateid" class="lookup&#32;form-control&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="true">
-					<option value="" label="&#32;" aria-label="Vide"></option>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_primarytelephonenumber" id="esdc_primarytelephonenumber_label" class="field-label">Primary Telephone Number</label><div class="validators"><span id="RequiredFieldValidatoresdc_primarytelephonenumber" style="display:none;">*</span><span id="MaximumLengthValidatoresdc_primarytelephonenumber" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>Provide a telephone number.</p>
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_primarytelephonenumber" type="text" maxlength="100" id="esdc_primarytelephonenumber" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-required="true" title="Primary&#32;Telephone&#32;Number&#32;is&#32;a&#32;required&#32;field." aria-label="Primary&#32;Telephone&#32;Number" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;Provide&#32;a&#32;telephone&#32;number.&lt;/p&gt;&#10;&lt;/div&gt;" placeholder="Provide&#32;a&#32;telephone&#32;number" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;lookup&#32;form-control-cell"><div class="info&#32;required"><label for="esdc_provinceterritorystateid" id="esdc_provinceterritorystateid_label" class="field-label">Province/Territory</label><div class="validators"><span id="RequiredFieldValidatoresdc_provinceterritorystateid" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_provinceterritorystateid" id="esdc_provinceterritorystateid" class="lookup&#32;form-control&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="true">
+					<option value="" label="&#32;" aria-label="Blank"></option>
 					<option value="3b17d494-35b3-eb11-8236-0022486d8d5f">Alberta</option>
 					<option value="9c440baa-35b3-eb11-8236-0022486d8d5f">British Columbia</option>
 					<option value="6d861c55-36b3-eb11-8236-0022486d8d5f">Manitoba</option>
@@ -710,7 +692,7 @@ $(document).ready(function () {
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_emailaddress" id="esdc_emailaddress_label" class="field-label">Adresse courriel</label><div class="validators"><span id="EmailFormatValidatoresdc_emailaddress" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoresdc_emailaddress" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info"><p>Un courriel contenant votre numéro de confirmation et des informations sur votre rendez-vous sera envoyé à l'adresse courriel indiquée</p></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_emailaddress" maxlength="100" id="esdc_emailaddress" class="text&#32;form-control&#32;" type="email" ondblclick="launchEmail(this.value);" onchange="setIsDirty(this.id);" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" style="text-decoration:underline;" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_emailaddress" id="esdc_emailaddress_label" class="field-label">Email Address</label><div class="validators"><span id="EmailFormatValidatoresdc_emailaddress" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoresdc_emailaddress" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info"><p>An email containing your Confirmation Number and information about your appointment will be sent to the email specified.</p></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_emailaddress" maxlength="100" id="esdc_emailaddress" class="text&#32;form-control&#32;" type="email" ondblclick="launchEmail(this.value);" onchange="setIsDirty(this.id);" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" style="text-decoration:underline;" /></div></td>
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
@@ -719,22 +701,22 @@ $(document).ready(function () {
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
-			</table></fieldset><fieldset aria-label="Metadonnée"><legend class="section-title">Metadonnée</legend><table role="presentation" data-name="step0b_tab_metadata_section" class="section"><colgroup><col style="width:100%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;datetime&#32;form-control-cell"><div class="info"><label for="esdc_sessionexpiryon" id="esdc_sessionexpiryon_label" class="field-label">Expiration de la session le</label><div class="validators"><span id="DateFormatValidatoresdc_sessionexpiryon" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon" type="text" value="2022-06-09T23:52:13.0000000" id="esdc_sessionexpiryon" class="datetime&#32;form-control&#32;" data-ui="datetimepicker" data-type="datetime" data-attribute="esdc_sessionexpiryon" data-behavior="TimeZoneIndependent" /></div></td>
+			</table></fieldset><fieldset aria-label="Metadata"><legend class="section-title">Metadata</legend><table role="presentation" data-name="step0b_tab_metadata_section" class="section"><colgroup><col style="width:100%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;datetime&#32;form-control-cell"><div class="info"><label for="esdc_sessionexpiryon" id="esdc_sessionexpiryon_label" class="field-label">Session Expiry On</label><div class="validators"><span id="DateFormatValidatoresdc_sessionexpiryon" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon" type="text" value="2022-06-10T15:51:58.0000000" id="esdc_sessionexpiryon" class="datetime&#32;form-control&#32;" data-ui="datetimepicker" data-type="datetime" data-attribute="esdc_sessionexpiryon" data-behavior="TimeZoneIndependent" /></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_bookingtype" id="esdc_bookingtype_label" class="field-label">Type de rendez-vous</label></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype" id="esdc_bookingtype" class="readonly&#32;form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" disabled="disabled" aria-disabled="true">
-					<option value="" label="&#32;" aria-label="Vide"></option>
-					<option value="564190000">Collecte des données biométriques</option>
-					<option selected="selected" value="564190001">Service de passeport</option>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_bookingtype" id="esdc_bookingtype_label" class="field-label">Booking Type</label></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype" id="esdc_bookingtype" class="readonly&#32;form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" disabled="disabled" aria-disabled="true">
+					<option value="" label="&#32;" aria-label="Blank"></option>
+					<option value="564190000">Biometrics Collection</option>
+					<option selected="selected" value="564190001">Passport Service</option>
 
 				</select><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype_Value" id="esdc_bookingtype_Value" value="564190001" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype_SelectedIndex" id="esdc_bookingtype_SelectedIndex" value="2" /></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			</table></fieldset></div></div></div>
 		</div><div class="actions"><div class="col-sm-6&#32;clearfix">
-			<div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton" value="Précédent" onclick="javascript:__doPostBack(&#39;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton&#39;,&#39;&#39;)" id="PreviousButton" class="btn&#32;btn-default&#32;button&#32;previous&#32;previous-btn" nonActionLinkButton="true" /></div><div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton" value="Suivant" onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="NextButton" class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn" nonActionLinkButton="true" /></div>
+			<div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton" value="Previous" onclick="javascript:__doPostBack(&#39;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$PreviousButton&#39;,&#39;&#39;)" id="PreviousButton" class="btn&#32;btn-default&#32;button&#32;previous&#32;previous-btn" nonActionLinkButton="true" /></div><div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton" value="Next" onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="NextButton" class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn" nonActionLinkButton="true" /></div>
 		</div></div>
 	</div>
 </div>
@@ -746,9 +728,9 @@ $(document).ready(function () {
         <dl class="text-right">
             
             
+                <dt>Protection level when complete</dt>
+                <dd>Protected-B</dd>
             
-                <dt>Niveau de protection une fois terminé</dt>
-                <dd>Protégé-B</dd>
             
         </dl>
     </div>  
@@ -768,54 +750,54 @@ var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator
 <script type="text/javascript">
 //<![CDATA[
 var ValidationSummaryEntityFormView = document.all ? document.all["ValidationSummaryEntityFormView"] : document.getElementById("ValidationSummaryEntityFormView");
-ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> Le formulaire n\'a pas pu être soumis pour les raisons suivantes :</h2>";
+ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> The form could not be submitted for the following reasons:</h2>";
 var RequiredFieldValidatoresdc_firstname = document.all ? document.all["RequiredFieldValidatoresdc_firstname"] : document.getElementById("RequiredFieldValidatoresdc_firstname");
 RequiredFieldValidatoresdc_firstname.controltovalidate = "esdc_firstname";
-RequiredFieldValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>Le champ Prénom est obligatoire. </a>";
+RequiredFieldValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>First Name is a required field. </a>";
 RequiredFieldValidatoresdc_firstname.display = "Dynamic";
 RequiredFieldValidatoresdc_firstname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_firstname.initialvalue = "";
 var MaximumLengthValidatoresdc_firstname = document.all ? document.all["MaximumLengthValidatoresdc_firstname"] : document.getElementById("MaximumLengthValidatoresdc_firstname");
 MaximumLengthValidatoresdc_firstname.controltovalidate = "esdc_firstname";
-MaximumLengthValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>Prénom dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_firstname.errormessage = "<a href=\'#esdc_firstname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_firstname_label\",\"esdc_firstname\");return false;\' referenceControlId=esdc_firstname>First Name exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_firstname.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RequiredFieldValidatoresdc_lastname = document.all ? document.all["RequiredFieldValidatoresdc_lastname"] : document.getElementById("RequiredFieldValidatoresdc_lastname");
 RequiredFieldValidatoresdc_lastname.controltovalidate = "esdc_lastname";
-RequiredFieldValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Le champ Nom de famille est obligatoire. </a>";
+RequiredFieldValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Last Name is a required field. </a>";
 RequiredFieldValidatoresdc_lastname.display = "Dynamic";
 RequiredFieldValidatoresdc_lastname.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_lastname.initialvalue = "";
 var MaximumLengthValidatoresdc_lastname = document.all ? document.all["MaximumLengthValidatoresdc_lastname"] : document.getElementById("MaximumLengthValidatoresdc_lastname");
 MaximumLengthValidatoresdc_lastname.controltovalidate = "esdc_lastname";
-MaximumLengthValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Nom de famille dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_lastname.errormessage = "<a href=\'#esdc_lastname_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_lastname_label\",\"esdc_lastname\");return false;\' referenceControlId=esdc_lastname>Last Name exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_lastname.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RequiredFieldValidatoresdc_primarytelephonenumber = document.all ? document.all["RequiredFieldValidatoresdc_primarytelephonenumber"] : document.getElementById("RequiredFieldValidatoresdc_primarytelephonenumber");
 RequiredFieldValidatoresdc_primarytelephonenumber.controltovalidate = "esdc_primarytelephonenumber";
-RequiredFieldValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Le champ Numéro de téléphone principal est obligatoire. </a>";
+RequiredFieldValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Primary Telephone Number is a required field. </a>";
 RequiredFieldValidatoresdc_primarytelephonenumber.display = "Dynamic";
 RequiredFieldValidatoresdc_primarytelephonenumber.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_primarytelephonenumber.initialvalue = "";
 var MaximumLengthValidatoresdc_primarytelephonenumber = document.all ? document.all["MaximumLengthValidatoresdc_primarytelephonenumber"] : document.getElementById("MaximumLengthValidatoresdc_primarytelephonenumber");
 MaximumLengthValidatoresdc_primarytelephonenumber.controltovalidate = "esdc_primarytelephonenumber";
-MaximumLengthValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Numéro de téléphone principal dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_primarytelephonenumber.errormessage = "<a href=\'#esdc_primarytelephonenumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_primarytelephonenumber_label\",\"esdc_primarytelephonenumber\");return false;\' referenceControlId=esdc_primarytelephonenumber>Primary Telephone Number exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_primarytelephonenumber.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RequiredFieldValidatoresdc_provinceterritorystateid = document.all ? document.all["RequiredFieldValidatoresdc_provinceterritorystateid"] : document.getElementById("RequiredFieldValidatoresdc_provinceterritorystateid");
 RequiredFieldValidatoresdc_provinceterritorystateid.controltovalidate = "esdc_provinceterritorystateid";
-RequiredFieldValidatoresdc_provinceterritorystateid.errormessage = "<a href=\'#esdc_provinceterritorystateid_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_provinceterritorystateid_label\",\"esdc_provinceterritorystateid\");return false;\' referenceControlId=esdc_provinceterritorystateid>Le champ Province/Territoire est obligatoire. </a>";
+RequiredFieldValidatoresdc_provinceterritorystateid.errormessage = "<a href=\'#esdc_provinceterritorystateid_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_provinceterritorystateid_label\",\"esdc_provinceterritorystateid\");return false;\' referenceControlId=esdc_provinceterritorystateid>Province/Territory is a required field. </a>";
 RequiredFieldValidatoresdc_provinceterritorystateid.display = "Dynamic";
 RequiredFieldValidatoresdc_provinceterritorystateid.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_provinceterritorystateid.initialvalue = "";
 var EmailFormatValidatoresdc_emailaddress = document.all ? document.all["EmailFormatValidatoresdc_emailaddress"] : document.getElementById("EmailFormatValidatoresdc_emailaddress");
 EmailFormatValidatoresdc_emailaddress.controltovalidate = "esdc_emailaddress";
-EmailFormatValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Adresse courriel doit être une adresse de messagerie valide. </a>";
+EmailFormatValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Email Address must be a valid email address. </a>";
 EmailFormatValidatoresdc_emailaddress.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var MaximumLengthValidatoresdc_emailaddress = document.all ? document.all["MaximumLengthValidatoresdc_emailaddress"] : document.getElementById("MaximumLengthValidatoresdc_emailaddress");
 MaximumLengthValidatoresdc_emailaddress.controltovalidate = "esdc_emailaddress";
-MaximumLengthValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Adresse courriel dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_emailaddress.errormessage = "<a href=\'#esdc_emailaddress_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_emailaddress_label\",\"esdc_emailaddress\");return false;\' referenceControlId=esdc_emailaddress>Email Address exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_emailaddress.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var DateFormatValidatoresdc_sessionexpiryon = document.all ? document.all["DateFormatValidatoresdc_sessionexpiryon"] : document.getElementById("DateFormatValidatoresdc_sessionexpiryon");
 DateFormatValidatoresdc_sessionexpiryon.controltovalidate = "esdc_sessionexpiryon";
-DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Le format de date de Expiration de la session le doit être valide. Exemple : {1} </a>";
+DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Session Expiry On must have a valid date format. Example: {1} </a>";
 DateFormatValidatoresdc_sessionexpiryon.evaluationfunction = "CustomValidatorEvaluateIsValid";
 //]]>
 </script>
@@ -907,10 +889,10 @@ document.getElementById('DateFormatValidatoresdc_sessionexpiryon').dispose = fun
 
 
 
+  
+  
+  
 
-  
-  
-  
 
 
 <!-- CDTS Footer -->
@@ -950,9 +932,9 @@ document.getElementById('DateFormatValidatoresdc_sessionexpiryon').dispose = fun
 <!--
     cdtsTheme=gcweb
     cdtsVersion=rn
-    cdtsLanguage=fr
+    cdtsLanguage=en
 -->
-<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/fr.min.js"></script>
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/en.min.js"></script>
 
 <!-- Additional Plugins -->
 <script src="/en/assets/vendor/select2/select2.min.js"></script>
@@ -971,7 +953,7 @@ document.getElementById('DateFormatValidatoresdc_sessionexpiryon').dispose = fun
 
 	<script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-3b0ea058d8.js" type="text/javascript"></script>
 
-	<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1036.bundle-a9edc8a9d0.js" type="text/javascript"></script>
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.bundle-eda4e638fd.js" type="text/javascript"></script>
 
 	
 	
@@ -1022,5 +1004,5 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 		
 </body>
 </html>
-<!-- Generated at 09/06/2022 23:39:11 -->
+<!-- Generated at 6/10/2022 3:22:01 PM -->
 <!-- Page OK -->

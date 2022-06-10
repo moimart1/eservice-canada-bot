@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="fr-FR" data-lang="fr" crm-lang="fr-FR" dir="ltr" crm-lcid="1036"
+<html lang="en-US" data-lang="en" crm-lang="en-US" dir="ltr" crm-lcid="1033"
 	same-site-mode="None">
 <head>
 		
@@ -11,11 +11,11 @@
 		</script>
 	<title>
 	
-		Prise de rendez-vous
+		Appointment Booking
 		- E-service Canada.ca
 </title>
 		
-		<script src="/_resources/getresourcemanager?lang=fr"></script>
+		<script src="/_resources/getresourcemanager?lang=en"></script>
 	
 	<script type="text/javascript">
 		// Refresh all powerBI Iframes on Login in one Iframe
@@ -91,12 +91,12 @@ try {
 </script>
 
 <!-- Add in the PWA Manifest -->
-<link rel="manifest" href="/fr/manifest-fr.json">
+<link rel="manifest" href="/en/manifest-en.json">
 
 <!-- Meta data -->
-<meta name="dcterms.title" content="Prise de rendez-vous">
-<meta name="dcterms.language" content="fra"> 
-<meta name="dcterms.creator" content="Emploi et Développement social Canada">
+<meta name="dcterms.title" content="Appointment Booking">
+<meta name="dcterms.language" content="eng"> 
+<meta name="dcterms.creator" content="Employment and Social Development Canada">
 <meta name="dcterms.service" content="ESDC-EDSC_EService_SCC-ServiceRequest">
 <meta name="dcterms.accessRights" content="2">
 <meta name="dcterms.issued" content="2022-04-04">
@@ -105,7 +105,7 @@ try {
 
 <script>
     // Provide the wb-lang attribute for WET
-    document.documentElement.setAttribute("data-wb-lang", "fr");
+    document.documentElement.setAttribute("data-wb-lang", "en");
 </script>
 
 <!-- Load closure template scripts -->
@@ -115,16 +115,14 @@ try {
 <!--
     cdtsTheme=gcweb
     cdtsVersion=rn
-    cdtsLanguage=fr
+    cdtsLanguage=en
 -->
 
 <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/soyutils.js"></script>
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/wet-en.js"></script>
 
 
 
-
-
-<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/wet-fr.js"></script>
 
 <!-- Write closure template -->
 <script>
@@ -162,7 +160,7 @@ function throwFocus(e) {
   var destObj = document.getElementById(dest);
   if (!destObj.hasAttribute("tabindex")) destObj.setAttribute("tabindex", "-1");
   destObj.focus();
-} // End of throwFocus
+} 
 </script>
 
 <!-- Including eService Form Helpers -->
@@ -176,15 +174,15 @@ function throwFocus(e) {
 		<link href="/css/offlinenotification.css" rel="stylesheet" /></head>
 <body data-sitemap-state="/reservation/application/:/reservation/:/"
 	data-dateformat="yyyy-MM-dd"
-	data-timeformat="HH:mm"
-	data-datetimeformat="yyyy-MM-dd HH:mm"
+	data-timeformat="h:mm tt"
+	data-datetimeformat="yyyy-MM-dd h:mm tt"
 	data-app-path="/"
 	data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
 	data-case-deflection-url="/_services/search/d78574f9-20c3-4dcc-8d8d-85cf5b7ac141">
 
 	<div id="offlineNotificationBar" style="display: none;">
 		<div id="web"></div>
-		<div id="message">Vous êtes hors connexion. Ceci est une version en lecture seule de la page.</div>
+		<div id="message">You&#8217;re offline. This is a read only version of the page.</div>
 		<div id="close" onclick="this.parentElement.style.display='none';"></div>
 	</div>
 
@@ -215,8 +213,7 @@ function throwFocus(e) {
 <!-- Current Page: /reservation/application/ -->
 
 
-<!-- Current Lang: fr | Français | fr/reservation/application/?booking-privacy=true -->
-
+<!-- Current Lang: en | English | en/reservation/application/?booking-privacy=true -->
 
 
 
@@ -231,9 +228,10 @@ function throwFocus(e) {
   
   
 
-<!-- Is English: false -->
-<!-- Is French: true -->
-<span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">fr</span>
+
+<!-- Is English: true -->
+<!-- Is French: false -->
+<span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">en</span>
 
 
 
@@ -257,8 +255,8 @@ function throwFocus(e) {
   let eServiceDevelopmentMode = document.getElementById("eService_DevelopmentMode_Enabled").innerText;
   if (eServiceDevelopmentMode.toLowerCase() == "true") {
     
+      appName += " (Development)";
     
-      appName += " (Développement)";
     
   }
 
@@ -266,19 +264,19 @@ function throwFocus(e) {
       "appName": [
         {
           "text": appName,
-          "href": "/fr/menu"
+          "href": "/en/menu"
         }
       ],
       "lngLinks": [
         
           
-            {
-            "lang": "en",
-            "href": "/en/reservation/application/?booking-privacy=true",
-            "text": "English"
-            }
-          
         
+          
+            {
+            "lang": "fr",
+            "href": "/fr/reservation/application/?booking-privacy=true",
+            "text": "Français"
+            }
           
         
       ],
@@ -322,7 +320,7 @@ function throwFocus(e) {
       browserWarningAlert.setAttribute("role", "alert");
 
       let browserWarningAlertP = document.createElement("p");
-      browserWarningAlertP.innerText = "Nous avons détecté que votre navigateur n'est plus soutenu et ne fonctionnera pas correctement avec certaines fonctionnalités de ce site. Veuillez passer à un autre navigateur.";
+      browserWarningAlertP.innerText = "We have detected that your browser is no longer supported and will not work properly with some features on this site. Please switch to another browser.";
       browserWarningAlert.appendChild(browserWarningAlertP);
       defTop.parentNode.insertBefore(browserWarningAlert, defTop.nextSibling);
     }
@@ -350,11 +348,11 @@ function throwFocus(e) {
 
 	<script src="/js/pcf/fluentui-react.js"></script>
 	
-	   <form method="post" action="/fr/reservation/application/?booking-privacy=true" onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
+	   <form method="post" action="/en/reservation/application/?booking-privacy=true" onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
 <div class="aspNetHidden">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
 </div>
 
 <script type="text/javascript">
@@ -398,7 +396,7 @@ return true;
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1128FCF4" />
 	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="LO6bCbLSDucLSO1Z2jiNwMjv3bqb7gPapy0qTU9lqM6HcDmOxSkbeglXHmi5P4cBIExrrQR9Ki7OL2QAO9a4i9oLCjuG/1svCVcfKNZYY3y/jlTyQN8rHc/5/xt4W1ESBEjeZvxqIyHifJC74CcAPjOsj3xn1Lz8DcurO29FwqHj3taLEjimNjxDst7v+bJvOoe6utU050w4hielEMTtT+7lKtsF1cPVuD3F5dfRofzUhJV39KdCBdHQ3D/ju+QgMlef77QfHZOrfTi4vPqxbzv1PzGWjJiSBIcqk/0xM+i+bCGvnSnoFjchC1rbn66TZ72iU0whbZMh6MyqadBLgd9t10tKbtO7a7zpBcvOC7WZMxWfY1MHQ9x7y28zraK1x7IV6zPOb4tE2fZhL1cxdfGOfd1IUkXjgMU4kwlAHa+nE0H638npMMmOwDvuYL8yJGBTQJZ0xXp2eCY6QSNSGjBlTsItYxm9OPSN72CbOXz0lNWXFg/djApOLrlaoSYfnfntSNq0Gdo1hOvQqmfqcVFULkOKDJ+SxIt4QxfeCfpZYM7xuS/Cd8DcsGtygsqFasTa7DmmapdCHmS4nw+pHEobs9IuXZcfcNd6Um80gfVZFgtnzlglzjLO0Kl3vgdxWs/bxYSelXHATqtUiNuv+ne1xU0j/IyS+bXBSAcfTMncgR5OXaTuPZHzbxaBtpDBx+uxuGmgJUJMCIdKIaGbnFbyWnjdsKwBfKIROk9HG5thZu0QUNfOMaX08B2welY9I9TI+J/+eOglDjE3wmuhoE6oPwsWgOMRS3Kg6R+Xyds0cpfNqFcJZYhGpoiX42oYmqI0i0WUjaE2MCTY3M0lUnWoR5cqVHoJLM0WyiR2njacJL0Qf0ZCSnT3DzJ3I1h2c9I9hHnaHUVC8nB0O0qm1g==" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="6rmqYr7+gBc7NiN9YQnZz0vjPHRm+0c3n9qmN5eYzwjPTjIDtVBjv1UmJ7wRxesycjblPpkiIN5dVeP95k9yu/F0/3vIkRkatFfkJe/9vQiUDguENedtZoWoY1q5efCXwAv2tuT0EfSunxBUfAt6ju3am/7+eoyY//CjfgOGBHAvHgYApf8fzRITJGl3hGWKY6aF5QWit37PA1zI2OKXhD6kGbqnwU9B9JGdghxaVeGfSmEyUNXw7FV9CGaPtOaA0U0NCgi7+GPstIu2nkZv61iHRiVEYs3VAk6E34INOsXuC5mhQCuVYjAmw8axa9DZ1ntt+hY8QQIIrD/IXSNncEnqvneLPjVYTaJzSHnoBEu0ART/TDmvWADW00k/PDPCpTGSS6vGWV4xS/+ge8O75viGTphtkwEgtrW1XINIhzyzpyYxTRTQ6Yfr1PKYmjvAvNAfLeTlkv79EOyGnwmrJ8iIborqufGy4JQsHLTAqOIGjvRbC9tOCgGbQMXyK6RLyMvo3u+XymIzzZk0cUYps9sbQYlHN99r8WMUiN+c+vwEveIgJpj4Rr6SvswX1gmmFYTvuc+bw2VWsbqwdbAD4YlC12r8owJoLd4/rCINg1sQ7GI8cplk/PFZ/phnJwppEXZGYpBGRaeg0G4yPiP4kYFlorNhNeW7OdiqdvNsXpnLf+VMxokU0Azej3w2BXSEG2urrkYFt93+5j+TWYM6M4qAcDwQzAHfUCxlY8rgzn7AqBrXwYgZHbE0SMsZ2OYz9XcrXmjWDZVpmY0e58T5ExB/PBqC1YqTyvm7xr1Ph3omhjVCQ/eX8RqBQAaIim5a5WV3F0y6NZ4yCI+9K2ZFg6y1iFGkErmaGyWjyAc8TAQQN6guJ9c7TOBlvIzrTTo6p4Q5EUiuUr6/R2Pwqw30Iw==" />
 </div>
 	<script type="text/javascript">
 //<![CDATA[
@@ -424,20 +422,20 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
   <a href="/" title="Home">Home</a>
  </li>
   <li>
-  <a href="/reservation/" title="Bienvenue &#224; l&#39;outil de prise de rendez-vous eServiceCanada">Bienvenue &#224; l&#39;outil d...</a>
+  <a href="/reservation/" title="Welcome to the eServiceCanada Appointment Booking Tool">Welcome to the eServi...</a>
  </li>
-  <li class="active">Prise de rendez-vous</li>
+  <li class="active">Appointment Booking</li>
 </ul>
     
     -->
     <!--
-    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="Français"><div class="xrm-attribute-value"><h2 class="wb-inv">Vous êtes ici&nbsp;:</h2></div></div>
+    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><h2 class="wb-inv">You are here:</h2></div></div>
     -->
   
     
 
 <div class="page-header" >
- <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Prise de rendez-vous</h1>
+ <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Appointment Booking</h1>
 </div>
   
 
@@ -461,15 +459,10 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
 
 <div id="success" class="row" style="display: none;">
     <div class="col-md-10 col-md-offset-1">
-        <p class="h2" style="text-align: center;">Merci, votre rendez-vous est confirmé.</p>
-        <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au
-            Centre Service Canada.</p>
+        <p class="h2" style="text-align: center;">Thank you, your appointment has been booked.</p>
+        <p>Please keep a record of your confirmation number. This number is to confirm your appointment at the Service
+            Canada Centre.</p>
     </div>
-</div>
-
-<div id="confirmNumberText" class="row" style="display: none;">
-    <p>Veuillez garder votre numéro de confirmation. Ce numéro sera utilisé pour confirmer votre rendez-vous au Centre
-        Service Canada.</p>
 </div>
 
 <div id="ConfirmationSummary" class="container" style="display:none;">
@@ -477,106 +470,94 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
         <div class="wb-tabs">
             <div class="tabpanels">
                 <details id="details-panel-overview" open="open">
-                    <summary>Un aperçu</summary>
+                    <summary>Overview</summary>
                     <div>
                         <div id="Covidmessaging">
-                            <p class="h3" style="text-align: left;">Ne visitez pas un Centre Service Canada si vous
-                                :
-                            </p>
+                            <p class="h3" style="text-align: left;">Do not come to a Service Canada Centre if you:</p>
                             <div>
                                 <ul>
-                                    <li>Avez un des symptômes de la COVID-19 tels que de la fièvre, de la toux ou de
-                                        la
-                                        difficulté à respirer</li>
-                                    <li>Avez été en contact avec un cas confirmé de COVID-19 dans les 14 derniers
-                                        jours
+                                    <li>Have any COVID-19 related symptoms such as fever, cough or difficulty
+                                        breathing
                                     </li>
-                                    <li>Êtes tenu par les autorités de santé publique de vous isoler ou d’être en
-                                        quarantaine</li>
+                                    <li>Have had contact with a confirmed case of COVID-19 in the past 14 days</li>
+                                    <li>Are required to self-isolate or quarantine by public health authorities</li>
                                 </ul>
-                                <p>Veuillez suivre les conseils de la santé publique. Si vous ne suivez pas les
-                                    conseils
-                                    de la santé publique et essayez d’entrer dans un bureau, vous pourrez être
-                                    déclaré
-                                    aux autorités de santé publique locales. Pour plus de renseignements, visitez <a
-                                        href="https://www.canada.ca/fr/sante-publique/services/maladies/maladie-coronavirus-covid-19.html"
-                                        target="_blank">Canada.ca/lacovid19</a>.</p>
-                                <p>Service Canada s’engage à offrir un environnement sécuritaire pour tous. Veuillez
-                                    lire attentivement les instructions suivantes avant de vous rendre au bureau
-                                    pour
-                                    votre rendez-vous:</p>
+                                <p>Please follow public health advice. If you don't follow public health advice and
+                                    try
+                                    to enter the office, you could be reported to local public health authorities.
+                                    For
+                                    more information, visit <a
+                                        href="https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html"
+                                        target="_blank">Canada.ca/covid19</a>.</p>
+                                <p>Service Canada is committed to providing a safe environment for all. Please read
+                                    the
+                                    following instructions carefully before visiting the office for your
+                                    appointment:
+                                </p>
                                 <ul>
-                                    <li>Veuillez arriver pas plus de 10 minutes avant votre rendez-vous. Si vous
-                                        êtes en
-                                        retard, vous devrez peut-être prendre un autre rendez-vous.</li>
-                                    <li>À votre arrivée à votre rendez-vous, veuillez-vous enregistrer directement
-                                        avec
-                                        le commissionnaire. Vous devrez lui fournir votre nom et l'heure de votre
-                                        rendez-vous.</li>
-                                    <li>Vous devrez être prêt à attendre à l'extérieur du bureau, ceci pourrait être nécessaire.</li>
-                                    <li>Durant votre visite, veuillez respecter la signalisation de santé et de sécurité.</li>
-                                    <li>Service Canada exige que tous portent un masque en tout temps à l’intérieur
-                                        du
-                                        bureau.</li>
-                                    <li>N'oubliez pas d'apporter tous les documents nécessaires pour votre demande.
-                                    </li>
+                                    <li>Please arrive no more than 10 minutes early for your appointment. If you are
+                                        late, you may have to make another appointment.</li>
+                                    <li>When you arrive for your appointment, please check-in with the
+                                        Commissionaire.
+                                        You will have to give them your name and the time of your appointment.</li>
+                                    <li>You should be ready to wait outside the office, should you be required to do so.</li>
+                                    <li>During your visit, please follow health and safety signage.</li>
+                                    <li>Service Canada requires everyone to wear a face mask at all times inside the office.</li>
+                                    <li>Be sure to bring all the required documentation for your request.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <hr />
                         <div>
-                            <p class="h3" style="text-align: left;">Annuler votre rendez-vous</p>
+                            <p class="h3" style="text-align: left;">Canceling your booking</p>
                             <div>
-                                <p>Si vous devez annuler votre rendez-vous, cliquez sur le lien suivant et suivre les
-                                    instructions : <a id="cancelAppointmentLink"
+                                <p>If you need to cancel your appointment, please click on this link and follow the
+                                    instructions: <a id="cancelAppointmentLink"
                                         href="../cancel-annuler/?bookingid={!Booking:Booking;}&lastname={!Booking:Last Name;}"
-                                        target="_blank">Annuler le rendez-vous</a></p>
-                                <p>Si vous voulez modifier votre rendez-vous, vous devrez l'annuler et prendre un
-                                    nouveau
-                                    rendez-vous.</p>
+                                        target="_blank">Cancel Booking</a></p>
+                                <p>If you want to change the appointment, you will need to cancel it and book a new
+                                    appointment.</p>
                             </div>
-                            <p class="h3" style="text-align: left;">Environnement à parfum réduit</p>
+                            <p class="h3" style="text-align: left;">Scent-reduced environment</p>
                             <div>
-                                <p>Service Canada favorise un environnement à parfum réduit. Nous encourageons les
-                                    visiteurs
-                                    à utiliser le moins possible les produits parfumés dans nos bureaux.</p>
+                                <p>Service Canada promotes a scent-reduced environment. We encourage limited use of
+                                    scented
+                                    products in our offices.</p>
                             </div>
                         </div>
                     </div>
                 </details>
                 <details id="details-panel-passportconfirm">
-                    <summary>Service de passeport</summary>
+                    <summary>Passport Service</summary>
                     <div>
                         <p>
-                            Veuillez apporter les documents requis, indiqués à la section aide-mémoire sur le formulaire de demande, à votre rendez-vous. Pour de plus amples
-                            renseignements,
-                            consultez <a
-                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens.html"
-                                target="_blank">Canada.ca/passeport</a>.
+                            Please bring the required documentation, indicated on the requirement checklist section on the application form, at your appointment. For more information, visit <a
+                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html"
+                                target="_blank">Canada.ca/passport</a>.
                         <p>
                         <p>
-                            <strong>Important:</strong> Si vous avez besoin d’un passeport dans les 45 jours ouvrables
-                            suivant la date de votre rendez-vous, une <a
-                                href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/passeport-urgent-express.html#preuve"
-                                target="_blank">preuve de voyage ou de besoin</a> est requise.
+                            <strong>Important:</strong> If you need a passport in less than 45 business days from the
+                            date
+                            of your appointment, a <a
+                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html#proof"
+                                target="_blank">proof of travel or need</a> is required.
                         </p>
                         <p>
-                            Veuillez noter que vous ne pouvez pas transférer votre rendez-vous à une autre personne.
+                            Please note that you cannot transfer your appointment to another person. 
                         </p>
                     </div>
                 </details>
                 <details id="details-panel-bioconfirm">
-                    <summary>Collecte des données biométriques</summary>
+                    <summary>Biometrics Collection</summary>
                     <div>
                         <ul>
                             <li>
-                                N'oubliez pas d'apporter les documents suivants à votre rendez-vous:
+                                Please remember to bring the following with you to your appointment:
                                 <ul>
-                                    <li>Votre lettre d'instructions pour la collecte des données biométriques , et</li>
-                                    <li>Le <strong>passeport</strong> ou le <strong>document de voyage</strong> utilisé
-                                        dans
-                                        votre demande.</li>
+                                    <li>Your <strong>Biometrics Instruction Letter</strong>, and</li>
+                                    <li>The <strong>passport</strong> or <strong>travel document</strong> used in your
+                                        application.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -598,6 +579,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liq
 
 <input id="sessionExpiryTimeMinutes" type="hidden" name="sessionExpiryTimeMinutes" value="30"
     data-entityname="esdc_booking">
+
 
 <!-- Dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
@@ -720,121 +702,121 @@ function appendBio() {
 		<div class="bar&#32;progress-bar&#32;zero" style="width:&#32;0%;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0%" tabindex="0"><span aria-hidden="true">0%</span></div>
 	</div><div id="WebFormPanel" class="crmEntityFormView" onkeypress="javascript:return&#32;WebForm_FireDefaultButton(event,&#32;&#39;NextButton&#39;)">
 		<div id="EntityFormView" class="entity-form">
-			<input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName" id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID" id="EntityFormView_EntityID" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState" id="EntityFormView_EntityState" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus" id="EntityFormView_EntityStatus" /><span id="EntityFormView_EntityLayoutConfig" data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;87142ac8-3aa6-43b5-98d6-0195b464df3b&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;e488317b-1076-4008-8d74-a87ffce5839d&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;c483a601-28ae-4724-baf0-afec93297bb6&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;779633be-898a-4ee4-8606-a6a9b59106b2&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span><div id="ValidationSummaryEntityFormView" class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
+			<input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName" id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID" id="EntityFormView_EntityID" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState" id="EntityFormView_EntityState" /><input type="hidden" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus" id="EntityFormView_EntityStatus" /><span id="EntityFormView_EntityLayoutConfig" data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;936954ce-b903-4c77-b0b0-b3d40873f8ea&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;c6aba265-706a-4bfd-9cd1-7faf1c2d0612&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;472f9313-497c-496d-aa16-c9e9a61d0e6a&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;ade21c8a-ef8e-4e36-a185-53f53ec9395c&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span><div id="ValidationSummaryEntityFormView" class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block" role="alert" style="display:none;">
 
-			</div><div data-name="step0_tab" class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Langue"><legend class="section-title">Langue</legend><table role="presentation" data-name="step0_tab_section_4" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info&#32;required"><label for="esdc_languageofservice" id="esdc_languageofservice_label" class="field-label">Langue de service</label><div class="validators"><span id="RequiredFieldValidatoresdc_languageofservice" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_languageofservice" id="esdc_languageofservice" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="false" title="Sélectionnez&#32;un&#32;élément&#32;dans&#32;cette&#32;liste">
-					<option selected="selected" value="" label="&#32;" aria-label="Vide"></option>
-					<option value="564190000">Anglais</option>
-					<option value="564190001">Français</option>
-					<option value="100000000">Langue des signes américaine (ASL)</option>
-					<option value="100000001">Langue des signes québécoise (LSQ)</option>
-					<option value="564190002">Autre langue parlée</option>
+			</div><div data-name="step0_tab" class="tab&#32;clearfix"><div class="tab-column" style="width:100%;"><div><fieldset aria-label="Language"><legend class="section-title">Language</legend><table role="presentation" data-name="step0_tab_section_4" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info&#32;required"><label for="esdc_languageofservice" id="esdc_languageofservice_label" class="field-label">Language of Service</label><div class="validators"><span id="RequiredFieldValidatoresdc_languageofservice" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_languageofservice" id="esdc_languageofservice" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="false" title="Please&#32;select&#32;an&#32;item&#32;in&#32;this&#32;list">
+					<option selected="selected" value="" label="&#32;" aria-label="Blank"></option>
+					<option value="564190000">English</option>
+					<option value="564190001">French</option>
+					<option value="100000000">American Sign Language (ASL)</option>
+					<option value="100000001">Quebec Sign Language (LSQ)</option>
+					<option value="564190002">Other Spoken Language</option>
 
 				</select></div></td>
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_otherspokenlanguage" id="esdc_otherspokenlanguage_label" class="field-label">Autre (Langue parlée)</label><div class="validators"><span id="MaximumLengthValidatoresdc_otherspokenlanguage" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_otherspokenlanguage" type="text" maxlength="100" id="esdc_otherspokenlanguage" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_otherspokenlanguage" id="esdc_otherspokenlanguage_label" class="field-label">Other (Language)</label><div class="validators"><span id="MaximumLengthValidatoresdc_otherspokenlanguage" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_otherspokenlanguage" type="text" maxlength="100" id="esdc_otherspokenlanguage" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
-			</table></fieldset><fieldset aria-label="Informations&#32;sur&#32;le&#32;service"><legend class="section-title">Informations sur le service</legend><table role="presentation" data-name="step0_tab_section_serviceinformation" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info&#32;required"><label for="esdc_bookingtype" id="esdc_bookingtype_label" class="field-label">Type de rendez-vous</label><div class="validators"><span id="RequiredFieldValidatoresdc_bookingtype" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype" id="esdc_bookingtype" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="false" title="Sélectionnez&#32;un&#32;élément&#32;dans&#32;cette&#32;liste">
-					<option selected="selected" value="" label="&#32;" aria-label="Vide"></option>
-					<option value="564190000">Collecte des données biométriques</option>
-					<option value="564190001">Service de passeport</option>
+			</table></fieldset><fieldset aria-label="Service&#32;Information"><legend class="section-title">Service Information</legend><table role="presentation" data-name="step0_tab_section_serviceinformation" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info&#32;required"><label for="esdc_bookingtype" id="esdc_bookingtype_label" class="field-label">Booking Type</label><div class="validators"><span id="RequiredFieldValidatoresdc_bookingtype" style="display:none;">*</span></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype" id="esdc_bookingtype" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);" required="" aria-invalid="false" title="Please&#32;select&#32;an&#32;item&#32;in&#32;this&#32;list">
+					<option selected="selected" value="" label="&#32;" aria-label="Blank"></option>
+					<option value="564190000">Biometrics Collection</option>
+					<option value="564190001">Passport Service</option>
 
 				</select></div></td>
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
-			</table></fieldset><fieldset aria-label="Service&#32;de&#32;passeport"><legend class="section-title">Service de passeport</legend><table role="presentation" data-name="step0_tab_section_passport_1" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_earliesttraveldaterange" id="esdc_earliesttraveldaterange_label" class="field-label">Date de voyage la plus tôt (sélectionnez une plage)</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_earliesttraveldaterange" id="esdc_earliesttraveldaterange" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
-					<option selected="selected" value="" label="&#32;" aria-label="Vide"></option>
-					<option value="564190000">Je n&#39;ai pas de date de voyage</option>
-					<option value="564190001">Voyage dans 2 jours ouvrables ou moins </option>
-					<option value="564190002">Voyage entre 3 et 5 jours ouvrables</option>
-					<option value="564190003">Voyage entre 6 et 45 jours ouvrables</option>
-					<option value="564190004">Voyage dans les 46 jours ouvrables ou plus</option>
+			</table></fieldset><fieldset aria-label="Passport"><legend class="section-title">Passport</legend><table role="presentation" data-name="step0_tab_section_passport_1" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_earliesttraveldaterange" id="esdc_earliesttraveldaterange_label" class="field-label">Earliest Travel Date (Select Range)</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_earliesttraveldaterange" id="esdc_earliesttraveldaterange" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
+					<option selected="selected" value="" label="&#32;" aria-label="Blank"></option>
+					<option value="564190000">I don&#39;t have a travel date</option>
+					<option value="564190001">Travel in 2 business days or less </option>
+					<option value="564190002">Travel between 3 and 5 business days</option>
+					<option value="564190003">Travel between 6 and 45 business days</option>
+					<option value="564190004">Travel in 46 business days or more</option>
 
 				</select></div></td>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;integer&#32;form-control-cell"><div class="info"><label for="esdc_numberofapplicationspassport" id="esdc_numberofapplicationspassport_label" class="field-label">Nombre de demandes</label><div class="validators"><span id="IntegerValidatoresdc_numberofapplicationspassport" style="visibility:hidden;">*</span><span id="RangeValidatoresdc_numberofapplicationspassport" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicationspassport" type="text" id="esdc_numberofapplicationspassport" class="text&#32;integer&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;integer&#32;form-control-cell"><div class="info"><label for="esdc_numberofapplicationspassport" id="esdc_numberofapplicationspassport_label" class="field-label">Number of Applications</label><div class="validators"><span id="IntegerValidatoresdc_numberofapplicationspassport" style="visibility:hidden;">*</span><span id="RangeValidatoresdc_numberofapplicationspassport" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicationspassport" type="text" id="esdc_numberofapplicationspassport" class="text&#32;integer&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="2" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_passportraapplicable" id="esdc_passportraapplicable_label" class="field-label">Est-ce que l’une des situations suivantes s’applique à vous :</label><div class="validators"></div></div><div class="description&#32;above"><div class="alert alert-info">
+				<td colspan="2" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_passportraapplicable" id="esdc_passportraapplicable_label" class="field-label">Does any of the following apply to you:</label><div class="validators"></div></div><div class="description&#32;above"><div class="alert alert-info">
     <ul>
-        <li>Je demande un nom qui n’est pas le même que celui apparaissant sur :
+        <li>I’m asking for a name that isn’t the same as shown on the:
             <ul>
-                <li>la preuve de citoyenneté canadienne et</li>
-                <li>je n’ai pas de document de déclaration de relation, ni de document de changement de nom légal pour appuyer la divergence.</li>
+                <li>Proof of Canadian citizenship, and</li>
+                <li>I don’t have a relationship document or Legal Name Change document to support the discrepancy.</li>
             </ul>
         </li>
-        <li>Je dépose une demande pour enfant pour laquelle seul l’un des parents participe et</li>
+        <li>I’m submitting a child’s application with only one parent participating, and</li>
             <ul>
-                <li>le nom de plus d’un parent figure sur la preuve de filiation; ou</li>
-                <li>la preuve de décès de l’un des parents dont le nom figure sur la preuve de filiation n’est pas présentée.</li>
+                <li>more than one parent is listed on the proof of parentage; or</li>
+                <li>no death certificate is being submitted for one of the parents listed on the proof of parentage document.</li>
             </ul>
-<li>J’ai besoin de cueillir le passeport en personne. Des <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/frais/passeport-canada.html" target="_blank">frais</a> supplémentaires s’appliquent.</li>
+<li>I need to pick up the passport in person. Additional <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/passport-canada.html" target="_blank">fees</a> apply.</li>
     </ul>
-</div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_passportraapplicable" id="esdc_passportraapplicable" class="form-control&#32;picklist&#32;" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;Je&#32;demande&#32;un&#32;nom&#32;qui&#32;n&#8217;est&#32;pas&#32;le&#32;même&#32;que&#32;celui&#32;apparaissant&#32;sur&#32;:&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;la&#32;preuve&#32;de&#32;citoyenneté&#32;canadienne&#32;et&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;je&#32;n&#8217;ai&#32;pas&#32;de&#32;document&#32;de&#32;déclaration&#32;de&#32;relation,&#32;ni&#32;de&#32;document&#32;de&#32;changement&#32;de&#32;nom&#32;légal&#32;pour&#32;appuyer&#32;la&#32;divergence.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;Je&#32;dépose&#32;une&#32;demande&#32;pour&#32;enfant&#32;pour&#32;laquelle&#32;seul&#32;l&#8217;un&#32;des&#32;parents&#32;participe&#32;et&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;le&#32;nom&#32;de&#32;plus&#32;d&#8217;un&#32;parent&#32;figure&#32;sur&#32;la&#32;preuve&#32;de&#32;filiation;&#32;ou&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;la&#32;preuve&#32;de&#32;décès&#32;de&#32;l&#8217;un&#32;des&#32;parents&#32;dont&#32;le&#32;nom&#32;figure&#32;sur&#32;la&#32;preuve&#32;de&#32;filiation&#32;n&#8217;est&#32;pas&#32;présentée.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;li&gt;J&#8217;ai&#32;besoin&#32;de&#32;cueillir&#32;le&#32;passeport&#32;en&#32;personne.&#32;Des&#32;&lt;a&#32;href=&quot;https://www.canada.ca/fr/immigration-refugies-citoyennete/services/passeports-canadiens/frais/passeport-canada.html&quot;&#32;target=&quot;_blank&quot;&gt;frais&lt;/a&gt;&#32;supplémentaires&#32;s&#8217;appliquent.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;/div&gt;" onchange="setIsDirty(this.id);">
-					<option selected="selected" value="" label="&#32;" aria-label="Vide"></option>
-					<option value="0">Non</option>
-					<option value="1">Oui</option>
+</div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_passportraapplicable" id="esdc_passportraapplicable" class="form-control&#32;picklist&#32;" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#8217;m&#32;asking&#32;for&#32;a&#32;name&#32;that&#32;isn&#8217;t&#32;the&#32;same&#32;as&#32;shown&#32;on&#32;the:&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;Proof&#32;of&#32;Canadian&#32;citizenship,&#32;and&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#32;don&#8217;t&#32;have&#32;a&#32;relationship&#32;document&#32;or&#32;Legal&#32;Name&#32;Change&#32;document&#32;to&#32;support&#32;the&#32;discrepancy.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#8217;m&#32;submitting&#32;a&#32;child&#8217;s&#32;application&#32;with&#32;only&#32;one&#32;parent&#32;participating,&#32;and&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;more&#32;than&#32;one&#32;parent&#32;is&#32;listed&#32;on&#32;the&#32;proof&#32;of&#32;parentage;&#32;or&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;no&#32;death&#32;certificate&#32;is&#32;being&#32;submitted&#32;for&#32;one&#32;of&#32;the&#32;parents&#32;listed&#32;on&#32;the&#32;proof&#32;of&#32;parentage&#32;document.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;li&gt;I&#32;need&#32;to&#32;pick&#32;up&#32;the&#32;passport&#32;in&#32;person.&#32;Additional&#32;&lt;a&#32;href=&quot;https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/passport-canada.html&quot;&#32;target=&quot;_blank&quot;&gt;fees&lt;/a&gt;&#32;apply.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;/div&gt;" onchange="setIsDirty(this.id);">
+					<option selected="selected" value="" label="&#32;" aria-label="Blank"></option>
+					<option value="0">No</option>
+					<option value="1">Yes</option>
 
 				</select></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
-			</table></fieldset><fieldset aria-label="Collecte&#32;des&#32;données&#32;biométriques"><legend class="section-title">Collecte des données biométriques</legend><table role="presentation" data-name="step0_tab_section_bio_1" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_bilapplicationnumber" id="esdc_bilapplicationnumber_label" class="field-label">Lettre d’instructions pour la collecte des données biométriques</label><div class="validators"><span id="RegularExpressionValidatoresdc_bilapplicationnumber" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoresdc_bilapplicationnumber" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
-<p>Vous trouverez le numéro de demande de la lettre d'instructions pour la collecte des données biométriques dans le coin supérieur droit de votre lettre</p>
-<img src="bio-letter-fr.png" style="max-width: 500px;width: 100%;" alt="Lettre d'instruction biométrique avec numéro BIL encerclé" aria-hidden="true" />
-</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bilapplicationnumber" type="text" maxlength="100" id="esdc_bilapplicationnumber" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;Vous&#32;trouverez&#32;le&#32;numéro&#32;de&#32;demande&#32;de&#32;la&#32;lettre&#32;d&#39;instructions&#32;pour&#32;la&#32;collecte&#32;des&#32;données&#32;biométriques&#32;dans&#32;le&#32;coin&#32;supérieur&#32;droit&#32;de&#32;votre&#32;lettre&lt;/p&gt;&#10;&lt;img&#32;src=&quot;bio-letter-fr.png&quot;&#32;style=&quot;max-width:&#32;500px;width:&#32;100%;&quot;&#32;alt=&quot;Lettre&#32;d&#39;instruction&#32;biométrique&#32;avec&#32;numéro&#32;BIL&#32;encerclé&quot;&#32;aria-hidden=&quot;true&quot;&#32;/&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
+			</table></fieldset><fieldset aria-label="Biometrics&#32;Collection"><legend class="section-title">Biometrics Collection</legend><table role="presentation" data-name="step0_tab_section_bio_1" class="section"><colgroup><col style="width:50%;" /><col style="width:50%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;text&#32;form-control-cell"><div class="info"><label for="esdc_bilapplicationnumber" id="esdc_bilapplicationnumber_label" class="field-label">Biometric Instruction Letter Application Number</label><div class="validators"><span id="RegularExpressionValidatoresdc_bilapplicationnumber" style="visibility:hidden;">*</span><span id="MaximumLengthValidatoresdc_bilapplicationnumber" style="visibility:hidden;">*</span></div></div><div class="description&#32;above"><div class="alert alert-info">
+<p>You will find the Biometric Instruction Letter Application Number on the top-right of your Letter</p>
+<img src="bio-letter-en.png" style="max-width: 500px; width: 100%;" alt="Biometric Instruction Letter with BIL Number circled" aria-hidden="true" />
+</div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bilapplicationnumber" type="text" maxlength="100" id="esdc_bilapplicationnumber" class="text&#32;form-control&#32;" onchange="setIsDirty(this.id);" aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;You&#32;will&#32;find&#32;the&#32;Biometric&#32;Instruction&#32;Letter&#32;Application&#32;Number&#32;on&#32;the&#32;top-right&#32;of&#32;your&#32;Letter&lt;/p&gt;&#10;&lt;img&#32;src=&quot;bio-letter-en.png&quot;&#32;style=&quot;max-width:&#32;500px;&#32;width:&#32;100%;&quot;&#32;alt=&quot;Biometric&#32;Instruction&#32;Letter&#32;with&#32;BIL&#32;Number&#32;circled&quot;&#32;aria-hidden=&quot;true&quot;&#32;/&gt;&#10;&lt;/div&gt;" onkeypress="javascript:return&#32;LengthError(this,&#32;event);" /></div></td>
 				<td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;integer&#32;form-control-cell"><div class="info"><label for="esdc_numberofapplicantsbio" id="esdc_numberofapplicantsbio_label" class="field-label">Nombre de demandeurs</label><div class="validators"><span id="IntegerValidatoresdc_numberofapplicantsbio" style="visibility:hidden;">*</span><span id="RangeValidatoresdc_numberofapplicantsbio" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicantsbio" type="text" id="esdc_numberofapplicantsbio" class="text&#32;integer&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_privateroomrequired" id="esdc_privateroomrequired_label" class="field-label">J’aimerais un espace privé pour répondre à mes besoins et/ou croyances religieuses</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privateroomrequired" id="esdc_privateroomrequired" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
-					<option value="" label="&#32;" aria-label="Vide"></option>
-					<option selected="selected" value="0">Non</option>
-					<option value="1">Oui</option>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;integer&#32;form-control-cell"><div class="info"><label for="esdc_numberofapplicantsbio" id="esdc_numberofapplicantsbio_label" class="field-label">Number of Applicants</label><div class="validators"><span id="IntegerValidatoresdc_numberofapplicantsbio" style="visibility:hidden;">*</span><span id="RangeValidatoresdc_numberofapplicantsbio" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicantsbio" type="text" id="esdc_numberofapplicantsbio" class="text&#32;integer&#32;form-control&#32;" onchange="setIsDirty(this.id);" /></div></td>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_privateroomrequired" id="esdc_privateroomrequired_label" class="field-label">I would like a private space to meet my needs and/or religious beliefs</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privateroomrequired" id="esdc_privateroomrequired" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
+					<option value="" label="&#32;" aria-label="Blank"></option>
+					<option selected="selected" value="0">No</option>
+					<option value="1">Yes</option>
 
 				</select></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
-			</table></fieldset><fieldset aria-label="Métadonnées"><legend class="section-title">Métadonnées</legend><table role="presentation" data-name="step0_tab_metadata_section" class="section"><colgroup><col style="width:100%;" /><col /></colgroup><tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;datetime&#32;form-control-cell"><div class="info"><label for="esdc_sessionexpiryon" id="esdc_sessionexpiryon_label" class="field-label">Expiration de la session le</label><div class="validators"><span id="DateFormatValidatoresdc_sessionexpiryon" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon" type="text" id="esdc_sessionexpiryon" class="datetime&#32;form-control&#32;" data-ui="datetimepicker" data-type="datetime" data-attribute="esdc_sessionexpiryon" data-behavior="TimeZoneIndependent" /></div></td>
+			</table></fieldset><fieldset aria-label="Metadata"><legend class="section-title">Metadata</legend><table role="presentation" data-name="step0_tab_metadata_section" class="section"><colgroup><col style="width:100%;" /><col /></colgroup><tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;datetime&#32;form-control-cell"><div class="info"><label for="esdc_sessionexpiryon" id="esdc_sessionexpiryon_label" class="field-label">Session Expiry On</label><div class="validators"><span id="DateFormatValidatoresdc_sessionexpiryon" style="visibility:hidden;">*</span></div></div><div class="control"><input name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon" type="text" id="esdc_sessionexpiryon" class="datetime&#32;form-control&#32;" data-ui="datetimepicker" data-type="datetime" data-attribute="esdc_sessionexpiryon" data-behavior="TimeZoneIndependent" /></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_portalbooking" id="esdc_portalbooking_label" class="field-label">Rendez-vous sur le portail</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_portalbooking" id="esdc_portalbooking" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
-					<option value="" label="&#32;" aria-label="Vide"></option>
-					<option selected="selected" value="0">Non</option>
-					<option value="1">Oui</option>
-
-				</select></div></td>
-				<td class="cell&#32;zero-cell"></td>
-			</tr>
-			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_privacystatementaccepted" id="esdc_privacystatementaccepted_label" class="field-label">Déclaration de confidentialité acceptée</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privacystatementaccepted" id="esdc_privacystatementaccepted" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
-					<option selected="selected" value="" label="&#32;" aria-label="Vide"></option>
-					<option value="0">Non</option>
-					<option value="1">Oui</option>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_portalbooking" id="esdc_portalbooking_label" class="field-label">Portal Booking</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_portalbooking" id="esdc_portalbooking" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
+					<option value="" label="&#32;" aria-label="Blank"></option>
+					<option selected="selected" value="0">No</option>
+					<option value="1">Yes</option>
 
 				</select></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			<tr>
-				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;textarea&#32;form-control-cell"><div class="info"><label for="esdc_browseragent" id="esdc_browseragent_label" class="field-label">Agent de navigateur</label><div class="validators"><span id="MaximumLengthValidatoresdc_browseragent" style="visibility:hidden;">*</span></div></div><div class="control"><textarea name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_browseragent" rows="1" cols="20" maxlength="4000" id="esdc_browseragent" class="textarea&#32;form-control&#32;" onchange="setIsDirty(this.id);" onkeydown="javascript:return&#32;LimitInput(this,&#32;event);" oninput="javascript:return&#32;LimitInput(this,&#32;event);" onpaste="javascript:return&#32;LimitPaste(this,&#32;event);">
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;picklist-cell"><div class="info"><label for="esdc_privacystatementaccepted" id="esdc_privacystatementaccepted_label" class="field-label">Privacy Statement Accepted</label><div class="validators"></div></div><div class="control"><select name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privacystatementaccepted" id="esdc_privacystatementaccepted" class="form-control&#32;picklist&#32;" onchange="setIsDirty(this.id);">
+					<option selected="selected" value="" label="&#32;" aria-label="Blank"></option>
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+
+				</select></div></td>
+				<td class="cell&#32;zero-cell"></td>
+			</tr>
+			<tr>
+				<td colspan="1" rowspan="1" class="clearfix&#32;cell&#32;textarea&#32;form-control-cell"><div class="info"><label for="esdc_browseragent" id="esdc_browseragent_label" class="field-label">Browser Agent</label><div class="validators"><span id="MaximumLengthValidatoresdc_browseragent" style="visibility:hidden;">*</span></div></div><div class="control"><textarea name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_browseragent" rows="1" cols="20" maxlength="4000" id="esdc_browseragent" class="textarea&#32;form-control&#32;" onchange="setIsDirty(this.id);" onkeydown="javascript:return&#32;LimitInput(this,&#32;event);" oninput="javascript:return&#32;LimitInput(this,&#32;event);" onpaste="javascript:return&#32;LimitPaste(this,&#32;event);">
 </textarea></div></td>
 				<td class="cell&#32;zero-cell"></td>
 			</tr>
 			</table></fieldset></div></div></div>
 		</div><div class="actions"><div class="col-sm-6&#32;clearfix">
-			<div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton" value="Suivant" onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Traitement&#32;en&#32;cours...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="NextButton" class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn" nonActionLinkButton="true" /></div>
+			<div role ="group" class="btn-group entity-action-button" ><input type="button" name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton" value="Next" onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))" id="NextButton" class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn" nonActionLinkButton="true" /></div>
 		</div></div>
 	</div>
 </div>
@@ -846,9 +828,9 @@ function appendBio() {
         <dl class="text-right">
             
             
+                <dt>Protection level when complete</dt>
+                <dd>Protected-B</dd>
             
-                <dt>Niveau de protection une fois terminé</dt>
-                <dd>Protégé-B</dd>
             
         </dl>
     </div>  
@@ -870,55 +852,55 @@ var Page_Validators =  new Array(document.getElementById("RequiredFieldValidator
 var esdc_browseragent = document.all ? document.all["esdc_browseragent"] : document.getElementById("esdc_browseragent");
 esdc_browseragent.exMaxLen = "4000";
 var ValidationSummaryEntityFormView = document.all ? document.all["ValidationSummaryEntityFormView"] : document.getElementById("ValidationSummaryEntityFormView");
-ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> Le formulaire n\'a pas pu être soumis pour les raisons suivantes :</h2>";
+ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> The form could not be submitted for the following reasons:</h2>";
 var RequiredFieldValidatoresdc_languageofservice = document.all ? document.all["RequiredFieldValidatoresdc_languageofservice"] : document.getElementById("RequiredFieldValidatoresdc_languageofservice");
 RequiredFieldValidatoresdc_languageofservice.controltovalidate = "esdc_languageofservice";
-RequiredFieldValidatoresdc_languageofservice.errormessage = "<a href=\'#esdc_languageofservice_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_languageofservice_label\",\"esdc_languageofservice\");return false;\' referenceControlId=esdc_languageofservice>Le champ Langue de service est obligatoire. </a>";
+RequiredFieldValidatoresdc_languageofservice.errormessage = "<a href=\'#esdc_languageofservice_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_languageofservice_label\",\"esdc_languageofservice\");return false;\' referenceControlId=esdc_languageofservice>Language of Service is a required field. </a>";
 RequiredFieldValidatoresdc_languageofservice.display = "Dynamic";
 RequiredFieldValidatoresdc_languageofservice.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_languageofservice.initialvalue = "";
 var MaximumLengthValidatoresdc_otherspokenlanguage = document.all ? document.all["MaximumLengthValidatoresdc_otherspokenlanguage"] : document.getElementById("MaximumLengthValidatoresdc_otherspokenlanguage");
 MaximumLengthValidatoresdc_otherspokenlanguage.controltovalidate = "esdc_otherspokenlanguage";
-MaximumLengthValidatoresdc_otherspokenlanguage.errormessage = "<a href=\'#esdc_otherspokenlanguage_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_otherspokenlanguage_label\",\"esdc_otherspokenlanguage\");return false;\' referenceControlId=esdc_otherspokenlanguage>Autre (Langue parlée) dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_otherspokenlanguage.errormessage = "<a href=\'#esdc_otherspokenlanguage_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_otherspokenlanguage_label\",\"esdc_otherspokenlanguage\");return false;\' referenceControlId=esdc_otherspokenlanguage>Other (Language) exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_otherspokenlanguage.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RequiredFieldValidatoresdc_bookingtype = document.all ? document.all["RequiredFieldValidatoresdc_bookingtype"] : document.getElementById("RequiredFieldValidatoresdc_bookingtype");
 RequiredFieldValidatoresdc_bookingtype.controltovalidate = "esdc_bookingtype";
-RequiredFieldValidatoresdc_bookingtype.errormessage = "<a href=\'#esdc_bookingtype_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bookingtype_label\",\"esdc_bookingtype\");return false;\' referenceControlId=esdc_bookingtype>Le champ Type de rendez-vous est obligatoire. </a>";
+RequiredFieldValidatoresdc_bookingtype.errormessage = "<a href=\'#esdc_bookingtype_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bookingtype_label\",\"esdc_bookingtype\");return false;\' referenceControlId=esdc_bookingtype>Booking Type is a required field. </a>";
 RequiredFieldValidatoresdc_bookingtype.display = "Dynamic";
 RequiredFieldValidatoresdc_bookingtype.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
 RequiredFieldValidatoresdc_bookingtype.initialvalue = "";
 var IntegerValidatoresdc_numberofapplicationspassport = document.all ? document.all["IntegerValidatoresdc_numberofapplicationspassport"] : document.getElementById("IntegerValidatoresdc_numberofapplicationspassport");
 IntegerValidatoresdc_numberofapplicationspassport.controltovalidate = "esdc_numberofapplicationspassport";
-IntegerValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>Nombre de demandes doit être un nombre entier valide. </a>";
+IntegerValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>Number of Applications must be a valid integer value. </a>";
 IntegerValidatoresdc_numberofapplicationspassport.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RangeValidatoresdc_numberofapplicationspassport = document.all ? document.all["RangeValidatoresdc_numberofapplicationspassport"] : document.getElementById("RangeValidatoresdc_numberofapplicationspassport");
 RangeValidatoresdc_numberofapplicationspassport.controltovalidate = "esdc_numberofapplicationspassport";
-RangeValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>La valeur de Nombre de demandes doit être comprise entre 0 et 2147483647. </a>";
+RangeValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>Number of Applications must have a value between 0 and 2147483647. </a>";
 RangeValidatoresdc_numberofapplicationspassport.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RegularExpressionValidatoresdc_bilapplicationnumber = document.all ? document.all["RegularExpressionValidatoresdc_bilapplicationnumber"] : document.getElementById("RegularExpressionValidatoresdc_bilapplicationnumber");
 RegularExpressionValidatoresdc_bilapplicationnumber.controltovalidate = "esdc_bilapplicationnumber";
-RegularExpressionValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>Le numéro de demande que vous avez fourni n\'est pas valide. Veuillez vérifier le numéro de demande figurant sur votre Lettre d\'instructions sur la biométrie.\n\n </a>";
+RegularExpressionValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>The application number you have provided is invalid. Please verify the application number on your Biometrics Instruction Letter.  </a>";
 RegularExpressionValidatoresdc_bilapplicationnumber.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
 RegularExpressionValidatoresdc_bilapplicationnumber.validationexpression = "^[a-zA-Z]{1}[a-zA-Z0-9]{1}[0-9]{7,8}$";
 var MaximumLengthValidatoresdc_bilapplicationnumber = document.all ? document.all["MaximumLengthValidatoresdc_bilapplicationnumber"] : document.getElementById("MaximumLengthValidatoresdc_bilapplicationnumber");
 MaximumLengthValidatoresdc_bilapplicationnumber.controltovalidate = "esdc_bilapplicationnumber";
-MaximumLengthValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>Lettre d’instructions pour la collecte des données biométriques dépasse la longueur maximale de 100 caractères. </a>";
+MaximumLengthValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>Biometric Instruction Letter Application Number exceeds the maximum length of 100 characters. </a>";
 MaximumLengthValidatoresdc_bilapplicationnumber.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var IntegerValidatoresdc_numberofapplicantsbio = document.all ? document.all["IntegerValidatoresdc_numberofapplicantsbio"] : document.getElementById("IntegerValidatoresdc_numberofapplicantsbio");
 IntegerValidatoresdc_numberofapplicantsbio.controltovalidate = "esdc_numberofapplicantsbio";
-IntegerValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>Nombre de demandeurs doit être un nombre entier valide. </a>";
+IntegerValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>Number of Applicants must be a valid integer value. </a>";
 IntegerValidatoresdc_numberofapplicantsbio.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var RangeValidatoresdc_numberofapplicantsbio = document.all ? document.all["RangeValidatoresdc_numberofapplicantsbio"] : document.getElementById("RangeValidatoresdc_numberofapplicantsbio");
 RangeValidatoresdc_numberofapplicantsbio.controltovalidate = "esdc_numberofapplicantsbio";
-RangeValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>La valeur de Nombre de demandeurs doit être comprise entre 0 et 2147483647. </a>";
+RangeValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>Number of Applicants must have a value between 0 and 2147483647. </a>";
 RangeValidatoresdc_numberofapplicantsbio.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var DateFormatValidatoresdc_sessionexpiryon = document.all ? document.all["DateFormatValidatoresdc_sessionexpiryon"] : document.getElementById("DateFormatValidatoresdc_sessionexpiryon");
 DateFormatValidatoresdc_sessionexpiryon.controltovalidate = "esdc_sessionexpiryon";
-DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Le format de date de Expiration de la session le doit être valide. Exemple : {1} </a>";
+DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Session Expiry On must have a valid date format. Example: {1} </a>";
 DateFormatValidatoresdc_sessionexpiryon.evaluationfunction = "CustomValidatorEvaluateIsValid";
 var MaximumLengthValidatoresdc_browseragent = document.all ? document.all["MaximumLengthValidatoresdc_browseragent"] : document.getElementById("MaximumLengthValidatoresdc_browseragent");
 MaximumLengthValidatoresdc_browseragent.controltovalidate = "esdc_browseragent";
-MaximumLengthValidatoresdc_browseragent.errormessage = "<a href=\'#esdc_browseragent_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_browseragent_label\",\"esdc_browseragent\");return false;\' referenceControlId=esdc_browseragent>Agent de navigateur dépasse la longueur maximale de 4000 caractères. </a>";
+MaximumLengthValidatoresdc_browseragent.errormessage = "<a href=\'#esdc_browseragent_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_browseragent_label\",\"esdc_browseragent\");return false;\' referenceControlId=esdc_browseragent>Browser Agent exceeds the maximum length of 4000 characters. </a>";
 MaximumLengthValidatoresdc_browseragent.evaluationfunction = "CustomValidatorEvaluateIsValid";
 //]]>
 </script>
@@ -1014,10 +996,10 @@ document.getElementById('MaximumLengthValidatoresdc_browseragent').dispose = fun
 
 
 
+  
+  
+  
 
-  
-  
-  
 
 
 <!-- CDTS Footer -->
@@ -1057,9 +1039,9 @@ document.getElementById('MaximumLengthValidatoresdc_browseragent').dispose = fun
 <!--
     cdtsTheme=gcweb
     cdtsVersion=rn
-    cdtsLanguage=fr
+    cdtsLanguage=en
 -->
-<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/fr.min.js"></script>
+<script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/en.min.js"></script>
 
 <!-- Additional Plugins -->
 <script src="/en/assets/vendor/select2/select2.min.js"></script>
@@ -1078,7 +1060,7 @@ document.getElementById('MaximumLengthValidatoresdc_browseragent').dispose = fun
 
 	<script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-3b0ea058d8.js" type="text/javascript"></script>
 
-	<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1036.bundle-a9edc8a9d0.js" type="text/javascript"></script>
+	<script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.bundle-eda4e638fd.js" type="text/javascript"></script>
 
 	
 	
@@ -1129,5 +1111,5 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 		
 </body>
 </html>
-<!-- Generated at 09/06/2022 23:39:08 -->
+<!-- Generated at 6/10/2022 3:21:58 PM -->
 <!-- Page OK -->
