@@ -1,13 +1,15 @@
 {
-  "name": "hello_world",
+  "name": "eservice-canada-bot",
   "version": "1.0.0",
-  "description": "hello world sample for NodeJS",
+  "description": "Check rendez vous programmatically on https://eservices.canada.ca/fr/reservation/",
   "main": "app.js",
   "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
-  "author": "SAM CLI",
+  "author": "moimart1",
   "license": "MIT",
   "dependencies": {
-    "axios": ">=0.21.1"
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11",
+    "twitter-api-v2": "^1.12.2"
   },
   "scripts": {
     "test": "mocha tests/unit/"
