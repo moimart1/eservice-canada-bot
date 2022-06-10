@@ -102,22 +102,20 @@ async function main() {
     ],
     AdditionalParameters: {
       UserLocalTime: new Date().toISOString(),
-      BookingServiceOfferingIds: ["57af4796-67ab-ea11-a812-000d3af4f03d"],
+      BookingServiceOfferingIds: ["57af4796-67ab-ea11-a812-000d3af4f03d"], // Passport
     },
   };
 
   const resultTimeSlot = await client.post(eServiceTimeSlotsUrl, data);
-  fs.writeFile(
-    "result.json",
-    JSON.stringify(JSON.parse(resultTimeSlot.data)),
-    (err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log("done3");
+  const timeSlots = JSON.parse(resultTimeSlot.data);
+
+  fs.writeFile("result.json", JSON.stringify(timeSlots), (err) => {
+    if (err) {
+      console.error(err);
+      return;
     }
-  );
+    console.log("done3");
+  });
 }
 
 main();

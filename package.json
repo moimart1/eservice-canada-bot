@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "axios-cookiejar-support": "^4.0.2",
     "cheerio": "^1.0.0-rc.11",
-    "tough-cookie": "^4.0.0"
+    "tough-cookie": "^4.0.0",
+    "twitter-api-v2": "^1.12.2"
   }
 }
