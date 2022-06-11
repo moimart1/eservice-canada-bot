@@ -18,10 +18,11 @@ Resources:
       Architectures:
         - x86_64
       Events:
-        InvocationSchedule:
+        ScheduledEvent:
+          Name: Every5min
           Type: Schedule
           Properties:
-            Schedule: 'rate(5 minute)'
+            Schedule: rate(5 minutes)
     Metadata:
       DockerTag: nodejs16.x-v1
       DockerContext: ./eservice-canada-bot
