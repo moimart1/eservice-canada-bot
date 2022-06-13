@@ -17,6 +17,14 @@ Resources:
       PackageType: Image
       Architectures:
         - x86_64
+      Environment:
+        Variables:
+          TWITTER_APP_KEY:
+          TWITTER_APP_SECRET:
+          TWITTER_APP_ACCESS_TOKEN:
+          TWITTER_APP_ACCESS_SECRET:
+          TWITTER_APP_MONTREAL_ACCESS_TOKEN:
+          TWITTER_APP_MONTREAL_ACCESS_SECRET:
       Events:
         ScheduledEvent:
           Type: Schedule

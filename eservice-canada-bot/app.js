@@ -1,13 +1,12 @@
-// const axios = require('axios')
-
+const { officeKey } = require("./config");
 const config = require("./config");
 const {
   getAvailableSlots,
   getBookingId,
   isBookingId,
 } = require("./libs/eservice");
+const { getExistingTweets, postTweet } = require("./libs/twitter");
 
-// const url = 'http://checkip.amazonaws.com/';
 let response;
 const cache = {
   lastUpdatedAt: new Date(),
@@ -69,6 +68,38 @@ exports.lambdaHandler = async (event, context) => {
         }
 
         return result;
+      })
+    );
+
+    const last48hoursDate = new Date(
+      new Date().getTime() - 2 * 24 * 60 * 60 * 1000
+    ); // 48h to ms
+    // Manage tweets
+    await Promise.all(
+      officesSlots.map(async (officesSlot) => {
+        try {
+          console.log(
+            `Getting existing tweets for ${officesSlot.officeKey} office...`
+          );
+          const existingTweets = await getExistingTweets(
+            officesSlot.officeKey,
+            {
+              start_time: last48hoursDate.toISOString(),
+            }
+          );
+
+          if (!Array.isArray(existingTweets.data)) {
+            await postTweet(
+              officesSlot.officeKey,
+              "Je vérifie les rendez vous mais pour l'instant je ne trouve rien..."
+            );
+            return;
+          }
+
+          console.log(existingTweets.data.at(0).text);
+        } catch (err) {
+          console.log(err);
+        }
       })
     );
 
