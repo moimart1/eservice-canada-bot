@@ -7,55 +7,15 @@
     {
       "type": "aws-sam",
       "request": "direct-invoke",
-      "name": "API lambda-eservice-bot:HelloWorldFunction (nodejs16.x)",
-      "invokeTarget": {
-        "target": "api",
-        "templatePath": "${workspaceFolder}/lambda-eservice-bot/template.yaml",
-        "logicalId": "HelloWorldFunction"
-      },
-      "api": {
-        "path": "/",
-        "httpMethod": "get",
-        "payload": {
-          "json": {}
-        }
-      },
-      "lambda": {
-        "runtime": "nodejs16.x"
-      }
-    },
-    {
-      "type": "aws-sam",
-      "request": "direct-invoke",
-      "name": "lambda-eservice-bot:HelloWorldFunction",
+      "name": "eservice-canada-bot:ServiceCanadaBotFunction",
       "invokeTarget": {
         "target": "template",
-        "templatePath": "${workspaceFolder}/lambda-eservice-bot/template.yaml",
-        "logicalId": "HelloWorldFunction"
+        "templatePath": "${workspaceFolder}/template.yaml",
+        "logicalId": "ServiceCanadaBotFunction"
       },
       "lambda": {
         "payload": {},
         "environmentVariables": {},
-        "runtime": "nodejs16.x"
-      }
-    },
-    {
-      "type": "aws-sam",
-      "request": "direct-invoke",
-      "name": "API lambda-eservice-bot:HelloWorldFunction",
-      "invokeTarget": {
-        "target": "api",
-        "templatePath": "${workspaceFolder}/lambda-eservice-bot/template.yaml",
-        "logicalId": "HelloWorldFunction"
-      },
-      "api": {
-        "path": "/hello",
-        "httpMethod": "get",
-        "payload": {
-          "json": {}
-        }
-      },
-      "lambda": {
         "runtime": "nodejs16.x"
       }
     },

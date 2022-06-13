@@ -19,10 +19,10 @@ Resources:
         - x86_64
       Events:
         ScheduledEvent:
-          Name: Every5min
           Type: Schedule
           Properties:
-            Schedule: rate(5 minutes)
+            # Every 5min from 6:00 to 18:55 (EST)
+            Schedule: cron(0/5 10-23 ? * * *)
     Metadata:
       DockerTag: nodejs16.x-v1
       DockerContext: ./eservice-canada-bot

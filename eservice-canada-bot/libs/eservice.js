@@ -2,6 +2,10 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 const config = require("../config").eservice;
+
+const bookingIdRegex = new RegExp(
+  "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+);
 const client = axios.create({
   headers: {
     "User-Agent":
@@ -20,6 +24,10 @@ function getHtmlOptionsFromSelect(root, selector) {
 
   return result;
 }
+
+module.exports.isBookingId = (bookingId) => {
+  return bookingIdRegex.test(bookingId);
+};
 
 module.exports.getBookingId = async () => {
   const resultInitial = await client.get(config.bookingUrl);
@@ -73,19 +81,23 @@ module.exports.getBookingId = async () => {
   const pageBooking = cheerio.load(resultBooking.data);
   const bookingId = pageBooking("#EntityFormView_EntityID").val();
 
-  if (bookingId.length === 0) throw new Error("Invalid booking ID");
+  if (!this.isBookingId(bookingId))
+    throw new Error(`Invalid booking ID: ${bookingId}`);
 
   return bookingId;
 };
 
-module.exports.getAvailableSlots = async (bookingId) => {
-  // Use default booking ID if not provided
-  bookingId = bookingId ? bookingId : config.defaultBookingId;
+module.exports.getAvailableSlots = async (officeId, bookingId) => {
+  if (!officeId || !bookingId) {
+    throw new Error(
+      `Missing parameters in getAvailableSlots(${officeId}, ${bookingId})`
+    );
+  }
 
   const data = {
     CrmOrigin: "eservices",
     BookingId: bookingId,
-    OfficeIds: [config.officeIds.montreal],
+    OfficeIds: [officeId],
     AdditionalParameters: {
       UserLocalTime: new Date().toISOString(),
       BookingServiceOfferingIds: [config.bookingServiceOfferingIds],
