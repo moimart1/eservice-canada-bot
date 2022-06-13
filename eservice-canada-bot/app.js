@@ -41,7 +41,7 @@ exports.lambdaHandler = async (event, context) => {
 
     const officesSlots = await Promise.all(
       Object.keys(config.eservice.officeIds).map(async (officeKey) => {
-        const result = { officeKey };
+        const result = { officeKey, slots: [], error: null };
 
         try {
           console.log(`Getting available slots for ${officeKey} office...`);
@@ -88,7 +88,14 @@ exports.lambdaHandler = async (event, context) => {
             }
           );
 
-          if (!Array.isArray(existingTweets.data)) {
+          if (
+            !Array.isArray(existingTweets.data) ||
+            (Array.isArray(existingTweets.data) &&
+              existingTweets.data.length === 0)
+          ) {
+            console.log(
+              `No tweet for ${officesSlot.officeKey} office since last 48 hours, posting a new tweet...`
+            );
             await postTweet(
               officesSlot.officeKey,
               "Je vérifie les rendez vous mais pour l'instant je ne trouve rien..."
@@ -96,7 +103,48 @@ exports.lambdaHandler = async (event, context) => {
             return;
           }
 
-          console.log(existingTweets.data.at(0).text);
+          const lastTweet =
+            existingTweets.data[existingTweets.data.length - 1].text;
+          console.log(`Get last tweet: ${lastTweet}`);
+
+          if (
+            officesSlot.error ||
+            !Array.isArray(officesSlot.slots) ||
+            officesSlot.slots.length === 0
+          ) {
+            console.log(
+              `No availabilities for ${officesSlot.officeKey} office`
+            );
+            return; // Nothing to do
+          }
+
+          let availabilityTweet =
+            "Nouvelles disponibilités pour un RDV Passeport:";
+          for (const slot of officesSlot.slots) {
+            if (!slot.AvailableWorkstations) {
+              console.error(`Unable to find expected AvailableWorkstations`);
+              continue;
+            }
+
+            for (const [day, availableWorkstation] of Object.entries(
+              slot.AvailableWorkstations
+            )) {
+              if (lastTweet.includes(day)) continue; // Don't log already tweeted date
+              const slotCount = Array.isArray(availableWorkstation)
+                ? availableWorkstation.length
+                : 0;
+              const availability = `\n - ${day}: ${slotCount} place(s)`;
+              if (availabilityTweet.length + availability.length < 140) {
+                // Add only if tweet size is not exceeded
+                availabilityTweet += availability;
+              }
+            }
+          }
+
+          console.log(
+            `Posting Tweet with availabilities for ${officesSlot.officeKey} office...`
+          );
+          await postTweet(officesSlot.officeKey, availabilityTweet);
         } catch (err) {
           console.log(err);
         }
