@@ -128,3 +128,20 @@ curl 'https://eservice-api-production.azurewebsites.net/api/GetAvailableTimeslot
   }
 ]
 ```
+
+## Dev
+
+```sh
+brew install aws-sam-cli
+brew install awscli
+```
+
+```sh
+sam build
+sam local invoke
+sam deploy
+```
+
+```sh
+aws lambda get-function-configuration --function-name <stack>-<function>-<id>
+```
