@@ -132,16 +132,24 @@ curl 'https://eservice-api-production.azurewebsites.net/api/GetAvailableTimeslot
 ## Dev
 
 ```sh
+# Setup
 brew install aws-sam-cli
 brew install awscli
 ```
 
 ```sh
+# Run
 sam build
 sam local invoke
 sam deploy
 ```
 
 ```sh
+# Get function info
 aws lambda get-function-configuration --function-name <stack>-<function>-<id>
+```
+
+```sh
+# Generate access
+export $(cat .env | xargs) && node eservice-canada-bot/libs/twitter.js
 ```
