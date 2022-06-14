@@ -1,4 +1,5 @@
 {
   "editor.rulers": [130],
-  "jira-plugin.workingProject": ""
+  "jira-plugin.workingProject": "",
+  "prettier.printWidth": 130
 }
