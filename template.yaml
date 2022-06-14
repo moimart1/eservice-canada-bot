@@ -17,11 +17,19 @@ Resources:
       PackageType: Image
       Architectures:
         - x86_64
+      Environment:
+        Variables:
+          TWITTER_APP_KEY: ''
+          TWITTER_APP_SECRET: ''
+          TWITTER_APP_ACCESS_TOKEN: ''
+          TWITTER_APP_ACCESS_SECRET: ''
+          TWITTER_APP_MONTREAL_ACCESS_TOKEN: ''
+          TWITTER_APP_MONTREAL_ACCESS_SECRET: ''
       Events:
         ScheduledEvent:
           Type: Schedule
           Properties:
-            # Every 5min from 6:00 to 18:55 (EST)
+            # Every 5min from 6:00 to 19:55 (EST)
             Schedule: cron(0/5 10-23 ? * * *)
     Metadata:
       DockerTag: nodejs16.x-v1

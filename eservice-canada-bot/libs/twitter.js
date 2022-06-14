@@ -1,26 +1,22 @@
 const { TwitterApi } = require("twitter-api-v2");
 const readline = require("readline");
 
-const { twitter, officeKey } = require("../config");
-const { accounts, ...config } = twitter;
-
-const rootClient = new TwitterApi(config);
-const officeClients = Object.values(officeKey).reduce((clients, key) => {
-  const officeConfig = accounts[key];
-  if (officeConfig.accessToken && officeConfig.accessSecret) {
-    clients[key] = new TwitterApi({
-      ...officeConfig,
-      appKey: config.appKey,
-      appSecret: config.appSecret,
-    });
-  }
-
-  return clients;
-}, {});
+const { accounts, ...config } = require("../config").twitter;
+const officeClients = {};
 
 function getClient(officeKey) {
-  if (!officeKey) return rootClient;
-  if (officeClients[officeKey]) return officeClients[officeKey];
+  if (!officeKey) return new TwitterApi(config);
+  if (accounts[officeKey] && accounts[officeKey].accessToken) {
+    if (!officeClients[officeKey]) {
+      officeClients[officeKey] = new TwitterApi({
+        ...accounts[officeKey],
+        appKey: config.appKey,
+        appSecret: config.appSecret,
+      });
+    }
+
+    return officeClients[officeKey];
+  }
 
   throw new Error(
     `Unable to find a client to use Twitter with office key ${officeKey}`
@@ -32,7 +28,7 @@ module.exports.getExistingTweets = async (officeKey, { start_time }) => {
   const meUser = await client.v2.me();
 
   return (
-    await rootClient.v2.userTimeline(meUser.data.id, {
+    await getClient().v2.userTimeline(meUser.data.id, {
       exclude: ["retweets", "replies"],
       start_time,
     })
@@ -53,7 +49,7 @@ async function generateAccess() {
   });
 
   // Generate auth link
-  const authLink = await rootClient.generateAuthLink("oob", {
+  const authLink = await getClient().generateAuthLink("oob", {
     authAccessType: "write",
   });
   console.log(`Got to ${authLink.url}`);
@@ -87,7 +83,7 @@ if (require.main === module) {
     new Date().getTime() - 20 * 365 * 24 * 60 * 60 * 1000
   );
   (async () => {
-    const tweets = await this.getExistingTweets(null, {
+    const tweets = await this.getExistingTweets("montreal", {
       start_time: "2020-11-06T00:00:00-00:00",
     });
     console.log(tweets);

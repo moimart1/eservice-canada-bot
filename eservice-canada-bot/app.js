@@ -98,13 +98,13 @@ exports.lambdaHandler = async (event, context) => {
             );
             await postTweet(
               officesSlot.officeKey,
-              "Je vérifie les rendez vous mais pour l'instant je ne trouve rien..."
+              `J'ai vérifié les rendez vous le ${new Date().toISOString()} mais pour l'instant je ne trouve rien...`
             );
             return;
           }
 
-          const lastTweet =
-            existingTweets.data[existingTweets.data.length - 1].text;
+          // Tweets are ordered from newest to oldest
+          const lastTweet = existingTweets.data.at(0).text;
           console.log(`Get last tweet: ${lastTweet}`);
 
           if (
@@ -120,6 +120,7 @@ exports.lambdaHandler = async (event, context) => {
 
           let availabilityTweet =
             "Nouvelles disponibilités pour un RDV Passeport:";
+          let newAvailability = false;
           for (const slot of officesSlot.slots) {
             if (!slot.AvailableWorkstations) {
               console.error(`Unable to find expected AvailableWorkstations`);
@@ -137,14 +138,19 @@ exports.lambdaHandler = async (event, context) => {
               if (availabilityTweet.length + availability.length < 140) {
                 // Add only if tweet size is not exceeded
                 availabilityTweet += availability;
+                newAvailability = true;
               }
             }
           }
 
-          console.log(
-            `Posting Tweet with availabilities for ${officesSlot.officeKey} office...`
-          );
-          await postTweet(officesSlot.officeKey, availabilityTweet);
+          if (newAvailability) {
+            console.log(
+              `Posting Tweet with availabilities for ${officesSlot.officeKey} office...`
+            );
+            await postTweet(officesSlot.officeKey, availabilityTweet);
+          } else {
+            console.log(`Already posted for ${officesSlot.officeKey} office`);
+          }
         } catch (err) {
           console.log(err);
         }
