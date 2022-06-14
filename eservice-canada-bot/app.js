@@ -57,9 +57,10 @@ exports.lambdaHandler = async (event, context) => {
       })
     );
 
+    console.log("Get offices slots:", officesSlots);
     response = {
       statusCode: 200,
-      body: JSON.stringify(officesSlots, null, 2),
+      body: JSON.stringify(officesSlots),
     };
 
     const last48hoursDate = new Date(new Date().getTime() - 2 * 24 * 60 * 60 * 1000); // 48h to ms
@@ -77,7 +78,7 @@ exports.lambdaHandler = async (event, context) => {
             console.log(`No tweet for ${officesSlot.officeKey} office since last 48 hours, posting a new tweet...`);
             await postTweet(
               officesSlot.officeKey,
-              `J'ai vérifié les rendez vous le ${new Date().toISOString()} mais pour l'instant je ne trouve rien...`
+              `J'ai vérifié les rendez vous le ${new Date().toLocaleDateString("fr-CA")} mais pour l'instant je ne trouve rien...`
             );
             return;
           }
@@ -91,7 +92,9 @@ exports.lambdaHandler = async (event, context) => {
             return; // Nothing to do
           }
 
-          let availabilityTweet = "Nouvelles disponibilités pour un RDV Passeport:";
+          let availabilityTweet =
+            "Nouvelles disponibilités pour un RDV Passeport sur " +
+            "https://eservices.canada.ca/fr/reservation/application/?booking-privacy=true:";
           let newAvailability = false;
           for (const slot of officesSlot.slots) {
             if (!slot.AvailableWorkstations) {
