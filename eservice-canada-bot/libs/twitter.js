@@ -18,9 +18,7 @@ function getClient(officeKey) {
     return officeClients[officeKey];
   }
 
-  throw new Error(
-    `Unable to find a client to use Twitter with office key ${officeKey}`
-  );
+  throw new Error(`Unable to find a client to use Twitter with office key ${officeKey}`);
 }
 
 module.exports.getExistingTweets = async (officeKey, { start_time }) => {
@@ -63,31 +61,14 @@ async function generateAccess() {
   });
 
   rl.question("PIN ? ", async (pin) => {
-    const {
-      accessToken,
-      accessSecret,
-      userId,
-      client: appClient,
-    } = await connecterClient.login((pin ?? "").trim());
+    const { accessToken, accessSecret, userId, client: appClient } = await connecterClient.login((pin ?? "").trim());
 
-    console.log(
-      `Connected with user #${userId} !\n accessToken: ${accessToken}\n accessSecret: ${accessSecret}\n`
-    );
+    console.log(`Connected with user #${userId} !\n accessToken: ${accessToken}\n accessSecret: ${accessSecret}\n`);
     console.log(await appClient.v2.me());
     process.exit(0);
   });
 }
 
 if (require.main === module) {
-  const last48hoursDate = new Date(
-    new Date().getTime() - 20 * 365 * 24 * 60 * 60 * 1000
-  );
-  (async () => {
-    const tweets = await this.getExistingTweets("montreal", {
-      start_time: "2020-11-06T00:00:00-00:00",
-    });
-    console.log(tweets);
-  })();
-  return;
   generateAccess();
 }
