@@ -57,7 +57,7 @@ exports.lambdaHandler = async (event, context) => {
       })
     );
 
-    console.log("Get offices slots:", officesSlots);
+    console.log("Get offices slots:", JSON.stringify(officesSlots).substring(0, 1024));
     response = {
       statusCode: 200,
       body: JSON.stringify(officesSlots),
@@ -78,7 +78,7 @@ exports.lambdaHandler = async (event, context) => {
             console.log(`No tweet for ${officesSlot.officeKey} office since last 48 hours, posting a new tweet...`);
             await postTweet(
               officesSlot.officeKey,
-              `J'ai vérifié les rendez vous le ${new Date().toLocaleDateString("fr-CA")} mais pour l'instant je ne trouve rien...`
+              `J'ai vérifié les rendez vous le ${new Date().toLocaleDateString("fr-FR")} mais pour l'instant je ne trouve rien...`
             );
             return;
           }
@@ -92,9 +92,7 @@ exports.lambdaHandler = async (event, context) => {
             return; // Nothing to do
           }
 
-          let availabilityTweet =
-            "Nouvelles disponibilités pour un RDV Passeport sur " +
-            "https://eservices.canada.ca/fr/reservation/application/?booking-privacy=true:";
+          let availabilityTweet = "Nouvelles disponibilités pour un RDV Passeport:";
           let newAvailability = false;
           for (const slot of officesSlot.slots) {
             if (!slot.AvailableWorkstations) {
@@ -103,6 +101,7 @@ exports.lambdaHandler = async (event, context) => {
             }
 
             for (const [day, availableWorkstation] of Object.entries(slot.AvailableWorkstations)) {
+              console.log(`Checking available time slot for ${day} for ${officesSlot.officeKey} office`);
               if (lastTweet.includes(day)) continue; // Don't log already tweeted date
               const slotCount = Array.isArray(availableWorkstation) ? availableWorkstation.length : 0;
               const availability = `\n - ${day}: ${slotCount} place(s)`;
@@ -116,9 +115,14 @@ exports.lambdaHandler = async (event, context) => {
 
           if (newAvailability) {
             console.log(`Posting Tweet with availabilities for ${officesSlot.officeKey} office...`);
-            await postTweet(officesSlot.officeKey, availabilityTweet);
-          } else {
+            await postTweet(
+              officesSlot.officeKey,
+              availabilityTweet + "\nhttps://eservices.canada.ca/fr/reservation/application/?booking-privacy=true"
+            );
+          } else if (officesSlot.slots.length > 0) {
             console.log(`Already posted for ${officesSlot.officeKey} office`);
+          } else {
+            console.log(`Nothing for ${officesSlot.officeKey} office`);
           }
         } catch (err) {
           console.log(err);
