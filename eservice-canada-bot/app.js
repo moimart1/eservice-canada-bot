@@ -114,7 +114,7 @@ exports.lambdaHandler = async (event, context) => {
           }
 
           if (newAvailability) {
-            console.log(`Posting Tweet with availabilities for ${officesSlot.officeKey} office...`);
+            console.log(`Posting Tweet with availabilities for ${officesSlot.officeKey} office...\n${availabilityTweet}`);
             await postTweet(
               officesSlot.officeKey,
               availabilityTweet + "\nhttps://eservices.canada.ca/fr/reservation/application/?booking-privacy=true"
