@@ -5,8 +5,16 @@ const officeKey = {
   laval: "laval",
 };
 
+const officeKeyDisplayName = {
+  montreal: "Montréal",
+  pointeclaire: "Pointe Claire",
+  saintlaurent: "Saint-Laurent",
+  laval: "Laval",
+};
+
 module.exports = {
   officeKey,
+  officeKeyDisplayName,
   twitter: {
     appKey: process.env.TWITTER_APP_KEY || "",
     appSecret: process.env.TWITTER_APP_SECRET || "",
@@ -33,10 +41,8 @@ module.exports = {
     },
   },
   eservice: {
-    bookingUrl:
-      "https://eservices.canada.ca/en/reservation/application/?booking-privacy=true",
-    getTimeSlotsUrl:
-      "https://eservice-api-production.azurewebsites.net/api/GetAvailableTimeslots",
+    bookingUrl: "https://eservices.canada.ca/en/reservation/application/?booking-privacy=true",
+    getTimeSlotsUrl: "https://eservice-api-production.azurewebsites.net/api/GetAvailableTimeslots",
     bookingServiceOfferingIds: "57af4796-67ab-ea11-a812-000d3af4f03d", // Passport service
     languageOptionsKey: "french",
     bookingTypeOptionsKey: "passport service",

@@ -29,8 +29,8 @@ Resources:
         ScheduledEvent:
           Type: Schedule
           Properties:
-            # Every 5min from 6:00 to 22:55 (EST)
-            Schedule: cron(0/5 10-23,0-2 ? * * *)
+            # Every 3min from 6:00 to 22:55 (EST)
+            Schedule: cron(0/3 10-23,0-2 ? * * *)
     Metadata:
       DockerTag: nodejs16.x-v1
       DockerContext: ./eservice-canada-bot

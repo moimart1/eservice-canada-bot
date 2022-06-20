@@ -92,7 +92,7 @@ exports.lambdaHandler = async (event, context) => {
             return; // Nothing to do
           }
 
-          let availabilityTweet = "Nouvelles disponibilités pour un RDV Passeport:";
+          let availabilityTweet = `${config.officeKeyDisplayName[officesSlot.officeKey]}: Nouveaux RDV pour les Passeports:`;
           let newAvailability = false;
           for (const slot of officesSlot.slots) {
             if (!slot.AvailableWorkstations) {
