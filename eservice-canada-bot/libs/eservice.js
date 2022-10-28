@@ -3,13 +3,10 @@ const cheerio = require("cheerio");
 
 const config = require("../config").eservice;
 
-const bookingIdRegex = new RegExp(
-  "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
-);
+const bookingIdRegex = new RegExp("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$");
 const client = axios.create({
   headers: {
-    "User-Agent":
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:101.0) Gecko/20100101 Firefox/101.0",
   },
 });
 
@@ -33,35 +30,21 @@ module.exports.getBookingId = async () => {
   const resultInitial = await client.get(config.bookingUrl);
   const pageInitial = cheerio.load(resultInitial.data);
 
-  const bookingData = new URLSearchParams(
-    pageInitial("#liquid_form").serialize()
-  );
+  const bookingData = new URLSearchParams(pageInitial("#liquid_form").serialize());
   const sessionExpiryOn = new Date(new Date().getTime() + 30 * 60 * 1000); // 30 min to ms
-  const languageOptions = getHtmlOptionsFromSelect(
-    pageInitial,
-    "#esdc_languageofservice"
-  );
-  const bookingTypeOptions = getHtmlOptionsFromSelect(
-    pageInitial,
-    "#esdc_bookingtype"
-  );
-  const earliestTravelDateRangeOptions = getHtmlOptionsFromSelect(
-    pageInitial,
-    "#esdc_earliesttraveldaterange"
-  );
+  const languageOptions = getHtmlOptionsFromSelect(pageInitial, "#esdc_languageofservice");
+  const bookingTypeOptions = getHtmlOptionsFromSelect(pageInitial, "#esdc_bookingtype");
+  const earliestTravelDateRangeOptions = getHtmlOptionsFromSelect(pageInitial, "#esdc_earliesttraveldaterange");
 
   const params = {
     EntityName: "esdc_booking",
-    languageofservice: languageOptions[config.languageOptionsKey], // FR
-    bookingtype: bookingTypeOptions[config.bookingTypeOptionsKey], // Passport
-    earliesttraveldaterange:
-      earliestTravelDateRangeOptions[config.earliestTravelDateRangeOptionsKey], // 9 to 45 jrs
+    languageofservice: languageOptions[config.languageOptionsKey] || "564190001", // FR
+    bookingtype: bookingTypeOptions[config.bookingTypeOptionsKey] || "564190001", // Passport
+    earliesttraveldaterange: earliestTravelDateRangeOptions[config.earliestTravelDateRangeOptionsKey] || "564190000", // I don't have travel date
     numberofapplicationspassport: "1",
     passportraapplicable: "1",
     numberofapplicantsbio: "0",
-    sessionexpiryon: sessionExpiryOn
-      .toISOString()
-      .replace(/\.[0-9]+Z/, ".0000000Z"),
+    sessionexpiryon: sessionExpiryOn.toISOString().replace(/\.[0-9]+Z/, ".0000000Z"),
     portalbooking: "1",
     privacystatementaccepted: "1",
     browseragent:
@@ -81,17 +64,14 @@ module.exports.getBookingId = async () => {
   const pageBooking = cheerio.load(resultBooking.data);
   const bookingId = pageBooking("#EntityFormView_EntityID").val();
 
-  if (!this.isBookingId(bookingId))
-    throw new Error(`Invalid booking ID: ${bookingId}`);
+  if (!this.isBookingId(bookingId)) throw new Error(`Invalid booking ID: ${bookingId}`);
 
   return bookingId;
 };
 
 module.exports.getAvailableSlots = async (officeId, bookingId) => {
   if (!officeId || !bookingId) {
-    throw new Error(
-      `Missing parameters in getAvailableSlots(${officeId}, ${bookingId})`
-    );
+    throw new Error(`Missing parameters in getAvailableSlots(${officeId}, ${bookingId})`);
   }
 
   const data = {

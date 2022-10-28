@@ -46,7 +46,7 @@ module.exports = {
     bookingServiceOfferingIds: "57af4796-67ab-ea11-a812-000d3af4f03d", // Passport service
     languageOptionsKey: "french",
     bookingTypeOptionsKey: "passport service",
-    earliestTravelDateRangeOptionsKey: "travel between 6 and 45 business days",
+    earliestTravelDateRangeOptionsKey: "i don't have a travel date",
     officeIds: {
       [officeKey.montreal]: "2f0a32f7-bcac-ea11-a812-000d3af4316a",
       [officeKey.pointeclaire]: "2d0a32f7-bcac-ea11-a812-000d3af4316a",
