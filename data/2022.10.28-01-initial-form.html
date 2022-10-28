@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en-US" data-lang="en" crm-lang="en-US" dir="ltr" crm-lcid="1033" same-site-mode="None">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript">
+
+    </script>
+    <title>
+
+        Appointment Booking
+        - E-service Canada.ca
+    </title>
+
+    <script src="/_resources/getresourcemanager?lang=en"></script>
+
+    <script type="text/javascript">
+        // Refresh all powerBI Iframes on Login in one Iframe
+        window.addEventListener('message', function (event) {
+            if (event && event.data && event.data == 'refreshPowerBI') {
+                $("iframe.powerbi").each(function () {
+                    this.src = this.src;
+                });
+            }
+        });
+
+        // Fix for incorrect viewport width setting in IE 10 on Windows Phone 8.
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+
+
+
+    <link href="/bootstrap.min.css?1663119851000" rel="stylesheet" />
+
+    <link href="/css/glyphicons-font-awesome-migrate.min.css" rel="stylesheet" />
+
+    <link href="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-240556d2d6.css"
+        rel="stylesheet" />
+
+
+
+    <!--[if lt IE 9]>
+				<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+    <!--[if lt IE 10]>
+				<script src="~/js/formdata.js"></script>
+			<![endif]-->
+
+
+
+
+    <style type="text/css">
+        @media (hover) {
+            .fc-daygrid-day:not(.fc-day-disabled) :hover {
+                background: lightblue !important;
+            }
+        }
+    </style>
+
+
+
+    <meta name="google-site-verification" content="audaC6B5XAR2ow-TVVTZ5kWEaSZ3HMw9P_Rt432aymw">
+    <meta name="robots" content="/en/robots.txt">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+
+    <!-- Add in JS Redirect from powerappsportals to proper domain -->
+    <script>
+        var locationTmp = window.location.href;
+        console.log("Current URL: " + locationTmp);
+        try {
+            if (locationTmp.includes("sr-ds.powerappsportals.com")) {
+                locationTmp = locationTmp.replace("sr-ds.powerappsportals.com", "eservices.canada.ca");
+                console.log("Detected Old URL... Redirecting to: " + locationTmp);
+
+                try { window.location.replace(locationTmp); }
+                catch (ex) { }
+
+                /*
+                setTimeout(function(locationTmp) {
+                    window.location.href = locationTmp;
+                }, 1000, locationTmp);
+                */
+            }
+        } catch (ex) { }
+    </script>
+
+    <!-- Add in the PWA Manifest -->
+    <link rel="manifest" href="/en/manifest-en.json">
+
+    <!-- Meta data -->
+    <meta name="dcterms.title" content="Appointment Booking">
+    <meta name="dcterms.language" content="eng">
+    <meta name="dcterms.creator" content="Employment and Social Development Canada">
+    <meta name="dcterms.service" content="ESDC-EDSC_EService_SCC-ServiceRequest">
+    <meta name="dcterms.accessRights" content="2">
+    <meta name="dcterms.issued" content="2022-04-04">
+    <meta name="dcterms.modified" content="2022-10-12">
+    <!-- Meta data-->
+
+    <script>
+        // Provide the wb-lang attribute for WET
+        document.documentElement.setAttribute("data-wb-lang", "en");
+    </script>
+
+    <!-- Load closure template scripts -->
+
+
+
+    <!--
+    cdtsTheme=gcweb
+    cdtsVersion=v4_0_43
+    cdtsLanguage=en
+-->
+
+    <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/cdts/compiled/soyutils.js"></script>
+    <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/cdts/compiled/wet-en.js"></script>
+
+
+
+
+    <!-- Write closure template -->
+    <script>
+        document.write(wet.builder.refTop({
+            "isApplication": true
+        }));
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/en/assets/css/fonts/eServiceFonts.css">
+    <link rel="stylesheet" type="text/css" href="/en/assets/css/eService.css">
+
+    <!-- Additional Plugins -->
+    <link href="/en/assets/vendor/select2/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
+
+    <!-- Add a reference to the Azure Maps Services Module JavaScript file. -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+    <script src="/en/assets/vendor/azure-maps/azure-maps-fullscreen-control.min.js"></script>
+
+
+    <link href="/en/assets/vendor/printjs/print.min.css" rel="stylesheet">
+    <script src="/en/assets/vendor/printjs/print.min.js"></script>
+
+
+    <script type="text/javascript">
+        function throwFocus(e) {
+            e.preventDefault();
+            var dest = e.target.getAttribute("href").replace(/^.*#/, "");
+            document.location.href += "#" + dest;
+            var destObj = document.getElementById(dest);
+            if (!destObj.hasAttribute("tabindex")) destObj.setAttribute("tabindex", "-1");
+            destObj.focus();
+        }
+    </script>
+
+    <!-- Including eService Form Helpers -->
+    <script src="/en/assets/libs/eServiceFormHelpers.js"></script>
+
+
+    <!-- END Snippet Head/Bottom  -->
+
+
+
+    <link href="/css/offlinenotification.css" rel="stylesheet" />
+</head>
+
+<body data-sitemap-state="/reservation/application/:/reservation/:/" data-dateformat="yyyy-MM-dd"
+    data-timeformat="h:mm tt" data-datetimeformat="yyyy-MM-dd h:mm tt" data-app-path="/"
+    data-ckeditor-basepath="/js/BaseHtmlContentDesigner/Libs/msdyncrm_/libs/ckeditor/"
+    data-case-deflection-url="/_services/search/d78574f9-20c3-4dcc-8d8d-85cf5b7ac141">
+
+
+
+
+    <div id="offlineNotificationBar" style="display: none;">
+        <div id="web"></div>
+        <div id="message">You&#8217;re offline. This is a read only version of the page.</div>
+        <div id="close" onclick="this.parentElement.style.display='none';"></div>
+    </div>
+
+
+    <script type="text/javascript">
+        window["Microsoft"] = window["Microsoft"] || {};
+        window["Microsoft"].Dynamic365 = {
+            Portal: {
+
+                User: {
+                    contactId: '',
+                    userName: ''
+                },
+
+                version: '9.4.9.33',
+                type: 'CustomerPortal',
+                id: '6760744c-f752-40d9-91ee-f35b1a3cd06b'
+            }
+        }
+    </script>
+
+
+
+
+
+
+    <!-- Search Enabled: false -->
+    <!-- Current Page: /reservation/application/ -->
+
+
+    <!-- Current Lang: en | English | en/reservation/application/?booking-privacy=true -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Is English: true -->
+    <!-- Is French: false -->
+    <span id="eServiceLangCode" style="display: none;" aria-disabled="true" aria-hidden="true" hidden="true">en</span>
+
+
+
+
+    <span id="eService_DevelopmentMode_Enabled" style="display: none;" aria-disabled="true" aria-hidden="true"
+        hidden="true" data-key="eService/DevelopmentMode/Enabled">false</span>
+
+
+    <!-- Load in React 17/development -->
+
+    <script src="/en/assets/vendor/react/react.development.js"></script>
+    <script src="/en/assets/vendor/react/react-dom.development.js"></script>
+
+
+
+    <!-- CDTS Header -->
+    <div id="def-top">
+    </div>
+
+    <script>
+        let appName = "eServiceCanada";
+        let eServiceDevelopmentMode = document.getElementById("eService_DevelopmentMode_Enabled").innerText;
+        if (eServiceDevelopmentMode.toLowerCase() == "true") {
+
+            appName += " (Development)";
+
+
+        }
+
+        let cdtsTopSettings = {
+            "appName": [
+                {
+                    "text": appName,
+                    "href": "/en/menu"
+                }
+            ],
+            "lngLinks": [
+
+
+
+
+                {
+                    "lang": "fr",
+                    "href": "/fr/reservation/application/?booking-privacy=true",
+                    "text": "Français"
+                }
+
+
+            ],
+
+
+
+
+
+            "showPreContent": true
+        };
+
+
+
+        var defTop = document.getElementById("def-top");
+
+
+        // Display the Browser Warning
+        var browserIncompatible = false;
+        try {
+            function isNullOrWhitespace(text) {
+                if (typeof text === 'undefined' || text == null) return true;
+                return text.replace(/\s/g, '').length < 1;
+            }
+            function IsIE11OrOlder() {
+                const version = ieVersion(navigator.userAgent)
+                if (version == null) { return false; }
+                if (version <= 11) { return true; }
+                return false;
+            }
+            function ieVersion(uaString) {
+                var match = /\b(MSIE |Trident.*?rv:|Edge\/)(\d+)/.exec(uaString);
+                if (match) return parseInt(match[2])
+                return null;
+            }
+            if (IsIE11OrOlder()) { browserIncompatible = true; }
+
+            if (browserIncompatible == true) {
+                let browserWarningAlert = document.createElement("div");
+                browserWarningAlert.setAttribute("id", "UnsupportedBrowserAlert");
+                browserWarningAlert.setAttribute("class", "alert alert-warning");
+                browserWarningAlert.setAttribute("role", "alert");
+
+                let browserWarningAlertP = document.createElement("p");
+                browserWarningAlertP.innerText = "We have detected that your browser is no longer supported and will not work properly with some features on this site. Please switch to another browser.";
+                browserWarningAlert.appendChild(browserWarningAlertP);
+                defTop.parentNode.insertBefore(browserWarningAlert, defTop.nextSibling);
+            }
+        }
+        catch (ex) { }
+
+
+        // Turn on CDTS
+        defTop.outerHTML = wet.builder.appTop(cdtsTopSettings);
+    </script>
+
+    <!-- Render Dynamic Alerts -->
+    <div id="dynamic_esdc_alerts" class="xrmesdc-dynamic-alerts" style="display: none;">
+        <div class="wb-dismissable">
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load", function (event) {
+            console.log("Rendering Dynamic Alerts");
+            let alertsContainer = $("#dynamic_esdc_alerts");
+            let alertsContainerBody = alertsContainer.find(".wb-dismissable");
+
+            let select = ["xrm_esdc_key", "xrm_esdc_alerttype", "xrm_esdc_interactiontype", "xrm_esdc_partialurl", "xrm_esdc_stepid", "xrm_esdc_startdatetime", "xrm_esdc_enddatetime", "xrm_esdc_bodyenglish", "xrm_esdc_bodyfrench", "statecode", "statuscode"];
+            let apiUrl = "/_api/xrm_esdc_portalalerts?$filter=statecode eq 0" + "&$select=" + select.join(",");
+            loadMetadata(apiUrl, null, {}, { type: "GET" }).then(x => {
+                let currentPath = window.location.pathname.toLowerCase();
+                let values = x.value;
+                for (let i = 0; i < values.length; i++) {
+                    let alertMeta = values[i];
+
+                    // Match the Partial Url
+                    let partialUrl = alertMeta.xrm_esdc_partialurl.toLowerCase();
+                    if (!currentPath.includes(partialUrl)) { continue; }
+
+                    // Match the Step Id
+                    let stepId = alertMeta.xrm_esdc_stepid;
+                    if (!isNullOrWhitespace(stepId)) {
+                        let searchParams = new URLSearchParams(window.location.search);
+                        let match = false;
+                        if ($("#" + stepId).length > 0) { match = true; }
+                        if (searchParams.has("stepid")) { if (searchParams.get("stepid") == stepId) { match = true; } }
+
+                        try {
+                            if (typeof uniqueStepId !== "undefined") {
+                                if (stepId == uniqueStepId) { match = true; }
+                            }
+                        } catch (ex) { }
+
+                        if (!match) { continue; }
+                    }
+
+                    // If there is a Start/End Time on the metadata, check to see if the time is valid
+                    if (alertMeta.xrm_esdc_startdatetime != null) {
+                        // Skip if the Start Date is after today
+                        let startDate = moment.utc(alertMeta.xrm_esdc_startdatetime);
+                        if (startDate > moment.utc()) { continue; }
+                    }
+                    if (alertMeta.xrm_esdc_enddatetime != null) {
+                        // Skip if the End Date is before today
+                        let endDate = moment.utc(alertMeta.xrm_esdc_enddatetime);
+                        if (endDate < moment.utc()) { continue; }
+                    }
+
+                    // Render the Alert
+                    let id = alertMeta.xrm_esdc_key + "_" + alertMeta.xrm_esdc_portalalertid;
+                    let alertType = "";
+                    switch (alertMeta.xrm_esdc_alerttype) {
+                        case 100000000: alertType = "alert-success"; break;
+                        case 100000001: alertType = "alert-info"; break;
+                        case 100000002: alertType = "alert-warning"; break;
+                        case 100000003: alertType = "alert-danger"; break;
+                        default: alertType = "alert-info"; break;
+                    }
+
+                    let alert = createAlert(id, alertType, getTranslatedText(
+                        alertMeta.xrm_esdc_bodyenglish,
+                        alertMeta.xrm_esdc_bodyfrench
+                    ), true, {
+                        alertContainerType: "section",
+                        role: "alert",
+                        containerAttributes: [
+                            { key: "data-xrm_esdc_portalalertid", value: alertMeta.xrm_esdc_portalalertid },
+                            { key: "data-xrm_esdc_key", value: alertMeta.xrm_esdc_key },
+                            { key: "data-xrm_esdc_alerttype", value: alertMeta.xrm_esdc_alerttype },
+                            { key: "data-xrm_esdc_alerttype-formatted", value: alertMeta["xrm_esdc_alerttype@OData.Community.Display.V1.FormattedValue"] },
+                            { key: "data-xrm_esdc_interactiontype", value: alertMeta.xrm_esdc_interactiontype },
+                            { key: "data-xrm_esdc_interactiontype-formatted", value: alertMeta["xrm_esdc_interactiontype@OData.Community.Display.V1.FormattedValue"] },
+                            { key: "data-xrm_esdc_partialurl", value: alertMeta.xrm_esdc_partialurl },
+                            { key: "data-xrm_esdc_stepid", value: alertMeta.xrm_esdc_stepid },
+                            { key: "data-xrm_esdc_startdatetime", value: alertMeta.xrm_esdc_startdatetime },
+                            { key: "data-xrm_esdc_enddatetime", value: alertMeta.xrm_esdc_enddatetime },
+                            { key: "data-statecode", value: alertMeta.statecode },
+                            { key: "data-statuscode", value: alertMeta.statuscode }
+                        ],
+                        createParagraphElement: false,
+                        dismissable: alertMeta.xrm_esdc_interactiontype == 100000001
+                    });
+
+                    $(alertsContainerBody).append(alert);
+                    if (alertMeta.xrm_esdc_interactiontype == 100000001) { $(alert).trigger(".wb-init.wb-dismissable"); }
+                }
+
+                // If we have alerts, show the container
+                if (values.length > 0) { $(alertsContainer).show(); }
+            });
+        });
+    </script>
+
+    <!-- Preload Fonts -->
+    <div id="preloadfont" aria-hidden="true">.</div>
+
+    <!-- END GCWeb HEADER -->
+
+
+    <!-- add anti-forgery token-->
+    <div id="antiforgerytoken" data-url="/_layout/tokenhtml"></div>
+    <script src="https://content.powerapps.com/resource/powerappsportal/dist/preform.bundle-238a2fff81.js"
+        type="text/javascript"></script>
+
+
+    <script src="/js/pcf/prop-types.js"></script>
+    <script src="/js/pcf/fela.js"></script>
+    <script src="/js/pcf/fela-dom.js"></script>
+    <script src="https://content.powerapps.com/resource/powerappsportal/dist/pcf.bundle-bb82d8b481.js"
+        type="text/javascript"></script>
+
+    <script src="/js/pcf/react-fela.js"></script>
+    <script src="/js/pcf/fluentui-react.js"></script>
+
+    <form method="post" action="/en/reservation/application/?booking-privacy=true"
+        onsubmit="javascript:return WebForm_OnSubmit();" id="liquid_form">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="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" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['liquid_form'];
+            if (!theForm) {
+                theForm = document.liquid_form;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+//]]>
+        </script>
+
+
+        <script
+            src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZC4zCBv17yKgrioUgHIrWiAhRaZi0rOqjmZkKTUb8vWySOBWL1sEAEG6bt5HYfagcg2&amp;t=637906577474211569"
+            type="text/javascript"></script>
+
+
+        <script
+            src="/ScriptResource.axd?d=1HpV3OVB0CaEXoaafcqmhpbbunChFedMpK6jD73iWL2oZ_eZG88ZyiG4_3K5u-1cgGC3I8R0qaRxXnqgFOLe9gQOeRNHLwx0wnigAwDROunwRzeUbdjh3xDOtNYzE3Iqv3r8BTNNDya_KwDPGR0shQ2&amp;t=14d69f50"
+            type="text/javascript"></script>
+        <script
+            src="/ScriptResource.axd?d=uHIkleVeDJf4xS50Krz-yCjrt5thcM8sJGgR_dC4etqMKcY1TrElZMGMQyaR3Aq7bpwvjbDYFwHh03Me9b7I9-uIahu4LzuKecXckSD3EXbCGpEjZLv0AbE0AjnkchXFfZ-iWuYSn0mM7_dMNtsP2sacKTANEk6UAW-AWQtUuas1&amp;t=49337fe8"
+            type="text/javascript"></script>
+        <script
+            src="/ScriptResource.axd?d=Jw6tUGWnA15YEa3ai3FadLXd2KbFoIAAP9v3cVfX4u7gHSNYiVeJzXKYYhOkqBP_OLKQ8TeZVYZYL29Agbb2xccERRJcOCLfomezZjO9N8SfepfAoqsAufrSSDg3OxgX5VcSBx-w9ohIW86ldFEpZull-Uh5h9lNemHdWbGJBJs1&amp;t=49337fe8"
+            type="text/javascript"></script>
+        <script src="../../../js/jquery.blockUI.js" type="text/javascript"></script>
+        <script src="/xrm-adx/js/webform.js" type="text/javascript"></script>
+        <script src="/xrm-adx/js/radcaptcha.js" type="text/javascript"></script>
+        <script src="/xrm-adx/js/crmentityformview.js" type="text/javascript"></script>
+        <script src="/xrm-adx/js/crmentityformview-datetime.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            function WebForm_OnSubmit() {
+                if (typeof (ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+                return true;
+            }
+//]]>
+        </script>
+
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1128FCF4" />
+            <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="xfWI3s/53OYf6dSo9MkuzpoUd+RmGXOAMefGPhIZJR9codBVm0/kr5SaF3V3982dqQk3V/mRcOm5OYk9KDopS/BM5UDJJQ1JwjP6AtM9QdFzWa6ETQbjGGS8+bGordxU50OAozgyPVMWn1OVzWEeGi0v2Oa29bCkj0HvIogARaEGAGWckku1IjmtufybGjhGDSGbls44jFCI8MJoFiXF8DISC61A025pwmhrHbLBGQQeNnO0l81JbJKITVg3V/hwfuVmKNu2q5Pt1UUU/RSdP/pi8L2DEny2ih/gW8WFwTdPscL5z9dT7YV1M7S4yXNlWIG+sQSRsqbBQI6xlQBlRKcQK2s5MjC1pyAM7cNzrUAjOgabG0u4T/+/FS3MLSNR7fcIwmOtbi/1jeVzqqa/TOmjNFm2DDKmylwpN62g1YpG5KvXOLWNEfV55/63+9rXV29/3A0dKGSmK+8YfR4Gacgoj90jV8Y46sTUz1MaXsiH7OHolFViMbP7/w+If04JJGVfg/f4OYa6K7O5jqJ6kxJSoKgsiBl/U1FuFzyTVvcyTOe/ZyQRmDEwtW+79igTQRTRmd/e3Wetc7oQ6HPPXKiAyuKAad4hRoxqTJCDLQ0VTPXm7sFKlJ9y9jRri8++lpq6O8vnlYqLyV4ytaOaZoWP0Iplm1ONo0k1eRhW7UOQH1N/l2y2aa4lCVpiGIiUa1mx76+IH+QznVWt+st5uZ6xg+r8ZT0rztN2FPHDNTt7Af4QbCEySA+DEvxfOXWGhcMYfr6VBA8DNeYVl/rGwYuZqNZH6RfhVX4CVls90ecBSDNVfvMTCC7w8dSD3vg5aCTThWL1U5WIz2udouwdy89eZNLgOktS8IyucBXjTqK661YB/b3j3KHXakSmBgW3nwHOtnq3idJuODh+LCGlMCYVVf9Lk2+fDyW7QoFmNpg=" />
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ctl00$ContentContainer$ctl01', 'liquid_form', [], [], [], 90, 'ctl00');
+//]]>
+        </script>
+
+        <script type="text/javascript">
+            function entityFormClientValidate() {
+                // Custom client side validation. Method is called by the submit button's onclick event.
+                // Must return true or false. Returning false will prevent the form from submitting.
+                return true;
+            }
+        </script>
+        <div class="container">
+            <div class="page-heading">
+                <!--
+
+
+
+<ul class="breadcrumb">
+  <li>
+  <a href="/" title="Home">Home</a>
+ </li>
+  <li>
+  <a href="/reservation/" title="Welcome to the eServiceCanada Appointment Booking Tool">Welcome to the eServi...</a>
+ </li>
+  <li class="active">Appointment Booking</li>
+</ul>
+
+    -->
+                <!--
+    <div class="xrm-editable-html&#32;xrm-attribute" data-languageContext="English"><div class="xrm-attribute-value"><h2 class="wb-inv">You are here:</h2></div></div>
+    -->
+
+
+
+                <div class="page-header">
+                    <h1 id="wb-cont" dir="ltr" property="name" class="portal-page-title">Appointment Booking</h1>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                    <div class="page-copy">
+                        <div class="xrm-editable-html&#32;xrm-attribute">
+                            <div class="xrm-attribute-value">
+                                <span id="passportWithinNumberBusinessDays" style="display: none;" data-value="10"
+                                    data-entityname="esdc_booking"></span>
+
+                                <div id="success" class="row" style="display: none;">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <p class="h2" style="text-align: center;">Thank you, your appointment has been
+                                            booked.</p>
+                                        <p>Please keep a record of your confirmation number. This number is to confirm
+                                            your appointment at the Service
+                                            Canada Centre.</p>
+                                    </div>
+                                </div>
+
+                                <div id="ConfirmationSummary" class="container" style="display:none;">
+                                    <div id="SOcollapsible" class="row" style="display:none;">
+                                        <div class="wb-tabs">
+                                            <div class="tabpanels">
+                                                <details id="details-panel-overview" open="open">
+                                                    <summary>Overview</summary>
+                                                    <div>
+                                                        <div id="Covidmessaging">
+                                                            <p class="h3" style="text-align: left;">Do not come to a
+                                                                Service Canada Centre if you:</p>
+                                                            <div>
+                                                                <ul>
+                                                                    <li>Are experiencing any symptoms associated with
+                                                                        COVID-19 (even if mild);</li>
+                                                                    <li>Have tested positive on a PCR or rapid test,
+                                                                        been presumed positive for COVID-19 in the past
+                                                                        7 days; or</li>
+                                                                    <li>Have been instructed by public health
+                                                                        authorities or a health care provider to
+                                                                        quarantine or isolate for any reason.</li>
+                                                                </ul>
+                                                                <p>Please follow public health advice. If you don't
+                                                                    follow public health advice and
+                                                                    try
+                                                                    to enter the office, you could be reported to local
+                                                                    public health authorities.
+                                                                    For
+                                                                    more information, visit <a
+                                                                        href="https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html"
+                                                                        target="_blank">Canada.ca/covid19</a>.</p>
+                                                                <p>Service Canada is committed to providing a safe
+                                                                    environment for all. Please read
+                                                                    the
+                                                                    following instructions carefully before visiting the
+                                                                    office for your
+                                                                    appointment:
+                                                                </p>
+                                                                <ul>
+                                                                    <li>Please arrive no more than 10 minutes early for
+                                                                        your appointment. If you are
+                                                                        late, you may have to make another appointment.
+                                                                    </li>
+                                                                    <li>When you arrive for your appointment, please
+                                                                        check-in with the
+                                                                        Commissionaire.
+                                                                        You will have to give them your name and the
+                                                                        time of your appointment.</li>
+                                                                    <li>You should be ready to wait outside the office,
+                                                                        should you be required to do so.</li>
+                                                                    <li>During your visit, please follow health and
+                                                                        safety signage.</li>
+                                                                    <li>Service Canada requires everyone to wear a face
+                                                                        mask at all times inside the office.</li>
+                                                                    <li>Be sure to bring all the required documentation
+                                                                        for your request.</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr />
+                                                        <div id="cancellation-messaging">
+                                                            <p class="h3" style="text-align: left;">Canceling your
+                                                                booking</p>
+                                                            <div>
+                                                                <p>If you need to cancel your appointment, please click
+                                                                    on this link and follow the
+                                                                    instructions: <a id="cancelAppointmentLink"
+                                                                        href="../cancel-annuler/?bookingid={!Booking:Booking;}&lastname={!Booking:Last Name;}"
+                                                                        target="_blank">Cancel Booking</a></p>
+                                                                <p>If you want to change the appointment, you will need
+                                                                    to cancel it and book a new
+                                                                    appointment.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="h3" style="text-align: left;">Scent-reduced
+                                                                environment</p>
+                                                            <div>
+                                                                <p>Service Canada promotes a scent-reduced environment.
+                                                                    We encourage limited use of
+                                                                    scented
+                                                                    products in our offices.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </details>
+                                                <details id="details-panel-passportconfirm">
+                                                    <summary>Passport Service</summary>
+                                                    <div>
+                                                        <p>
+                                                            Please bring the required documentation, indicated on the
+                                                            requirement checklist section on the application form, at
+                                                            your appointment. For more information, visit <a
+                                                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports.html"
+                                                                target="_blank">Canada.ca/passport</a>.
+                                                        <p>
+                                                        <p>
+                                                            <strong>Important:</strong> If you need a passport in less
+                                                            than 10 business days from the
+                                                            date
+                                                            of your appointment, a <a
+                                                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/urgent-emergency-passport.html#proof"
+                                                                target="_blank">proof of travel or need</a> is required.
+                                                            Additional fees apply.
+                                                        </p>
+                                                        <p>
+                                                            Please note that you cannot transfer your appointment to
+                                                            another person.
+                                                        </p>
+                                                    </div>
+                                                </details>
+                                                <details id="details-panel-bioconfirm">
+                                                    <summary>Biometrics Collection</summary>
+                                                    <div>
+                                                        <ul>
+                                                            <li>
+                                                                Please remember to bring the following with you to your
+                                                                appointment:
+                                                                <ul>
+                                                                    <li>Your <strong>Biometrics Instruction
+                                                                            Letter</strong>, and</li>
+                                                                    <li>The <strong>passport</strong> or <strong>travel
+                                                                            document</strong> used in your
+                                                                        application.</li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </details>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Azure Maps -->
+
+                                <input id="azureMapsClientId" type="hidden" name="azureMapsClientId"
+                                    value="16a72cfd-c045-418a-a022-213965e8c94e">
+
+                                <input id="azureMapsMapEnabled" type="hidden" name="azureMapsMapEnabled" value="True">
+
+                                <input id="azureMapsInteractive" type="hidden" name="azureMapsInteractive"
+                                    value="False">
+
+                                <input id="azureMapsAuthUrl" type="hidden" name="azureMapsAuthUrl"
+                                    value="https://azuremapauthenticator-functionappprod.azurewebsites.net/api/AzureMapAuthenticator?code=DkDea3jrzTiGH8Ul5XYRlfaaghlBYA8BYY9oi6ZYSkhMNYU8yI7uyg==">
+
+                                <!-- Booking API -->
+
+                                <input id="bookingAPIUrl" type="hidden" name="bookingAPIUrl"
+                                    value="https://eservice-api-production.azurewebsites.net/"
+                                    data-entityname="esdc_booking">
+
+                                <input id="eServiceAPIUrl" type="hidden" name="eServiceAPIUrl"
+                                    value="https://eservice-api-production.azurewebsites.net/"
+                                    data-entityname="esdc_transferrequest">
+
+                                <!-- Session -->
+
+                                <input id="sessionExpiryEnabled" type="hidden" name="sessionExpiryEnabled" value="True"
+                                    data-entityname="esdc_booking">
+
+                                <input id="sessionExpiryTimeMinutes" type="hidden" name="sessionExpiryTimeMinutes"
+                                    value="30" data-entityname="esdc_booking">
+
+
+                                <!-- Dependencies -->
+                                <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+                                <script
+                                    src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
+
+
+                                <script src="/en/assets/libs/eServiceBooking.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div id="WebFormControl_de5496ccf543ec118c62000d3a09fbc2">
+                        <span>
+                            <script type="text/javascript">/// JS Doc References
+                                /// <reference path="../../libs/eServiceFormHelpers.js"/>
+                                /// <reference path="../../libs/eServiceBooking.js"/>
+                                var uniqueStepId = "efef11db-6acf-4990-8ab6-3a0a9d82da58";
+
+                                $(document).ready(function () {
+                                    console.log(`Step 0 Loaded - ${uniqueStepId}`);
+                                    let entityFormView = document.getElementById("EntityFormView");
+
+                                    // Pre-confirmation
+                                    $("#esdc_mobiletelephonenumber").attr("data-copyButtonEnabled", true);
+                                    $("[aria-roledescription]").removeAttr("aria-roledescription");
+
+                                    // Setup Initial Form state
+                                    configureFormState({
+                                        loadAddressMetadata: true,
+                                        metadataSectionName: "step0_tab_metadata_section",
+                                        initialization: {
+                                            enabled: true,
+                                            options: {},
+                                            initalizeLogic: CreateBookingInitializationLogic({})
+                                        },
+                                        tooltips: {
+                                            options: {
+                                                hideByDefault: true,
+                                                focus: {
+                                                    showOnEnter: false,
+                                                    hideOnLeave: false
+                                                }
+                                            }
+                                        },
+                                        actions: {
+                                            next: {
+                                                hide: false,
+                                                postAction: function () {
+                                                    // Lock the Create Button to a single execution
+                                                    console.log("Disabling Create Button");
+                                                    $("#NextButton").attr("disabled", "disabled");
+                                                }
+                                            },
+                                        },
+                                        page: {
+                                            tab: {
+                                                hide: true
+                                            },
+                                            title: {
+                                                text: getTranslatedText(
+                                                    "Appointment Booking",
+                                                    "Prise de rendez-vous"
+                                                ),
+                                                appendProgressBar: false
+                                            },
+                                            form: {
+                                                cacheInputs: {
+                                                    enabled: true,
+                                                    sessionKey: "esdc_booking-cached_inputs",
+                                                    location: "session"
+                                                }
+                                            }
+                                        }
+                                    });
+
+                                    // Unlock the "Create" Next Button when an input changes
+                                    $("input,select,textarea").change(unlockNextButton);
+                                    $("input,select,textarea").on("input", unlockNextButton);
+
+                                    appendBio();
+                                    addContactUsButton();
+
+                                    // On Change Handler
+                                    $("#esdc_bookingtype").change(function () {
+                                        let selectedValue = $(this).val();
+                                        if (selectedValue == 564190000) {
+                                            $("#contactButton_area").show();
+                                            return;
+                                        } else {
+                                            $("#contactButton_area").hide();
+                                        }
+                                    });
+
+                                });
+
+                                function appendBio() {
+                                    let bioLegend = $("#esdc_bilapplicationnumber").parents("fieldset").first().find("legend");
+
+                                    let bioText = getTranslatedText(
+                                        `You need a Biometric Instruction Letter to book an appointment. For more information, <a href="https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/biometrics/how-to-give-biometrics.html" target="_blank">how to give your fingerprints and photo - Canada.ca</a>.`,
+                                        `Vous avez besoin d'une lettre d'instructions pour la collecte des données biométriques pour prendre un rendez-vous. Pour plus d'informations, <a href="https://www.canada.ca/fr/immigration-refugies-citoyennete/campagnes/biometrie/comment-fournir-donnees-biometriques.html" target="_blank">comment fournir vos empreintes digitales et votre photo (données biométriques) - Canada.ca</a>.`
+                                    );
+                                    let pBioText = $("<p>" + bioText + "</p>");
+                                    pBioText.insertAfter(bioLegend);
+                                }
+                            </script>
+                        </span>
+                        <div id="WebFormControl_de5496ccf543ec118c62000d3a09fbc2_ProgressIndicator"
+                            class="&#32;progress&#32;top&#32;progress&#32;top">
+                            <div class="bar&#32;progress-bar&#32;zero" style="width:&#32;0%;" role="progressbar"
+                                aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0%"
+                                tabindex="0"><span aria-hidden="true">0%</span></div>
+                        </div>
+                        <div id="WebFormPanel" class="crmEntityFormView"
+                            onkeypress="javascript:return&#32;WebForm_FireDefaultButton(event,&#32;&#39;NextButton&#39;)">
+                            <div id="EntityFormView" class="entity-form">
+                                <input type="hidden"
+                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityName"
+                                    id="EntityFormView_EntityName" value="esdc_booking" /><input type="hidden"
+                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityID"
+                                    id="EntityFormView_EntityID" /><input type="hidden"
+                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityState"
+                                    id="EntityFormView_EntityState" /><input type="hidden"
+                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$EntityFormView_EntityStatus"
+                                    id="EntityFormView_EntityStatus" /><span id="EntityFormView_EntityLayoutConfig"
+                                    data-form-layout="{&quot;EntityName&quot;:&quot;esdc_booking&quot;,&quot;Id&quot;:&quot;00000000-0000-0000-0000-000000000000&quot;,&quot;SubmitActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;2dbb4bbb-deed-4f45-be26-cb48de36994b&quot;},&quot;PreviousActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;acb7a5e2-f29d-4456-baaa-92da278351e3&quot;},&quot;NextActionLink&quot;:{&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;a7e90fe1-6539-4b8d-8e7f-4e80c6a3a9ed&quot;},&quot;CreateRelatedRecordActionLink&quot;:{&quot;Modal&quot;:{},&quot;Type&quot;:0,&quot;Enabled&quot;:false,&quot;ShowModal&quot;:0,&quot;FilterCriteriaId&quot;:&quot;c82ffc1a-1d9f-472d-9304-1e6694ca09a8&quot;},&quot;EnableEntityPermissions&quot;:false,&quot;LanguageCode&quot;:0,&quot;EnableActions&quot;:false,&quot;ShowActionButtonContainer&quot;:0,&quot;AutoGenerateSteps&quot;:false}"></span>
+                                <div id="ValidationSummaryEntityFormView"
+                                    class="validation-summary&#32;alert&#32;alert-error&#32;alert-danger&#32;alert-block"
+                                    role="alert" style="display:none;">
+
+                                </div>
+                                <div data-name="step0_tab" class="tab&#32;clearfix">
+                                    <div class="tab-column" style="width:100%;">
+                                        <div>
+                                            <fieldset aria-label="Language">
+                                                <legend class="section-title">Language</legend>
+                                                <table role="presentation" data-name="step0_tab_section_4"
+                                                    class="section">
+                                                    <colgroup>
+                                                        <col style="width:50%;" />
+                                                        <col style="width:50%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info&#32;required"><label
+                                                                    for="esdc_languageofservice"
+                                                                    id="esdc_languageofservice_label"
+                                                                    class="field-label">Language of Service</label>
+                                                                <div class="validators"><span
+                                                                        id="RequiredFieldValidatoresdc_languageofservice"
+                                                                        style="display:none;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_languageofservice"
+                                                                    id="esdc_languageofservice"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);" required=""
+                                                                    aria-invalid="false"
+                                                                    title="Please&#32;select&#32;an&#32;item&#32;in&#32;this&#32;list">
+                                                                    <option selected="selected" value="" label="&#32;"
+                                                                        aria-label="Blank"></option>
+                                                                    <option value="564190000">English</option>
+                                                                    <option value="564190001">French</option>
+                                                                    <option value="100000000">American Sign Language
+                                                                        (ASL)</option>
+                                                                    <option value="100000001">Quebec Sign Language (LSQ)
+                                                                    </option>
+                                                                    <option value="564190002">Other Spoken Language
+                                                                    </option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;text&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_otherspokenlanguage"
+                                                                    id="esdc_otherspokenlanguage_label"
+                                                                    class="field-label">Other (Language)</label>
+                                                                <div class="validators"><span
+                                                                        id="MaximumLengthValidatoresdc_otherspokenlanguage"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_otherspokenlanguage"
+                                                                    type="text" maxlength="100"
+                                                                    id="esdc_otherspokenlanguage"
+                                                                    class="text&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);"
+                                                                    onkeypress="javascript:return&#32;LengthError(this,&#32;event);" />
+                                                            </div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                </table>
+                                            </fieldset>
+                                            <fieldset aria-label="Service&#32;Information">
+                                                <legend class="section-title">Service Information</legend>
+                                                <table role="presentation"
+                                                    data-name="step0_tab_section_serviceinformation" class="section">
+                                                    <colgroup>
+                                                        <col style="width:50%;" />
+                                                        <col style="width:50%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info&#32;required"><label for="esdc_bookingtype"
+                                                                    id="esdc_bookingtype_label"
+                                                                    class="field-label">Booking Type</label>
+                                                                <div class="validators"><span
+                                                                        id="RequiredFieldValidatoresdc_bookingtype"
+                                                                        style="display:none;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bookingtype"
+                                                                    id="esdc_bookingtype"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);" required=""
+                                                                    aria-invalid="false"
+                                                                    title="Please&#32;select&#32;an&#32;item&#32;in&#32;this&#32;list">
+                                                                    <option selected="selected" value="" label="&#32;"
+                                                                        aria-label="Blank"></option>
+                                                                    <option value="564190000">Biometrics Collection
+                                                                    </option>
+                                                                    <option value="564190001">Passport Service</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                </table>
+                                            </fieldset>
+                                            <fieldset aria-label="Passport">
+                                                <legend class="section-title">Passport</legend>
+                                                <table role="presentation" data-name="step0_tab_section_passport_1"
+                                                    class="section">
+                                                    <colgroup>
+                                                        <col style="width:50%;" />
+                                                        <col style="width:50%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info"><label for="esdc_earliesttraveldaterange"
+                                                                    id="esdc_earliesttraveldaterange_label"
+                                                                    class="field-label">Earliest Travel Date</label>
+                                                                <div class="validators"></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_earliesttraveldaterange"
+                                                                    id="esdc_earliesttraveldaterange"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);">
+                                                                    <option selected="selected" value="" label="&#32;"
+                                                                        aria-label="Blank"></option>
+                                                                    <option value="564190000">I don&#39;t have a travel
+                                                                        date</option>
+                                                                    <option value="564190001">Travel in 2 business days
+                                                                        or less </option>
+                                                                    <option value="564190002">Travel between 3 and 9
+                                                                        business days</option>
+                                                                    <option value="564190003">Travel in 10 business days
+                                                                        or more</option>
+                                                                    <option value="564190004">Travel in 46 business days
+                                                                        or more</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;integer&#32;form-control-cell">
+                                                            <div class="info"><label
+                                                                    for="esdc_numberofapplicationspassport"
+                                                                    id="esdc_numberofapplicationspassport_label"
+                                                                    class="field-label">Number of Applications</label>
+                                                                <div class="validators"><span
+                                                                        id="IntegerValidatoresdc_numberofapplicationspassport"
+                                                                        style="visibility:hidden;">*</span><span
+                                                                        id="RangeValidatoresdc_numberofapplicationspassport"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicationspassport"
+                                                                    type="text" id="esdc_numberofapplicationspassport"
+                                                                    class="text&#32;integer&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);" /></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info"><label for="esdc_passportraapplicable"
+                                                                    id="esdc_passportraapplicable_label"
+                                                                    class="field-label">Does any of the following apply
+                                                                    to you:</label>
+                                                                <div class="validators"></div>
+                                                            </div>
+                                                            <div class="description&#32;above">
+                                                                <div class="alert alert-info">
+                                                                    <ul>
+                                                                        <li>I’m asking for a name that isn’t the same as
+                                                                            shown on the:
+                                                                            <ul>
+                                                                                <li>Proof of Canadian citizenship, and
+                                                                                </li>
+                                                                                <li>I don’t have a relationship document
+                                                                                    or Legal Name Change document to
+                                                                                    support the discrepancy.</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li>I’m submitting a child’s application with
+                                                                            only one parent participating, and</li>
+                                                                        <ul>
+                                                                            <li>more than one parent is listed on the
+                                                                                proof of parentage; or</li>
+                                                                            <li>no death certificate is being submitted
+                                                                                for one of the parents listed on the
+                                                                                proof of parentage document.</li>
+                                                                        </ul>
+                                                                        <li>I need to pick up the passport in person.
+                                                                            Additional <a
+                                                                                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/passport-canada.html"
+                                                                                target="_blank">fees</a> apply.</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_passportraapplicable"
+                                                                    id="esdc_passportraapplicable"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#8217;m&#32;asking&#32;for&#32;a&#32;name&#32;that&#32;isn&#8217;t&#32;the&#32;same&#32;as&#32;shown&#32;on&#32;the:&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;Proof&#32;of&#32;Canadian&#32;citizenship,&#32;and&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#32;don&#8217;t&#32;have&#32;a&#32;relationship&#32;document&#32;or&#32;Legal&#32;Name&#32;Change&#32;document&#32;to&#32;support&#32;the&#32;discrepancy.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;I&#8217;m&#32;submitting&#32;a&#32;child&#8217;s&#32;application&#32;with&#32;only&#32;one&#32;parent&#32;participating,&#32;and&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;ul&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;more&#32;than&#32;one&#32;parent&#32;is&#32;listed&#32;on&#32;the&#32;proof&#32;of&#32;parentage;&#32;or&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;li&gt;no&#32;death&#32;certificate&#32;is&#32;being&#32;submitted&#32;for&#32;one&#32;of&#32;the&#32;parents&#32;listed&#32;on&#32;the&#32;proof&#32;of&#32;parentage&#32;document.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;li&gt;I&#32;need&#32;to&#32;pick&#32;up&#32;the&#32;passport&#32;in&#32;person.&#32;Additional&#32;&lt;a&#32;href=&quot;https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-passports/fees/passport-canada.html&quot;&#32;target=&quot;_blank&quot;&gt;fees&lt;/a&gt;&#32;apply.&lt;/li&gt;&#10;&#32;&#32;&#32;&#32;&lt;/ul&gt;&#10;&lt;/div&gt;"
+                                                                    onchange="setIsDirty(this.id);">
+                                                                    <option selected="selected" value="" label="&#32;"
+                                                                        aria-label="Blank"></option>
+                                                                    <option value="0">No</option>
+                                                                    <option value="1">Yes</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                </table>
+                                            </fieldset>
+                                            <fieldset aria-label="Biometrics&#32;Collection">
+                                                <legend class="section-title">Biometrics Collection</legend>
+                                                <table role="presentation" data-name="step0_tab_section_bio_1"
+                                                    class="section">
+                                                    <colgroup>
+                                                        <col style="width:50%;" />
+                                                        <col style="width:50%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;text&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_bilapplicationnumber"
+                                                                    id="esdc_bilapplicationnumber_label"
+                                                                    class="field-label">Biometric Instruction Letter
+                                                                    Application Number</label>
+                                                                <div class="validators"><span
+                                                                        id="RegularExpressionValidatoresdc_bilapplicationnumber"
+                                                                        style="display:none;"></span><span
+                                                                        id="MaximumLengthValidatoresdc_bilapplicationnumber"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="description&#32;above">
+                                                                <div class="alert alert-info">
+                                                                    <p>You will find the Biometric Instruction Letter
+                                                                        Application Number on the top-right of your
+                                                                        Letter</p>
+                                                                    <img src="bio-letter-en.png"
+                                                                        style="max-width: 500px; width: 100%;"
+                                                                        alt="Biometric Instruction Letter with BIL Number circled"
+                                                                        aria-hidden="true" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_bilapplicationnumber"
+                                                                    type="text" maxlength="100"
+                                                                    id="esdc_bilapplicationnumber"
+                                                                    class="text&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);"
+                                                                    aria-roledescription="&lt;div&#32;class=&quot;alert&#32;alert-info&quot;&gt;&#10;&lt;p&gt;You&#32;will&#32;find&#32;the&#32;Biometric&#32;Instruction&#32;Letter&#32;Application&#32;Number&#32;on&#32;the&#32;top-right&#32;of&#32;your&#32;Letter&lt;/p&gt;&#10;&lt;img&#32;src=&quot;bio-letter-en.png&quot;&#32;style=&quot;max-width:&#32;500px;&#32;width:&#32;100%;&quot;&#32;alt=&quot;Biometric&#32;Instruction&#32;Letter&#32;with&#32;BIL&#32;Number&#32;circled&quot;&#32;aria-hidden=&quot;true&quot;&#32;/&gt;&#10;&lt;/div&gt;"
+                                                                    onkeypress="javascript:return&#32;LengthError(this,&#32;event);" />
+                                                            </div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1" class="clearfix&#32;cell"></td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;integer&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_numberofapplicantsbio"
+                                                                    id="esdc_numberofapplicantsbio_label"
+                                                                    class="field-label">Number of Applicants</label>
+                                                                <div class="validators"><span
+                                                                        id="IntegerValidatoresdc_numberofapplicantsbio"
+                                                                        style="visibility:hidden;">*</span><span
+                                                                        id="RangeValidatoresdc_numberofapplicantsbio"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_numberofapplicantsbio"
+                                                                    type="text" id="esdc_numberofapplicantsbio"
+                                                                    class="text&#32;integer&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);" /></div>
+                                                        </td>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info"><label for="esdc_privateroomrequired"
+                                                                    id="esdc_privateroomrequired_label"
+                                                                    class="field-label">I would like a private space to
+                                                                    meet my needs and/or religious beliefs</label>
+                                                                <div class="validators"></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privateroomrequired"
+                                                                    id="esdc_privateroomrequired"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);">
+                                                                    <option value="" label="&#32;" aria-label="Blank">
+                                                                    </option>
+                                                                    <option selected="selected" value="0">No</option>
+                                                                    <option value="1">Yes</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                </table>
+                                            </fieldset>
+                                            <fieldset aria-label="Metadata">
+                                                <legend class="section-title">Metadata</legend>
+                                                <table role="presentation" data-name="step0_tab_metadata_section"
+                                                    class="section">
+                                                    <colgroup>
+                                                        <col style="width:100%;" />
+                                                        <col />
+                                                    </colgroup>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;datetime&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_sessionexpiryon"
+                                                                    id="esdc_sessionexpiryon_label"
+                                                                    class="field-label">Session Expiry On</label>
+                                                                <div class="validators"><span
+                                                                        id="DateFormatValidatoresdc_sessionexpiryon"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_sessionexpiryon"
+                                                                    type="text" id="esdc_sessionexpiryon"
+                                                                    class="datetime&#32;form-control&#32;"
+                                                                    data-ui="datetimepicker" data-type="datetime"
+                                                                    data-attribute="esdc_sessionexpiryon"
+                                                                    data-behavior="TimeZoneIndependent" /></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info"><label for="esdc_portalbooking"
+                                                                    id="esdc_portalbooking_label"
+                                                                    class="field-label">Portal Booking</label>
+                                                                <div class="validators"></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_portalbooking"
+                                                                    id="esdc_portalbooking"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);">
+                                                                    <option value="" label="&#32;" aria-label="Blank">
+                                                                    </option>
+                                                                    <option selected="selected" value="0">No</option>
+                                                                    <option value="1">Yes</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;picklist-cell">
+                                                            <div class="info"><label for="esdc_privacystatementaccepted"
+                                                                    id="esdc_privacystatementaccepted_label"
+                                                                    class="field-label">Privacy Statement
+                                                                    Accepted</label>
+                                                                <div class="validators"></div>
+                                                            </div>
+                                                            <div class="control"><select
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_privacystatementaccepted"
+                                                                    id="esdc_privacystatementaccepted"
+                                                                    class="form-control&#32;picklist&#32;"
+                                                                    onchange="setIsDirty(this.id);">
+                                                                    <option selected="selected" value="" label="&#32;"
+                                                                        aria-label="Blank"></option>
+                                                                    <option value="0">No</option>
+                                                                    <option value="1">Yes</option>
+
+                                                                </select></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;textarea&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_browseragent"
+                                                                    id="esdc_browseragent_label"
+                                                                    class="field-label">Browser Agent</label>
+                                                                <div class="validators"><span
+                                                                        id="MaximumLengthValidatoresdc_browseragent"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><textarea
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_browseragent"
+                                                                    rows="1" cols="20" maxlength="4000"
+                                                                    id="esdc_browseragent"
+                                                                    class="textarea&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);"
+                                                                    onkeydown="javascript:return&#32;LimitInput(this,&#32;event);"
+                                                                    oninput="javascript:return&#32;LimitInput(this,&#32;event);"
+                                                                    onpaste="javascript:return&#32;LimitPaste(this,&#32;event);">
+</textarea></div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="1" rowspan="1"
+                                                            class="clearfix&#32;cell&#32;text&#32;form-control-cell">
+                                                            <div class="info"><label for="esdc_clientianatimezone"
+                                                                    id="esdc_clientianatimezone_label"
+                                                                    class="field-label">Client IANA Timezone</label>
+                                                                <div class="validators"><span
+                                                                        id="MaximumLengthValidatoresdc_clientianatimezone"
+                                                                        style="visibility:hidden;">*</span></div>
+                                                            </div>
+                                                            <div class="control"><input
+                                                                    name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$EntityFormView$esdc_clientianatimezone"
+                                                                    type="text" maxlength="4000"
+                                                                    id="esdc_clientianatimezone"
+                                                                    class="text&#32;form-control&#32;"
+                                                                    onchange="setIsDirty(this.id);"
+                                                                    onkeypress="javascript:return&#32;LengthError(this,&#32;event);" />
+                                                            </div>
+                                                        </td>
+                                                        <td class="cell&#32;zero-cell"></td>
+                                                    </tr>
+                                                </table>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <div class="col-sm-6&#32;clearfix">
+                                    <div role="group" class="btn-group entity-action-button"><input type="button"
+                                            name="ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton"
+                                            value="Next"
+                                            onclick="javascript:if(typeof&#32;webFormClientValidate&#32;===&#32;&#39;function&#39;){if(webFormClientValidate()){if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{return&#32;false;}}else{if(typeof&#32;Page_ClientValidate&#32;===&#32;&#39;function&#39;){if(Page_ClientValidate(&#39;&#39;)){clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}}else{clearIsDirty();disableButtons();this.value&#32;=&#32;&#39;Processing...&#39;;}};WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$ContentContainer$WebFormControl_de5496ccf543ec118c62000d3a09fbc2$NextButton&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;true))"
+                                            id="NextButton"
+                                            class="btn&#32;btn-primary&#32;button&#32;next&#32;submit-btn"
+                                            nonActionLinkButton="true" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <dl class="text-right">
+
+
+                                <dt>Protection level when complete</dt>
+                                <dd>Protected-B</dd>
+
+
+                            </dl>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            var Page_ValidationSummaries = new Array(document.getElementById("ValidationSummaryEntityFormView"));
+            var Page_Validators = new Array(document.getElementById("RequiredFieldValidatoresdc_languageofservice"), document.getElementById("MaximumLengthValidatoresdc_otherspokenlanguage"), document.getElementById("RequiredFieldValidatoresdc_bookingtype"), document.getElementById("IntegerValidatoresdc_numberofapplicationspassport"), document.getElementById("RangeValidatoresdc_numberofapplicationspassport"), document.getElementById("RegularExpressionValidatoresdc_bilapplicationnumber"), document.getElementById("MaximumLengthValidatoresdc_bilapplicationnumber"), document.getElementById("IntegerValidatoresdc_numberofapplicantsbio"), document.getElementById("RangeValidatoresdc_numberofapplicantsbio"), document.getElementById("DateFormatValidatoresdc_sessionexpiryon"), document.getElementById("MaximumLengthValidatoresdc_browseragent"), document.getElementById("MaximumLengthValidatoresdc_clientianatimezone"));
+//]]>
+        </script>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var esdc_browseragent = document.all ? document.all["esdc_browseragent"] : document.getElementById("esdc_browseragent");
+            esdc_browseragent.exMaxLen = "4000";
+            var ValidationSummaryEntityFormView = document.all ? document.all["ValidationSummaryEntityFormView"] : document.getElementById("ValidationSummaryEntityFormView");
+            ValidationSummaryEntityFormView.headertext = "<h2 class=\'validation-header\'><span role=\'presentation\' class=\'fa fa-info-circle\'></span> The form could not be submitted for the following reasons:</h2>";
+            var RequiredFieldValidatoresdc_languageofservice = document.all ? document.all["RequiredFieldValidatoresdc_languageofservice"] : document.getElementById("RequiredFieldValidatoresdc_languageofservice");
+            RequiredFieldValidatoresdc_languageofservice.controltovalidate = "esdc_languageofservice";
+            RequiredFieldValidatoresdc_languageofservice.errormessage = "<a href=\'#esdc_languageofservice_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_languageofservice_label\",\"esdc_languageofservice\");return false;\' referenceControlId=esdc_languageofservice>Language of Service is a required field. </a>";
+            RequiredFieldValidatoresdc_languageofservice.display = "Dynamic";
+            RequiredFieldValidatoresdc_languageofservice.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+            RequiredFieldValidatoresdc_languageofservice.initialvalue = "";
+            var MaximumLengthValidatoresdc_otherspokenlanguage = document.all ? document.all["MaximumLengthValidatoresdc_otherspokenlanguage"] : document.getElementById("MaximumLengthValidatoresdc_otherspokenlanguage");
+            MaximumLengthValidatoresdc_otherspokenlanguage.controltovalidate = "esdc_otherspokenlanguage";
+            MaximumLengthValidatoresdc_otherspokenlanguage.errormessage = "<a href=\'#esdc_otherspokenlanguage_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_otherspokenlanguage_label\",\"esdc_otherspokenlanguage\");return false;\' referenceControlId=esdc_otherspokenlanguage>Other (Language) exceeds the maximum length of 100 characters. </a>";
+            MaximumLengthValidatoresdc_otherspokenlanguage.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var RequiredFieldValidatoresdc_bookingtype = document.all ? document.all["RequiredFieldValidatoresdc_bookingtype"] : document.getElementById("RequiredFieldValidatoresdc_bookingtype");
+            RequiredFieldValidatoresdc_bookingtype.controltovalidate = "esdc_bookingtype";
+            RequiredFieldValidatoresdc_bookingtype.errormessage = "<a href=\'#esdc_bookingtype_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bookingtype_label\",\"esdc_bookingtype\");return false;\' referenceControlId=esdc_bookingtype>Booking Type is a required field. </a>";
+            RequiredFieldValidatoresdc_bookingtype.display = "Dynamic";
+            RequiredFieldValidatoresdc_bookingtype.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+            RequiredFieldValidatoresdc_bookingtype.initialvalue = "";
+            var IntegerValidatoresdc_numberofapplicationspassport = document.all ? document.all["IntegerValidatoresdc_numberofapplicationspassport"] : document.getElementById("IntegerValidatoresdc_numberofapplicationspassport");
+            IntegerValidatoresdc_numberofapplicationspassport.controltovalidate = "esdc_numberofapplicationspassport";
+            IntegerValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>Number of Applications must be a valid integer value. </a>";
+            IntegerValidatoresdc_numberofapplicationspassport.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var RangeValidatoresdc_numberofapplicationspassport = document.all ? document.all["RangeValidatoresdc_numberofapplicationspassport"] : document.getElementById("RangeValidatoresdc_numberofapplicationspassport");
+            RangeValidatoresdc_numberofapplicationspassport.controltovalidate = "esdc_numberofapplicationspassport";
+            RangeValidatoresdc_numberofapplicationspassport.errormessage = "<a href=\'#esdc_numberofapplicationspassport_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicationspassport_label\",\"esdc_numberofapplicationspassport\");return false;\' referenceControlId=esdc_numberofapplicationspassport>Number of Applications must have a value between 0 and 2147483647. </a>";
+            RangeValidatoresdc_numberofapplicationspassport.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var RegularExpressionValidatoresdc_bilapplicationnumber = document.all ? document.all["RegularExpressionValidatoresdc_bilapplicationnumber"] : document.getElementById("RegularExpressionValidatoresdc_bilapplicationnumber");
+            RegularExpressionValidatoresdc_bilapplicationnumber.controltovalidate = "esdc_bilapplicationnumber";
+            RegularExpressionValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>The application number you have provided is invalid. Please verify the application number on your Biometrics Instruction Letter.  </a>";
+            RegularExpressionValidatoresdc_bilapplicationnumber.display = "None";
+            RegularExpressionValidatoresdc_bilapplicationnumber.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+            RegularExpressionValidatoresdc_bilapplicationnumber.validationexpression = "^[a-zA-Z]{1}[a-zA-Z0-9]{1}[0-9]{7,8}$";
+            var MaximumLengthValidatoresdc_bilapplicationnumber = document.all ? document.all["MaximumLengthValidatoresdc_bilapplicationnumber"] : document.getElementById("MaximumLengthValidatoresdc_bilapplicationnumber");
+            MaximumLengthValidatoresdc_bilapplicationnumber.controltovalidate = "esdc_bilapplicationnumber";
+            MaximumLengthValidatoresdc_bilapplicationnumber.errormessage = "<a href=\'#esdc_bilapplicationnumber_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_bilapplicationnumber_label\",\"esdc_bilapplicationnumber\");return false;\' referenceControlId=esdc_bilapplicationnumber>Biometric Instruction Letter Application Number exceeds the maximum length of 100 characters. </a>";
+            MaximumLengthValidatoresdc_bilapplicationnumber.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var IntegerValidatoresdc_numberofapplicantsbio = document.all ? document.all["IntegerValidatoresdc_numberofapplicantsbio"] : document.getElementById("IntegerValidatoresdc_numberofapplicantsbio");
+            IntegerValidatoresdc_numberofapplicantsbio.controltovalidate = "esdc_numberofapplicantsbio";
+            IntegerValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>Number of Applicants must be a valid integer value. </a>";
+            IntegerValidatoresdc_numberofapplicantsbio.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var RangeValidatoresdc_numberofapplicantsbio = document.all ? document.all["RangeValidatoresdc_numberofapplicantsbio"] : document.getElementById("RangeValidatoresdc_numberofapplicantsbio");
+            RangeValidatoresdc_numberofapplicantsbio.controltovalidate = "esdc_numberofapplicantsbio";
+            RangeValidatoresdc_numberofapplicantsbio.errormessage = "<a href=\'#esdc_numberofapplicantsbio_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_numberofapplicantsbio_label\",\"esdc_numberofapplicantsbio\");return false;\' referenceControlId=esdc_numberofapplicantsbio>Number of Applicants must have a value between 0 and 2147483647. </a>";
+            RangeValidatoresdc_numberofapplicantsbio.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var DateFormatValidatoresdc_sessionexpiryon = document.all ? document.all["DateFormatValidatoresdc_sessionexpiryon"] : document.getElementById("DateFormatValidatoresdc_sessionexpiryon");
+            DateFormatValidatoresdc_sessionexpiryon.controltovalidate = "esdc_sessionexpiryon";
+            DateFormatValidatoresdc_sessionexpiryon.errormessage = "<a href=\'#esdc_sessionexpiryon_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_sessionexpiryon_label\",\"esdc_sessionexpiryon_datepicker_description\");return false;\' referenceControlId=esdc_sessionexpiryon>Session Expiry On must have a valid date format. Example: {1} </a>";
+            DateFormatValidatoresdc_sessionexpiryon.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var MaximumLengthValidatoresdc_browseragent = document.all ? document.all["MaximumLengthValidatoresdc_browseragent"] : document.getElementById("MaximumLengthValidatoresdc_browseragent");
+            MaximumLengthValidatoresdc_browseragent.controltovalidate = "esdc_browseragent";
+            MaximumLengthValidatoresdc_browseragent.errormessage = "<a href=\'#esdc_browseragent_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_browseragent_label\",\"esdc_browseragent\");return false;\' referenceControlId=esdc_browseragent>Browser Agent exceeds the maximum length of 4000 characters. </a>";
+            MaximumLengthValidatoresdc_browseragent.evaluationfunction = "CustomValidatorEvaluateIsValid";
+            var MaximumLengthValidatoresdc_clientianatimezone = document.all ? document.all["MaximumLengthValidatoresdc_clientianatimezone"] : document.getElementById("MaximumLengthValidatoresdc_clientianatimezone");
+            MaximumLengthValidatoresdc_clientianatimezone.controltovalidate = "esdc_clientianatimezone";
+            MaximumLengthValidatoresdc_clientianatimezone.errormessage = "<a href=\'#esdc_clientianatimezone_label\' onclick=\'javascript:scrollToAndFocus(\"esdc_clientianatimezone_label\",\"esdc_clientianatimezone\");return false;\' referenceControlId=esdc_clientianatimezone>Client IANA Timezone exceeds the maximum length of 4000 characters. </a>";
+            MaximumLengthValidatoresdc_clientianatimezone.evaluationfunction = "CustomValidatorEvaluateIsValid";
+//]]>
+        </script>
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+
+            (function (id) {
+                var e = document.getElementById(id);
+                if (e) {
+                    e.dispose = function () {
+                        Array.remove(Page_ValidationSummaries, document.getElementById(id));
+                    }
+                    e = null;
+                }
+            })('ValidationSummaryEntityFormView');
+
+            var Page_ValidationActive = false;
+            if (typeof (ValidatorOnLoad) == "function") {
+                ValidatorOnLoad();
+            }
+
+            function ValidatorOnSubmit() {
+                if (Page_ValidationActive) {
+                    return ValidatorCommonOnSubmit();
+                }
+                else {
+                    return true;
+                }
+            }
+
+            document.getElementById('RequiredFieldValidatoresdc_languageofservice').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_languageofservice'));
+            }
+
+            document.getElementById('MaximumLengthValidatoresdc_otherspokenlanguage').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_otherspokenlanguage'));
+            }
+
+            document.getElementById('RequiredFieldValidatoresdc_bookingtype').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('RequiredFieldValidatoresdc_bookingtype'));
+            }
+
+            document.getElementById('IntegerValidatoresdc_numberofapplicationspassport').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('IntegerValidatoresdc_numberofapplicationspassport'));
+            }
+
+            document.getElementById('RangeValidatoresdc_numberofapplicationspassport').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('RangeValidatoresdc_numberofapplicationspassport'));
+            }
+
+            document.getElementById('RegularExpressionValidatoresdc_bilapplicationnumber').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('RegularExpressionValidatoresdc_bilapplicationnumber'));
+            }
+
+            document.getElementById('MaximumLengthValidatoresdc_bilapplicationnumber').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_bilapplicationnumber'));
+            }
+
+            document.getElementById('IntegerValidatoresdc_numberofapplicantsbio').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('IntegerValidatoresdc_numberofapplicantsbio'));
+            }
+
+            document.getElementById('RangeValidatoresdc_numberofapplicantsbio').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('RangeValidatoresdc_numberofapplicantsbio'));
+            }
+
+            document.getElementById('DateFormatValidatoresdc_sessionexpiryon').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('DateFormatValidatoresdc_sessionexpiryon'));
+            }
+
+            document.getElementById('MaximumLengthValidatoresdc_browseragent').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_browseragent'));
+            }
+
+            document.getElementById('MaximumLengthValidatoresdc_clientianatimezone').dispose = function () {
+                Array.remove(Page_Validators, document.getElementById('MaximumLengthValidatoresdc_clientianatimezone'));
+            }
+//]]>
+        </script>
+    </form>
+
+
+    <script src="/js/pcf/loadPcfControls.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CDTS Footer -->
+    <div class="container">
+        <div id="def-preFooter"></div>
+    </div>
+    <script>
+        var defPreFooter = document.getElementById("def-preFooter");
+        if (defPreFooter != undefined && defPreFooter != null) {
+            defPreFooter.outerHTML = wet.builder.preFooter({
+                "dateModified": "2022-10-12",
+                "showFeedback": false,
+                "showShare": false
+            });
+        }
+    </script>
+
+    <div id="def-footer">
+        <!-- Write closure fall-back static file -->
+        <!-- /ROOT/etc/designs/canada/cdts/gcweb/v4_0_28/cdts/static/footer-en.html -->
+    </div>
+    <!-- Write closure template -->
+    <script>
+        var defFooter = document.getElementById("def-footer");
+        defFooter.outerHTML = wet.builder.footer({
+        });
+    </script>
+    <!-- Write closure template -->
+    <script>
+        document.write(wet.builder.refFooter({
+            "isApplication": true
+        }));
+    </script>
+
+
+
+    <!--
+    cdtsTheme=gcweb
+    cdtsVersion=v4_0_43
+    cdtsLanguage=en
+-->
+    <script src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_43/wet-boew/js/i18n/en.min.js"></script>
+
+    <!-- Additional Plugins -->
+    <script src="/en/assets/vendor/select2/select2.min.js"></script>
+
+    <!-- Adobe Analytics -->
+    <!-- Path: /en/reservation/application/ -->
+    <!-- Contains: /en/reservation/application/ -->
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://content.powerapps.com/resource/powerappsportal/dist/postpreform.bundle-f4f91a6eb4.js"
+        type="text/javascript"></script>
+
+    <script src="https://content.powerapps.com/resource/powerappsportal/dist/app.bundle-f7eaf3ce8e.js"
+        type="text/javascript"></script>
+
+    <script src="https://content.powerapps.com/resource/powerappsportal/dist/default-1033.bundle-eda4e638fd.js"
+        type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+        var sdkInstance = "appInsightsSDK"; window[sdkInstance] = "appInsights"; var aiName = window[sdkInstance], aisdk = window[aiName] || function (n) { var o = { config: n, initialize: !0 }, t = document, e = window, i = "script"; setTimeout(function () { var e = t.createElement(i); e.src = n.url || "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js", t.getElementsByTagName(i)[0].parentNode.appendChild(e) }); try { o.cookie = t.cookie } catch (e) { } function a(n) { o[n] = function () { var e = arguments; o.queue.push(function () { o[n].apply(o, e) }) } } o.queue = [], o.version = 2; for (var s = ["Event", "PageView", "Exception", "Trace", "DependencyData", "Metric", "PageViewPerformance"]; s.length;)a("track" + s.pop()); var r = "Track", c = r + "Page"; a("start" + c), a("stop" + c); var u = r + "Event"; if (a("start" + u), a("stop" + u), a("addTelemetryInitializer"), a("setAuthenticatedUserContext"), a("clearAuthenticatedUserContext"), a("flush"), o.SeverityLevel = { Verbose: 0, Information: 1, Warning: 2, Error: 3, Critical: 4 }, !(!0 === n.disableExceptionTracking || n.extensionConfig && n.extensionConfig.ApplicationInsightsAnalytics && !0 === n.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)) { a("_" + (s = "onerror")); var p = e[s]; e[s] = function (e, n, t, i, a) { var r = p && p(e, n, t, i, a); return !0 !== r && o["_" + s]({ message: e, url: n, lineNumber: t, columnNumber: i, error: a }), r }, n.autoExceptionInstrumented = !0 } return o }(
+            {
+                instrumentationKey: "e4d34349-2ba3-4dc1-85ea-d25863650474"
+            }
+        ); (window[aiName] = aisdk).queue && 0 === aisdk.queue.length && aisdk.trackPageView({});
+    </script>
+    <script>
+        //this event will update the title of the page based on active breadcrumb
+        $('.breadcrumb').ready(function () {
+            if ($('.breadcrumb').is(':visible')) {
+                document.querySelector('title').innerHTML = ($('.breadcrumb > li.active').text() + "- E-service Canada.ca");
+            }
+        });
+
+        function GoToNewEditor() {
+            var editCmsUrlSegment = "EditInCms";
+            var currentUrl = window.location.href;
+            if (currentUrl.indexOf('?') > -1) {
+                var urlSegments = currentUrl.split("?");
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname + '?' + urlSegments[1];
+            }
+            else {
+                window.location.href = window.location.origin + '/' + editCmsUrlSegment + window.location.pathname;
+            }
+        }
+    </script>
+
+
+
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            }).catch(function (err) {
+                console.log('Service Worker unregister action failed: ', err);
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>
+<!-- Generated at 10/28/2022 9:08:24 PM -->
+<!-- Page OK -->
